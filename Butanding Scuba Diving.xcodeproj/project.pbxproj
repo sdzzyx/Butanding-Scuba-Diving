@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		A80DA6102DE89543000EAAC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A80DA5F12DE89541000EAAC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80DA5F82DE89541000EAAC0;
+			remoteInfo = "Butanding Scuba Diving";
+		};
+		A80DA61A2DE89543000EAAC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A80DA5F12DE89541000EAAC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80DA5F82DE89541000EAAC0;
+			remoteInfo = "Butanding Scuba Diving";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A80DA5F92DE89541000EAAC0 /* Butanding Scuba Diving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Butanding Scuba Diving.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80DA60F2DE89543000EAAC0 /* Butanding Scuba DivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Butanding Scuba DivingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80DA6192DE89543000EAAC0 /* Butanding Scuba DivingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Butanding Scuba DivingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A80DA6212DE89543000EAAC0 /* Exceptions for "Butanding Scuba Diving" folder in "Butanding Scuba Diving" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A80DA5F82DE89541000EAAC0 /* Butanding Scuba Diving */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A80DA5FB2DE89541000EAAC0 /* Butanding Scuba Diving */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A80DA6212DE89543000EAAC0 /* Exceptions for "Butanding Scuba Diving" folder in "Butanding Scuba Diving" target */,
+			);
+			path = "Butanding Scuba Diving";
+			sourceTree = "<group>";
+		};
+		A80DA6122DE89543000EAAC0 /* Butanding Scuba DivingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Butanding Scuba DivingTests";
+			sourceTree = "<group>";
+		};
+		A80DA61C2DE89543000EAAC0 /* Butanding Scuba DivingUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Butanding Scuba DivingUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A80DA5F62DE89541000EAAC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80DA60C2DE89543000EAAC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80DA6162DE89543000EAAC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A80DA5F02DE89541000EAAC0 = {
+			isa = PBXGroup;
+			children = (
+				A80DA5FB2DE89541000EAAC0 /* Butanding Scuba Diving */,
+				A80DA6122DE89543000EAAC0 /* Butanding Scuba DivingTests */,
+				A80DA61C2DE89543000EAAC0 /* Butanding Scuba DivingUITests */,
+				A80DA5FA2DE89541000EAAC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A80DA5FA2DE89541000EAAC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A80DA5F92DE89541000EAAC0 /* Butanding Scuba Diving.app */,
+				A80DA60F2DE89543000EAAC0 /* Butanding Scuba DivingTests.xctest */,
+				A80DA6192DE89543000EAAC0 /* Butanding Scuba DivingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A80DA5F82DE89541000EAAC0 /* Butanding Scuba Diving */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80DA6222DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba Diving" */;
+			buildPhases = (
+				A80DA5F52DE89541000EAAC0 /* Sources */,
+				A80DA5F62DE89541000EAAC0 /* Frameworks */,
+				A80DA5F72DE89541000EAAC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A80DA5FB2DE89541000EAAC0 /* Butanding Scuba Diving */,
+			);
+			name = "Butanding Scuba Diving";
+			packageProductDependencies = (
+			);
+			productName = "Butanding Scuba Diving";
+			productReference = A80DA5F92DE89541000EAAC0 /* Butanding Scuba Diving.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A80DA60E2DE89543000EAAC0 /* Butanding Scuba DivingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80DA6272DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba DivingTests" */;
+			buildPhases = (
+				A80DA60B2DE89543000EAAC0 /* Sources */,
+				A80DA60C2DE89543000EAAC0 /* Frameworks */,
+				A80DA60D2DE89543000EAAC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A80DA6112DE89543000EAAC0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A80DA6122DE89543000EAAC0 /* Butanding Scuba DivingTests */,
+			);
+			name = "Butanding Scuba DivingTests";
+			packageProductDependencies = (
+			);
+			productName = "Butanding Scuba DivingTests";
+			productReference = A80DA60F2DE89543000EAAC0 /* Butanding Scuba DivingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A80DA6182DE89543000EAAC0 /* Butanding Scuba DivingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80DA62A2DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba DivingUITests" */;
+			buildPhases = (
+				A80DA6152DE89543000EAAC0 /* Sources */,
+				A80DA6162DE89543000EAAC0 /* Frameworks */,
+				A80DA6172DE89543000EAAC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A80DA61B2DE89543000EAAC0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A80DA61C2DE89543000EAAC0 /* Butanding Scuba DivingUITests */,
+			);
+			name = "Butanding Scuba DivingUITests";
+			packageProductDependencies = (
+			);
+			productName = "Butanding Scuba DivingUITests";
+			productReference = A80DA6192DE89543000EAAC0 /* Butanding Scuba DivingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A80DA5F12DE89541000EAAC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					A80DA5F82DE89541000EAAC0 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					A80DA60E2DE89543000EAAC0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = A80DA5F82DE89541000EAAC0;
+					};
+					A80DA6182DE89543000EAAC0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = A80DA5F82DE89541000EAAC0;
+					};
+				};
+			};
+			buildConfigurationList = A80DA5F42DE89541000EAAC0 /* Build configuration list for PBXProject "Butanding Scuba Diving" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A80DA5F02DE89541000EAAC0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A80DA5FA2DE89541000EAAC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A80DA5F82DE89541000EAAC0 /* Butanding Scuba Diving */,
+				A80DA60E2DE89543000EAAC0 /* Butanding Scuba DivingTests */,
+				A80DA6182DE89543000EAAC0 /* Butanding Scuba DivingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A80DA5F72DE89541000EAAC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80DA60D2DE89543000EAAC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80DA6172DE89543000EAAC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A80DA5F52DE89541000EAAC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80DA60B2DE89543000EAAC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80DA6152DE89543000EAAC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A80DA6112DE89543000EAAC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80DA5F82DE89541000EAAC0 /* Butanding Scuba Diving */;
+			targetProxy = A80DA6102DE89543000EAAC0 /* PBXContainerItemProxy */;
+		};
+		A80DA61B2DE89543000EAAC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80DA5F82DE89541000EAAC0 /* Butanding Scuba Diving */;
+			targetProxy = A80DA61A2DE89543000EAAC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A80DA6232DE89543000EAAC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Butanding Scuba Diving/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.project.Butanding-Scuba-Diving";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A80DA6242DE89543000EAAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Butanding Scuba Diving/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.project.Butanding-Scuba-Diving";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A80DA6252DE89543000EAAC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A80DA6262DE89543000EAAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A80DA6282DE89543000EAAC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.project.Butanding-Scuba-DivingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Butanding Scuba Diving.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Butanding Scuba Diving";
+			};
+			name = Debug;
+		};
+		A80DA6292DE89543000EAAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.project.Butanding-Scuba-DivingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Butanding Scuba Diving.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Butanding Scuba Diving";
+			};
+			name = Release;
+		};
+		A80DA62B2DE89543000EAAC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.project.Butanding-Scuba-DivingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Butanding Scuba Diving";
+			};
+			name = Debug;
+		};
+		A80DA62C2DE89543000EAAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.project.Butanding-Scuba-DivingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Butanding Scuba Diving";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80DA5F42DE89541000EAAC0 /* Build configuration list for PBXProject "Butanding Scuba Diving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80DA6252DE89543000EAAC0 /* Debug */,
+				A80DA6262DE89543000EAAC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80DA6222DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba Diving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80DA6232DE89543000EAAC0 /* Debug */,
+				A80DA6242DE89543000EAAC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80DA6272DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba DivingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80DA6282DE89543000EAAC0 /* Debug */,
+				A80DA6292DE89543000EAAC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80DA62A2DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba DivingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80DA62B2DE89543000EAAC0 /* Debug */,
+				A80DA62C2DE89543000EAAC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A80DA5F12DE89541000EAAC0 /* Project object */;
+}
