@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1F705DF3D8DE847FA1E17E07 /* Pods_Butanding_Scuba_Diving.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07294AD57A22A11E5A24CAC7 /* Pods_Butanding_Scuba_Diving.framework */; };
+		A80DA6692DE8A16F000EAAC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A80DA6682DE8A16F000EAAC0 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A80DA6102DE89543000EAAC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07294AD57A22A11E5A24CAC7 /* Pods_Butanding_Scuba_Diving.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butanding_Scuba_Diving.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A8A3FEF3012EBFBD3F15BE /* Pods-Butanding Scuba Diving.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butanding Scuba Diving.release.xcconfig"; path = "Target Support Files/Pods-Butanding Scuba Diving/Pods-Butanding Scuba Diving.release.xcconfig"; sourceTree = "<group>"; };
+		2C7F32E3B8174FC54D79B268 /* Pods-Butanding Scuba Diving.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butanding Scuba Diving.debug.xcconfig"; path = "Target Support Files/Pods-Butanding Scuba Diving/Pods-Butanding Scuba Diving.debug.xcconfig"; sourceTree = "<group>"; };
 		A80DA5F92DE89541000EAAC0 /* Butanding Scuba Diving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Butanding Scuba Diving.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80DA60F2DE89543000EAAC0 /* Butanding Scuba DivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Butanding Scuba DivingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80DA6192DE89543000EAAC0 /* Butanding Scuba DivingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Butanding Scuba DivingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80DA6682DE8A16F000EAAC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F705DF3D8DE847FA1E17E07 /* Pods_Butanding_Scuba_Diving.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1130CB699A0F8698CFC373 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07294AD57A22A11E5A24CAC7 /* Pods_Butanding_Scuba_Diving.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71FAA5B5BF9062FBA430C977 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C7F32E3B8174FC54D79B268 /* Pods-Butanding Scuba Diving.debug.xcconfig */,
+				07A8A3FEF3012EBFBD3F15BE /* Pods-Butanding Scuba Diving.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A80DA5F02DE89541000EAAC0 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +119,9 @@
 				A80DA6122DE89543000EAAC0 /* Butanding Scuba DivingTests */,
 				A80DA61C2DE89543000EAAC0 /* Butanding Scuba DivingUITests */,
 				A80DA5FA2DE89541000EAAC0 /* Products */,
+				71FAA5B5BF9062FBA430C977 /* Pods */,
+				2F1130CB699A0F8698CFC373 /* Frameworks */,
+				A80DA6682DE8A16F000EAAC0 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A80DA6222DE89543000EAAC0 /* Build configuration list for PBXNativeTarget "Butanding Scuba Diving" */;
 			buildPhases = (
+				F7BDCB26A27B6AFCE672F189 /* [CP] Check Pods Manifest.lock */,
 				A80DA5F52DE89541000EAAC0 /* Sources */,
 				A80DA5F62DE89541000EAAC0 /* Frameworks */,
 				A80DA5F72DE89541000EAAC0 /* Resources */,
+				B458B5FCD9FC5BBEBCEAB0FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,8 +156,6 @@
 				A80DA5FB2DE89541000EAAC0 /* Butanding Scuba Diving */,
 			);
 			name = "Butanding Scuba Diving";
-			packageProductDependencies = (
-			);
 			productName = "Butanding Scuba Diving";
 			productReference = A80DA5F92DE89541000EAAC0 /* Butanding Scuba Diving.app */;
 			productType = "com.apple.product-type.application";
@@ -147,8 +177,6 @@
 				A80DA6122DE89543000EAAC0 /* Butanding Scuba DivingTests */,
 			);
 			name = "Butanding Scuba DivingTests";
-			packageProductDependencies = (
-			);
 			productName = "Butanding Scuba DivingTests";
 			productReference = A80DA60F2DE89543000EAAC0 /* Butanding Scuba DivingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -170,8 +198,6 @@
 				A80DA61C2DE89543000EAAC0 /* Butanding Scuba DivingUITests */,
 			);
 			name = "Butanding Scuba DivingUITests";
-			packageProductDependencies = (
-			);
 			productName = "Butanding Scuba DivingUITests";
 			productReference = A80DA6192DE89543000EAAC0 /* Butanding Scuba DivingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -225,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80DA6692DE8A16F000EAAC0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +270,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B458B5FCD9FC5BBEBCEAB0FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Butanding Scuba Diving/Pods-Butanding Scuba Diving-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Butanding Scuba Diving/Pods-Butanding Scuba Diving-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Butanding Scuba Diving/Pods-Butanding Scuba Diving-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7BDCB26A27B6AFCE672F189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Butanding Scuba Diving-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A80DA5F52DE89541000EAAC0 /* Sources */ = {
@@ -284,6 +357,7 @@
 /* Begin XCBuildConfiguration section */
 		A80DA6232DE89543000EAAC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C7F32E3B8174FC54D79B268 /* Pods-Butanding Scuba Diving.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +386,7 @@
 		};
 		A80DA6242DE89543000EAAC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07A8A3FEF3012EBFBD3F15BE /* Pods-Butanding Scuba Diving.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -376,7 +451,7 @@
 				DEVELOPMENT_TEAM = DY9KFZXZVA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -440,7 +515,7 @@
 				DEVELOPMENT_TEAM = DY9KFZXZVA;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
