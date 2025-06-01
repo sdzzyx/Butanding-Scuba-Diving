@@ -13,7 +13,7 @@ import FirebaseCore
 
 class LoginScreen: UIViewController, UITextFieldDelegate {
     
-    private let authViewModel = AuthViewModel()
+    private let authViewModel = GoogleAuthViewModel()
     
     let logoView = UIImageView()
     let emailTextField = UITextField()
