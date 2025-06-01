@@ -10,7 +10,7 @@ import FirebaseAuth
 import GoogleSignIn
 import FirebaseCore
 
-class AuthViewModel {
+class GoogleAuthViewModel {
     
     func signInWithGoogle(presentingVC: UIViewController, completion: @escaping (Result<User, Error>) -> Void) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
@@ -36,12 +36,11 @@ class AuthViewModel {
             
             let user = result.user
             
-            // Corrected line: accessToken.tokenString is now a non-optional String
             guard let idToken = user.idToken?.tokenString else {
                 completion(.failure(NSError(domain: "TokenError", code: -1, userInfo: nil)))
                 return
             }
-            let accessToken = user.accessToken.tokenString // No need for 'guard let' here as it's non-optional
+            let accessToken = user.accessToken.tokenString
             
             let credential = GoogleAuthProvider.credential(
                 withIDToken: idToken,

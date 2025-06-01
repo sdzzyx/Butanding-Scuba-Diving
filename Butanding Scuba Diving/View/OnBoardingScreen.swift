@@ -15,4 +15,9 @@ class OnBoardingScreen: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    func OnBoardingUI() {
+        
+        
+    }
 }

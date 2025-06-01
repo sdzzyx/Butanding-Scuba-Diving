@@ -221,5 +221,10 @@ class SignUpScreen: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func signUpButtonAction() {
+        
+    }
+    
 }
 
