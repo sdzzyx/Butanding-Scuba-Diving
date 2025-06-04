@@ -8,12 +8,11 @@
 import UIKit
 import SnapKit
 import GoogleSignIn
-import FirebaseAuth
-import FirebaseCore
+import AuthenticationServices
 
 class LoginScreen: UIViewController, UITextFieldDelegate {
     
-    private let authViewModel = GoogleAuthViewModel()
+    private let authViewModel = AuthViewModel()
     
     let logoView = UIImageView()
     let emailTextField = UITextField()
@@ -25,7 +24,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         LoginUI()
         setUpKeyboardDismissGesture()
-        
+        setUpViewModelBinding()
     }
     
     func LoginUI() {
@@ -42,7 +41,6 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
             make.width.height.equalTo(250)
         }
         
-        //logoView.snapshotView(afterScreenUpdates: false)
         
         // MARK: TextField Styling
         func styleTextField(_ textField: UITextField, placeholder: String) {
@@ -106,16 +104,16 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         
         forgotPassword.text = "Forgot Password?"
         //tappable
-        //                forgotPasswordLabel.isUserInteractionEnabled = true
-        //                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTapped))
-        //                forgotPasswordLabel.addGestureRecognizer(tapGesture)
+        //                forgotPasswordLabel.isUserInteractionEnabled = true
+        //                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTapped))
+        //                forgotPasswordLabel.addGestureRecognizer(tapGesture)
         forgotPassword.font = UIFont.systemFont(ofSize: 14)
         forgotPassword.textColor = .black
         forgotPassword.textAlignment = .right
         view.addSubview(forgotPassword)
         
         forgotPassword.snp.makeConstraints { make in
-            make.bottom.equalTo(loginButton.snp.bottom).offset(30)
+            make.bottom.equalTo(loginButton.snp.bottom).offset(30) // Adjusted constraint to be relative to loginButton
             make.right.equalTo(loginButton.snp.right)
         }
         
@@ -194,7 +192,6 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
             make.centerX.equalToSuperview()
         }
         
-        
         let signUpLabel = UILabel()
         signUpLabel.isUserInteractionEnabled = true
         view.addSubview(signUpLabel)
@@ -259,44 +256,42 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    private func setUpViewModelBinding() {
+        authViewModel.authenticationCompletion = { [weak self] result in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    print("Authentication successful for user: \(user.email ?? "N/A")")
+                    self.showSuccessAlert(message: "Successfully signed in as \(user.displayName ?? user.email ?? "user")!")
+                    self.navigateToMainViewController()
+                case .failure(let error):
+                    print("Authentication failed with error: \(error.localizedDescription)")
+                    // Handle specific error types for user-friendly messages
+                    if let asError = error as? ASAuthorizationError, asError.code == .canceled {
+                        self.showErrorAlert(message: "Sign-In with Apple was cancelled.")
+                    } else if let googleError = error as? GIDSignInError, googleError.code == GIDSignInError.Code.canceled {
+                        self.showErrorAlert(message: "Sign-In with Google was cancelled.")
+                    } else {
+                        self.showErrorAlert(message: "Sign-In failed: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
     
     @objc func appleTapped() {
-        print("Apple tapped")
+        authViewModel.signInWithApple()
     }
     
     @objc func googleTapped() {
-        //signInWithGoogle method from AuthViewModel
-        authViewModel.signInWithGoogle(presentingVC: self) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let user):
-                print("Google Sign-In successful for user: \(user.email ?? "N/A")")
-                DispatchQueue.main.async {
-                    self.showSuccessAlert(message: "Successfully signed in as \(user.displayName ?? user.email ?? "user")!")
-                    
-                    // MARK: Navigate to MainViewController
-                    let mainViewController = MainViewController()
-                    
-                    // current window scene and scene delegate
-                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                       let sceneDelegate = windowScene.delegate as? SceneDelegate {
-                        sceneDelegate.window?.rootViewController = mainViewController
-                        sceneDelegate.window?.makeKeyAndVisible()
-                    }
-                }
-                
-            case .failure(let error):
-                print("Google Sign-In failed with error: \(error.localizedDescription)")
-                DispatchQueue.main.async {
-                    self.showErrorAlert(message: "Google Sign-In failed: \(error.localizedDescription)")
-                }
-            }
-        }
+        authViewModel.signInWithGoogle(presentingVC: self)
     }
     
     
@@ -304,7 +299,21 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         print("Sign Up Tapped")
         let signUpVC = SignUpScreen()
         navigationController?.pushViewController(signUpVC, animated: true)
-        //self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil) 
+    }
+    
+    private func navigateToMainViewController() {
+        let mainViewController = MainViewController()
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let sceneDelegate = windowScene.delegate as? SceneDelegate {
+            UIView.transition(with: sceneDelegate.window!,
+                              duration: 0.5,
+                              options: .transitionCrossDissolve, // for smooth transition
+                              animations: {
+                sceneDelegate.window?.rootViewController = mainViewController
+            },
+                              completion: nil)
+        }
     }
     
     // Helper function to show an alert
@@ -321,7 +330,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     }
 }
 
-    // MARK: Custom Blue color
-    extension UIColor {
-        static let customBlue = UIColor(red: 43/255, green: 92/255, blue: 167/255, alpha: 1)
-    }
+// MARK: Custom Blue color
+extension UIColor {
+    static let customBlue = UIColor(red: 43/255, green: 92/255, blue: 167/255, alpha: 1)
+}
