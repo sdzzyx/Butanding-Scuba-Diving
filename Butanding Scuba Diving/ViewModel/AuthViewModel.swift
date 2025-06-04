@@ -186,10 +186,6 @@ extension AuthViewModel: ASAuthorizationControllerDelegate {
                     self?.authenticationCompletion?(.failure(error))
                 } else if let user = authResult?.user {
                     print("Firebase authentication with Apple successful for user: \(user.email ?? "N/A")")
-                    // On the first sign-in, you might get the user's full name and email from appleIDCredential:
-                    // appleIDCredential.fullName
-                    // appleIDCredential.email
-                    // You might want to save this information if your app requires it.
                     self?.authenticationCompletion?(.success(user))
                 }
                 self?.currentNonce = nil // Clear the nonce after it has been used
@@ -212,8 +208,7 @@ extension AuthViewModel: ASAuthorizationControllerPresentationContextProviding {
     
     // This method provides the anchor UIWindow for the Apple Sign-In sheet to be presented on.
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        // This attempts to find the key window of your application.
-        // It's generally the correct window to present the Apple Sign-In UI from.
+        // This attempts to find the key window of the application.
         guard let window = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
             .compactMap({$0 as? UIWindowScene})
