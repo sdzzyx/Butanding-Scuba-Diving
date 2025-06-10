@@ -13,7 +13,11 @@ class AppConstant {
     }
     
     struct Login {
-        
+        static let loginTitle = "Login"
+        static let forgotPasswordTitle = "Forgot Password?"
+        static let emailPlaceholder = "Email"
+        static let passwordPlaceholder = "Password"
+        static let footerText = "Don't have an account? Sign up"
     }
     
     struct Welcome {
