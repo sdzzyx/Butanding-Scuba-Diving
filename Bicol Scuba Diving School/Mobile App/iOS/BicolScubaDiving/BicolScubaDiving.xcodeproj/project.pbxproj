@@ -13,6 +13,14 @@
 		27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80392DF83B3300D8CC31 /* AppDelegate.swift */; };
 		27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA803B2DF83B3300D8CC31 /* SceneDelegate.swift */; };
 		27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80432DF83D7500D8CC31 /* LoginViewController.swift */; };
+		27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80432DF83D7500D8CC31 /* LoginViewController.swift */; };
+		27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80392DF83B3300D8CC31 /* AppDelegate.swift */; };
+		27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA803B2DF83B3300D8CC31 /* SceneDelegate.swift */; };
+		27EA804C2DF83E1D00D8CC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EA802A2DF83B3300D8CC31 /* Assets.xcassets */; };
+		27EA804D2DF83E1D00D8CC31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EA802E2DF83B3300D8CC31 /* LaunchScreen.storyboard */; };
+		27EA804E2DF83E1D00D8CC31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EA80302DF83B3300D8CC31 /* Main.storyboard */; };
+		27EA805D2DF850AF00D8CC31 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA805C2DF850AA00D8CC31 /* AppConstant.swift */; };
+		27EA805E2DF850AF00D8CC31 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA805C2DF850AA00D8CC31 /* AppConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		272362D22DF830B100C16E5E /* BicolScubaDiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicolScubaDiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		272362D22DF830B100C16E5E /* BicolScubaDiving_Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicolScubaDiving_Prod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272362E82DF830B300C16E5E /* BicolScubaDivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BicolScubaDivingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272362F22DF830B300C16E5E /* BicolScubaDivingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BicolScubaDivingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EA802A2DF83B3300D8CC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +51,8 @@
 		27EA803A2DF83B3300D8CC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27EA803B2DF83B3300D8CC31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		27EA80432DF83D7500D8CC31 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27EA80522DF83E1D00D8CC31 /* BicolScubaDiving_Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicolScubaDiving_Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EA805C2DF850AA00D8CC31 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -54,6 +64,11 @@
 		272362F52DF830B300C16E5E /* BicolScubaDivingUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BicolScubaDivingUITests;
+			sourceTree = "<group>";
+		};
+		27EA80542DF83FFA00D8CC31 /* Configuration */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +95,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27EA804A2DF83E1D00D8CC31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,9 +118,10 @@
 		272362D32DF830B100C16E5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				272362D22DF830B100C16E5E /* BicolScubaDiving.app */,
+				272362D22DF830B100C16E5E /* BicolScubaDiving_Prod.app */,
 				272362E82DF830B300C16E5E /* BicolScubaDivingTests.xctest */,
 				272362F22DF830B300C16E5E /* BicolScubaDivingUITests.xctest */,
+				27EA80522DF83E1D00D8CC31 /* BicolScubaDiving_Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +129,7 @@
 		27EA80272DF83B3300D8CC31 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				27EA805C2DF850AA00D8CC31 /* AppConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -207,6 +231,7 @@
 		27EA803C2DF83B3300D8CC31 /* BicolScubaDiving */ = {
 			isa = PBXGroup;
 			children = (
+				27EA80542DF83FFA00D8CC31 /* Configuration */,
 				27EA80272DF83B3300D8CC31 /* Constants */,
 				27EA80282DF83B3300D8CC31 /* Extensions */,
 				27EA802C2DF83B3300D8CC31 /* Resources */,
@@ -224,9 +249,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		272362D12DF830B100C16E5E /* BicolScubaDiving */ = {
+		272362D12DF830B100C16E5E /* BicolScubaDiving_Prod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 272362FB2DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDiving" */;
+			buildConfigurationList = 272362FB2DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDiving_Prod" */;
 			buildPhases = (
 				272362CE2DF830B100C16E5E /* Sources */,
 				272362CF2DF830B100C16E5E /* Frameworks */,
@@ -236,11 +261,14 @@
 			);
 			dependencies = (
 			);
-			name = BicolScubaDiving;
+			fileSystemSynchronizedGroups = (
+				27EA80542DF83FFA00D8CC31 /* Configuration */,
+			);
+			name = BicolScubaDiving_Prod;
 			packageProductDependencies = (
 			);
 			productName = BicolScubaDiving;
-			productReference = 272362D22DF830B100C16E5E /* BicolScubaDiving.app */;
+			productReference = 272362D22DF830B100C16E5E /* BicolScubaDiving_Prod.app */;
 			productType = "com.apple.product-type.application";
 		};
 		272362E72DF830B300C16E5E /* BicolScubaDivingTests */ = {
@@ -289,6 +317,28 @@
 			productReference = 272362F22DF830B300C16E5E /* BicolScubaDivingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		27EA80452DF83E1D00D8CC31 /* BicolScubaDiving_Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EA804F2DF83E1D00D8CC31 /* Build configuration list for PBXNativeTarget "BicolScubaDiving_Dev" */;
+			buildPhases = (
+				27EA80462DF83E1D00D8CC31 /* Sources */,
+				27EA804A2DF83E1D00D8CC31 /* Frameworks */,
+				27EA804B2DF83E1D00D8CC31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				27EA80542DF83FFA00D8CC31 /* Configuration */,
+			);
+			name = BicolScubaDiving_Dev;
+			packageProductDependencies = (
+			);
+			productName = BicolScubaDiving;
+			productReference = 27EA80522DF83E1D00D8CC31 /* BicolScubaDiving_Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -333,7 +383,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				272362D12DF830B100C16E5E /* BicolScubaDiving */,
+				272362D12DF830B100C16E5E /* BicolScubaDiving_Prod */,
+				27EA80452DF83E1D00D8CC31 /* BicolScubaDiving_Dev */,
 				272362E72DF830B300C16E5E /* BicolScubaDivingTests */,
 				272362F12DF830B300C16E5E /* BicolScubaDivingUITests */,
 			);
@@ -365,6 +416,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27EA804B2DF83E1D00D8CC31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EA804C2DF83E1D00D8CC31 /* Assets.xcassets in Resources */,
+				27EA804D2DF83E1D00D8CC31 /* LaunchScreen.storyboard in Resources */,
+				27EA804E2DF83E1D00D8CC31 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,6 +435,7 @@
 			files = (
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
+				27EA805D2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
 				27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,17 +454,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27EA80462DF83E1D00D8CC31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
+				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
+				27EA805E2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
+				27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		272362EA2DF830B300C16E5E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 272362D12DF830B100C16E5E /* BicolScubaDiving */;
+			target = 272362D12DF830B100C16E5E /* BicolScubaDiving_Prod */;
 			targetProxy = 272362E92DF830B300C16E5E /* PBXContainerItemProxy */;
 		};
 		272362F42DF830B300C16E5E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 272362D12DF830B100C16E5E /* BicolScubaDiving */;
+			target = 272362D12DF830B100C16E5E /* BicolScubaDiving_Prod */;
 			targetProxy = 272362F32DF830B300C16E5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -430,6 +503,8 @@
 		272362FC2DF830B300C16E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_DISPLAY_NAME = "Bicol Scuba";
+				APP_ENVIRONMENT = PROD;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -437,6 +512,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BicolScubaDiving/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -447,7 +523,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDiving;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.bicolscubadiving;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -462,6 +538,8 @@
 		272362FD2DF830B300C16E5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_DISPLAY_NAME = "Bicol Scuba";
+				APP_ENVIRONMENT = PROD;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,6 +547,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BicolScubaDiving/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -479,7 +558,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDiving;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.bicolscubadiving;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -678,6 +757,80 @@
 			};
 			name = Release;
 		};
+		27EA80502DF83E1D00D8CC31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_DISPLAY_NAME = "Bicol Scuba DEV";
+				APP_ENVIRONMENT = DEV;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BicolScubaDiving copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.bicolscubadiving.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		27EA80512DF83E1D00D8CC31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_DISPLAY_NAME = "Bicol Scuba DEV";
+				APP_ENVIRONMENT = DEV;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BicolScubaDiving copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.bicolscubadiving.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -690,7 +843,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		272362FB2DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDiving" */ = {
+		272362FB2DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDiving_Prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				272362FC2DF830B300C16E5E /* Debug */,
@@ -713,6 +866,15 @@
 			buildConfigurations = (
 				272363042DF830B300C16E5E /* Debug */,
 				272363052DF830B300C16E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EA804F2DF83E1D00D8CC31 /* Build configuration list for PBXNativeTarget "BicolScubaDiving_Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EA80502DF83E1D00D8CC31 /* Debug */,
+				27EA80512DF83E1D00D8CC31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
