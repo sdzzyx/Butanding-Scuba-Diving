@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		272362FA2DF830B300C16E5E /* Exceptions for "BicolScubaDiving" folder in "BicolScubaDiving" target */ = {
+		272363292DF8343300C16E5E /* Exceptions for "BicolScubaDiving" folder in "BicolScubaDiving" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -43,7 +43,7 @@
 		272362D42DF830B100C16E5E /* BicolScubaDiving */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				272362FA2DF830B300C16E5E /* Exceptions for "BicolScubaDiving" folder in "BicolScubaDiving" target */,
+				272363292DF8343300C16E5E /* Exceptions for "BicolScubaDiving" folder in "BicolScubaDiving" target */,
 			);
 			path = BicolScubaDiving;
 			sourceTree = "<group>";
@@ -289,6 +289,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BicolScubaDiving/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,6 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BicolScubaDiving/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
