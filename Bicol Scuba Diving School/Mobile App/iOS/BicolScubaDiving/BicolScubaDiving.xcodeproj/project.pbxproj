@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		272362E92DF830B300C16E5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 272362CA2DF830B100C16E5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 272362D12DF830B100C16E5E;
+			remoteInfo = BicolScubaDiving;
+		};
+		272362F32DF830B300C16E5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 272362CA2DF830B100C16E5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 272362D12DF830B100C16E5E;
+			remoteInfo = BicolScubaDiving;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		272362D22DF830B100C16E5E /* BicolScubaDiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicolScubaDiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		272362E82DF830B300C16E5E /* BicolScubaDivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BicolScubaDivingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		272362F22DF830B300C16E5E /* BicolScubaDivingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BicolScubaDivingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		272362FA2DF830B300C16E5E /* Exceptions for "BicolScubaDiving" folder in "BicolScubaDiving" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 272362D12DF830B100C16E5E /* BicolScubaDiving */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		272362D42DF830B100C16E5E /* BicolScubaDiving */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				272362FA2DF830B300C16E5E /* Exceptions for "BicolScubaDiving" folder in "BicolScubaDiving" target */,
+			);
+			path = BicolScubaDiving;
+			sourceTree = "<group>";
+		};
+		272362EB2DF830B300C16E5E /* BicolScubaDivingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BicolScubaDivingTests;
+			sourceTree = "<group>";
+		};
+		272362F52DF830B300C16E5E /* BicolScubaDivingUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BicolScubaDivingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		272362CF2DF830B100C16E5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272362E52DF830B300C16E5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272362EF2DF830B300C16E5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		272362C92DF830B100C16E5E = {
+			isa = PBXGroup;
+			children = (
+				272362D42DF830B100C16E5E /* BicolScubaDiving */,
+				272362EB2DF830B300C16E5E /* BicolScubaDivingTests */,
+				272362F52DF830B300C16E5E /* BicolScubaDivingUITests */,
+				272362D32DF830B100C16E5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		272362D32DF830B100C16E5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				272362D22DF830B100C16E5E /* BicolScubaDiving.app */,
+				272362E82DF830B300C16E5E /* BicolScubaDivingTests.xctest */,
+				272362F22DF830B300C16E5E /* BicolScubaDivingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		272362D12DF830B100C16E5E /* BicolScubaDiving */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 272362FB2DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDiving" */;
+			buildPhases = (
+				272362CE2DF830B100C16E5E /* Sources */,
+				272362CF2DF830B100C16E5E /* Frameworks */,
+				272362D02DF830B100C16E5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				272362D42DF830B100C16E5E /* BicolScubaDiving */,
+			);
+			name = BicolScubaDiving;
+			packageProductDependencies = (
+			);
+			productName = BicolScubaDiving;
+			productReference = 272362D22DF830B100C16E5E /* BicolScubaDiving.app */;
+			productType = "com.apple.product-type.application";
+		};
+		272362E72DF830B300C16E5E /* BicolScubaDivingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 272363002DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDivingTests" */;
+			buildPhases = (
+				272362E42DF830B300C16E5E /* Sources */,
+				272362E52DF830B300C16E5E /* Frameworks */,
+				272362E62DF830B300C16E5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				272362EA2DF830B300C16E5E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				272362EB2DF830B300C16E5E /* BicolScubaDivingTests */,
+			);
+			name = BicolScubaDivingTests;
+			packageProductDependencies = (
+			);
+			productName = BicolScubaDivingTests;
+			productReference = 272362E82DF830B300C16E5E /* BicolScubaDivingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		272362F12DF830B300C16E5E /* BicolScubaDivingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 272363032DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDivingUITests" */;
+			buildPhases = (
+				272362EE2DF830B300C16E5E /* Sources */,
+				272362EF2DF830B300C16E5E /* Frameworks */,
+				272362F02DF830B300C16E5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				272362F42DF830B300C16E5E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				272362F52DF830B300C16E5E /* BicolScubaDivingUITests */,
+			);
+			name = BicolScubaDivingUITests;
+			packageProductDependencies = (
+			);
+			productName = BicolScubaDivingUITests;
+			productReference = 272362F22DF830B300C16E5E /* BicolScubaDivingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		272362CA2DF830B100C16E5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					272362D12DF830B100C16E5E = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					272362E72DF830B300C16E5E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 272362D12DF830B100C16E5E;
+					};
+					272362F12DF830B300C16E5E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 272362D12DF830B100C16E5E;
+					};
+				};
+			};
+			buildConfigurationList = 272362CD2DF830B100C16E5E /* Build configuration list for PBXProject "BicolScubaDiving" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 272362C92DF830B100C16E5E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 272362D32DF830B100C16E5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				272362D12DF830B100C16E5E /* BicolScubaDiving */,
+				272362E72DF830B300C16E5E /* BicolScubaDivingTests */,
+				272362F12DF830B300C16E5E /* BicolScubaDivingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		272362D02DF830B100C16E5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272362E62DF830B300C16E5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272362F02DF830B300C16E5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		272362CE2DF830B100C16E5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272362E42DF830B300C16E5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272362EE2DF830B300C16E5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		272362EA2DF830B300C16E5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 272362D12DF830B100C16E5E /* BicolScubaDiving */;
+			targetProxy = 272362E92DF830B300C16E5E /* PBXContainerItemProxy */;
+		};
+		272362F42DF830B300C16E5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 272362D12DF830B100C16E5E /* BicolScubaDiving */;
+			targetProxy = 272362F32DF830B300C16E5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		272362FC2DF830B300C16E5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BicolScubaDiving/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDiving;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		272362FD2DF830B300C16E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BicolScubaDiving/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDiving;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		272362FE2DF830B300C16E5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		272362FF2DF830B300C16E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		272363012DF830B300C16E5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDivingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BicolScubaDiving.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BicolScubaDiving";
+			};
+			name = Debug;
+		};
+		272363022DF830B300C16E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDivingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BicolScubaDiving.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BicolScubaDiving";
+			};
+			name = Release;
+		};
+		272363042DF830B300C16E5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDivingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BicolScubaDiving;
+			};
+			name = Debug;
+		};
+		272363052DF830B300C16E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.BicolScubaDivingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BicolScubaDiving;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		272362CD2DF830B100C16E5E /* Build configuration list for PBXProject "BicolScubaDiving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				272362FE2DF830B300C16E5E /* Debug */,
+				272362FF2DF830B300C16E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		272362FB2DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDiving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				272362FC2DF830B300C16E5E /* Debug */,
+				272362FD2DF830B300C16E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		272363002DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDivingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				272363012DF830B300C16E5E /* Debug */,
+				272363022DF830B300C16E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		272363032DF830B300C16E5E /* Build configuration list for PBXNativeTarget "BicolScubaDivingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				272363042DF830B300C16E5E /* Debug */,
+				272363052DF830B300C16E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 272362CA2DF830B100C16E5E /* Project object */;
+}
