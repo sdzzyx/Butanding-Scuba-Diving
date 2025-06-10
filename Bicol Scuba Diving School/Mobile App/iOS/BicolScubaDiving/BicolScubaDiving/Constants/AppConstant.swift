@@ -11,4 +11,16 @@ class AppConstant {
         static let dev = "DEV"
         static let prod = "PROD"
     }
+    
+    struct Login {
+        
+    }
+    
+    struct Welcome {
+        
+    }
+    
+    struct SignUp {
+        
+    }
 }
