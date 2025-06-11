@@ -41,11 +41,27 @@ class LoginViewController: UIViewController {
         }
         
         loginView.onGoogleSignInTapped = { [weak self] in
-            self?.loginViewModel.googleSignIn()
+            guard let self = self else { return }
+            
+            self.loginViewModel.loginWithGoogle(from: self) { result in
+                switch result {
+                case .success(let user):
+                    print("Success, \(user)")
+                case .failure(let error): 
+                    print("Error: \(error)")
+                }
+            }
         }
         
         loginView.onAppleSignInTapped = { [weak self] in
-            self?.loginViewModel.appleSignIn()
+            self?.loginViewModel.loginWithApple(completion: { result in
+                switch result {
+                case .success(let user):
+                    print("Success, \(user)")
+                case .failure(let error): 
+                    print("Error: \(error)")
+                }
+            })
         }
     }
 

@@ -46,6 +46,9 @@
 		27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */; };
 		27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */; };
 		27EA80BA2DF87EBF00D8CC31 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 27EA80B92DF87EBF00D8CC31 /* GoogleSignIn */; };
+		27EA80BC2DF9904F00D8CC31 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 27EA80BB2DF9904F00D8CC31 /* GoogleSignIn */; };
+		27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */; };
+		27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,7 @@
 		27EA80882DF86EC600D8CC31 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		27EA808B2DF87B8B00D8CC31 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthManager.swift; sourceTree = "<group>"; };
+		27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -145,6 +149,7 @@
 				27EA806B2DF8566300D8CC31 /* FirebaseCore in Frameworks */,
 				27EA80692DF8565A00D8CC31 /* FirebaseRemoteConfig in Frameworks */,
 				27EA806F2DF8568C00D8CC31 /* FirebaseAuth in Frameworks */,
+				27EA80BC2DF9904F00D8CC31 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +286,7 @@
 		27EA803C2DF83B3300D8CC31 /* BicolScubaDiving */ = {
 			isa = PBXGroup;
 			children = (
+				27EA80BD2DF990EB00D8CC31 /* Utilities */,
 				27EA80542DF83FFA00D8CC31 /* Configuration */,
 				27EA80272DF83B3300D8CC31 /* Constants */,
 				27EA802C2DF83B3300D8CC31 /* Resources */,
@@ -326,6 +332,14 @@
 				27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		27EA80BD2DF990EB00D8CC31 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +447,7 @@
 				27EA806A2DF8566300D8CC31 /* FirebaseCore */,
 				27EA806C2DF8567300D8CC31 /* FirebaseAnalytics */,
 				27EA806E2DF8568C00D8CC31 /* FirebaseAuth */,
+				27EA80BB2DF9904F00D8CC31 /* GoogleSignIn */,
 			);
 			productName = BicolScubaDiving;
 			productReference = 27EA80522DF83E1D00D8CC31 /* BicolScubaDiving_Dev.app */;
@@ -540,6 +555,7 @@
 				27EA805D2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
 				27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA808A2DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
 				27EA808C2DF87B9200D8CC31 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +585,7 @@
 				27EA805E2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
 				27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA80892DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
 				27EA808D2DF87B9200D8CC31 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1122,6 +1139,11 @@
 			productName = FirebaseRemoteConfig;
 		};
 		27EA80B92DF87EBF00D8CC31 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27EA80B82DF87E5F00D8CC31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		27EA80BB2DF9904F00D8CC31 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 27EA80B82DF87E5F00D8CC31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;

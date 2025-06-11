@@ -5,6 +5,8 @@
 //  Created by Melvin Ballesteros on 6/10/25.
 //
 
+import UIKit
+
 class LoginViewModel {
     
     let loginText = AppConstant.Login.loginTitle
@@ -25,12 +27,12 @@ class LoginViewModel {
         
     }
     
-    func googleSignIn() {
-        
+    func loginWithGoogle(from controller: UIViewController, completion: @escaping (AuthResult) -> Void) {
+        SocialAuthManager.shared.signInWithGoogle(presentingVC: controller, completion: completion)
     }
     
-    func appleSignIn() {
-        
+    func loginWithApple(completion: @escaping (AuthResult) -> Void) {
+        SocialAuthManager.shared.signInWithApple(completion: completion)
     }
     
 }
