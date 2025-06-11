@@ -16,7 +16,7 @@ class LoginViewModel {
     let footerText = AppConstant.Login.footerText
     
     func login(username: String, password: String) {
-        
+        print("Test")
     }
     
     func forgotPasswordTapped() {
