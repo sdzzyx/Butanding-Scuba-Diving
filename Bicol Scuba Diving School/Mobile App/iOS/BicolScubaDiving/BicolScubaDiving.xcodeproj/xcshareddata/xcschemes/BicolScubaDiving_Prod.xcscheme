@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "272362D12DF830B100C16E5E"
-               BuildableName = "BicolScubaDiving.app"
-               BlueprintName = "BicolScubaDiving"
+               BuildableName = "BicolScubaDiving_Prod.app"
+               BlueprintName = "BicolScubaDiving_Prod"
                ReferencedContainer = "container:BicolScubaDiving.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "272362D12DF830B100C16E5E"
-            BuildableName = "BicolScubaDiving.app"
-            BlueprintName = "BicolScubaDiving"
+            BuildableName = "BicolScubaDiving_Prod.app"
+            BlueprintName = "BicolScubaDiving_Prod"
             ReferencedContainer = "container:BicolScubaDiving.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -86,8 +86,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "272362D12DF830B100C16E5E"
-            BuildableName = "BicolScubaDiving.app"
-            BlueprintName = "BicolScubaDiving"
+            BuildableName = "BicolScubaDiving_Prod.app"
+            BlueprintName = "BicolScubaDiving_Prod"
             ReferencedContainer = "container:BicolScubaDiving.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
