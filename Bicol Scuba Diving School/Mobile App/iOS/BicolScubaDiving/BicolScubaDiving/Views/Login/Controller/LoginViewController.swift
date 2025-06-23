@@ -10,16 +10,12 @@ import UIKit
 class LoginViewController: UIViewController {
     
     private let loginViewModel = LoginViewModel()
-
-    private var loginView: LoginView {
-        return view as! LoginView
-    }
+    private let loginView = LoginView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loginView.configure(with: loginViewModel.viewData)
         bindViewActions()
-        
     }
     
     override func loadView() {
