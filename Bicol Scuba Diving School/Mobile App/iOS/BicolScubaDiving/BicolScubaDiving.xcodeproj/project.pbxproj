@@ -49,6 +49,8 @@
 		27EA80BC2DF9904F00D8CC31 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 27EA80BB2DF9904F00D8CC31 /* GoogleSignIn */; };
 		27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */; };
 		27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */; };
+		A8A66F822E02FE030017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */; };
+		A8A66F832E02FE030017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 		27EA808B2DF87B8B00D8CC31 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthManager.swift; sourceTree = "<group>"; };
 		27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
+		A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -122,6 +125,11 @@
 				27EA810A2E0033EA00D8CC31 /* Exceptions for "Configuration" folder in "BicolScubaDiving_Dev" target */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A8A66F8A2E03DB450017F98B /* OnBoarding */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -248,6 +256,7 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */,
 				27EA80882DF86EC600D8CC31 /* LoginViewModel.swift */,
 			);
 			path = "View Models";
@@ -294,6 +303,7 @@
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8A66F8A2E03DB450017F98B /* OnBoarding */,
 				27EA80332DF83B3300D8CC31 /* Login */,
 				27EA80342DF83B3300D8CC31 /* Reusable View */,
 				27EA80352DF83B3300D8CC31 /* Sign Up */,
@@ -378,6 +388,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				27EA80542DF83FFA00D8CC31 /* Configuration */,
+				A8A66F8A2E03DB450017F98B /* OnBoarding */,
 			);
 			name = BicolScubaDiving_Prod;
 			packageProductDependencies = (
@@ -455,6 +466,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				27EA80542DF83FFA00D8CC31 /* Configuration */,
+				A8A66F8A2E03DB450017F98B /* OnBoarding */,
 			);
 			name = BicolScubaDiving_Dev;
 			packageProductDependencies = (
@@ -568,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EA80832DF86D6A00D8CC31 /* LoginView.swift in Sources */,
+				A8A66F822E02FE030017F98B /* OnBoardingViewModel.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
@@ -598,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EA80842DF86D6A00D8CC31 /* LoginView.swift in Sources */,
+				A8A66F832E02FE030017F98B /* OnBoardingViewModel.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
@@ -656,7 +670,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BicolScubaDiving/Configuration/Plists/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -691,7 +705,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BicolScubaDiving/Configuration/Plists/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -914,7 +928,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -951,7 +965,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
