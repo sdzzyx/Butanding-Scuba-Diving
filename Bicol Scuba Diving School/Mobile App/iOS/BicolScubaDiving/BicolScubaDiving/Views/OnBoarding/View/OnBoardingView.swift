@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class OnboardingView: UIView {
 
@@ -17,15 +18,14 @@ class OnboardingView: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.isPagingEnabled = true
         cv.showsHorizontalScrollIndicator = false
-        cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
-
+    
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let descriptionLabel = UILabel()
     let pageControl = CustomPageControl()
-
+    
     let getStartedButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Let’s Get Started", for: .normal)
@@ -33,75 +33,80 @@ class OnboardingView: UIView {
         button.backgroundColor = .orange
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.isHidden = true
         return button
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
     }
-
+    
     private func setupViews() {
         backgroundColor = .systemBackground
-
+        
+        addSubview(collectionView)
+        addSubview(titleLabel)
+        addSubview(subtitleLabel)
+        addSubview(descriptionLabel)
+        addSubview(pageControl)
+        addSubview(getStartedButton)
+        
         [titleLabel, subtitleLabel, descriptionLabel].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.textAlignment = .center
-            addSubview($0)
         }
-
+        
         titleLabel.font = .boldSystemFont(ofSize: 28)
         titleLabel.textColor = .orange
         titleLabel.numberOfLines = 0
-
+        
         subtitleLabel.font = .italicSystemFont(ofSize: 18)
         subtitleLabel.textColor = .customBlue
-
+        
         descriptionLabel.font = .boldSystemFont(ofSize: 16)
         descriptionLabel.textColor = .black
         descriptionLabel.numberOfLines = 0
-
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        
         pageControl.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.6)
         pageControl.currentPageIndicatorTintColor = .orange
-
-        addSubview(collectionView)
-        addSubview(pageControl)
-        addSubview(getStartedButton)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
-
-            titleLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            subtitleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-
-            descriptionLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 20),
-            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-
-            pageControl.bottomAnchor.constraint(equalTo: getStartedButton.topAnchor, constant: -70),
-            pageControl.centerXAnchor.constraint(equalTo: centerXAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 10),
-
-            getStartedButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            getStartedButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            getStartedButton.heightAnchor.constraint(equalToConstant: 50),
-            getStartedButton.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
-        ])
+        
+        // MARK: - SnapKit Constraints
+        collectionView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.5)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(30)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        subtitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.leading.trailing.equalTo(titleLabel)
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalTo(titleLabel)
+        }
+        
+        getStartedButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(40)
+            make.height.equalTo(50)
+            make.bottom.lessThanOrEqualTo(safeAreaLayoutGuide.snp.bottom).inset(20)
+        }
+        
+        pageControl.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(getStartedButton.snp.top).offset(-70)
+            make.height.equalTo(10)
+        }
     }
 }
+
