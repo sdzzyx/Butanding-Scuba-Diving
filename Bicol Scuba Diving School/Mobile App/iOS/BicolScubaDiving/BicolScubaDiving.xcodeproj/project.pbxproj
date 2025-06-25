@@ -49,10 +49,8 @@
 		27EA80BC2DF9904F00D8CC31 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 27EA80BB2DF9904F00D8CC31 /* GoogleSignIn */; };
 		27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */; };
 		27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */; };
-<<<<<<< HEAD
 		A8A66F822E02FE030017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */; };
 		A8A66F832E02FE030017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */; };
-=======
 		27EA81972E09144D00D8CC31 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA81962E09144900D8CC31 /* CustomTextField.swift */; };
 		27EA81982E09144D00D8CC31 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA81962E09144900D8CC31 /* CustomTextField.swift */; };
 		27EA819B2E09160B00D8CC31 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA819A2E09160300D8CC31 /* ExtensionColor.swift */; };
@@ -75,7 +73,6 @@
 		27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA81C32E09821000D8CC31 /* ExtensionString.swift */; };
 		27EA81C72E09864100D8CC31 /* ExtensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA81C62E09863D00D8CC31 /* ExtensionButton.swift */; };
 		27EA81C82E09864100D8CC31 /* ExtensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA81C62E09863D00D8CC31 /* ExtensionButton.swift */; };
->>>>>>> a2e98eb9add4c14d4acb5bd084d091ca4704bc72
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,9 +109,7 @@
 		27EA808B2DF87B8B00D8CC31 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthManager.swift; sourceTree = "<group>"; };
 		27EA80BE2DF990F100D8CC31 /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
-=======
 		27EA81962E09144900D8CC31 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		27EA819A2E09160300D8CC31 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 		27EA819E2E091B9000D8CC31 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -126,7 +121,6 @@
 		27EA81C02E0981EB00D8CC31 /* ExtensionAttributeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAttributeString.swift; sourceTree = "<group>"; };
 		27EA81C32E09821000D8CC31 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		27EA81C62E09863D00D8CC31 /* ExtensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionButton.swift; sourceTree = "<group>"; };
->>>>>>> a2e98eb9add4c14d4acb5bd084d091ca4704bc72
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -329,11 +323,8 @@
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				A8A66F8A2E03DB450017F98B /* OnBoarding */,
-=======
 				27EA81952E09143B00D8CC31 /* Reusable Component */,
->>>>>>> a2e98eb9add4c14d4acb5bd084d091ca4704bc72
 				27EA80332DF83B3300D8CC31 /* Login */,
 				27EA80352DF83B3300D8CC31 /* Sign Up */,
 				27EA80362DF83B3300D8CC31 /* Splash */,
