@@ -21,6 +21,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setupBindings()
         setupCollectionView()
+        onboardingView.getStartedButton.setTitle(viewModel.getStartedButtonTitle, for: .normal)
         onboardingView.getStartedButton.addTarget(self, action: #selector(getStartedTapped), for: .touchUpInside)
         onboardingView.pageControl.numberOfPages = viewModel.numberOfSlides
         updateSlideContent(for: 0)
