@@ -21,19 +21,7 @@ class AppConstant {
         static let footerText = "Don't have an account? Sign up"
     }
     
-    struct Welcome {
-        let image: UIImage
-        let title: String
-        let subtitle: String
-        let description: String
-    }
-    
     struct SignUp {
         
     }
-}
-
-// MARK: Custom Blue color
-extension UIColor {
-    static let customBlue = UIColor(red: 43/255, green: 92/255, blue: 167/255, alpha: 1)
 }
