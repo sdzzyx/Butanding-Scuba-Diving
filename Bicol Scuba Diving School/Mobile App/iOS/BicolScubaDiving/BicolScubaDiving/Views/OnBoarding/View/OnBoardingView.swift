@@ -28,9 +28,8 @@ class OnboardingView: UIView {
     
     let getStartedButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Let’s Get Started", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .orange
+        button.backgroundColor = .primaryOrange
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 10
         button.isHidden = true
@@ -62,18 +61,18 @@ class OnboardingView: UIView {
         }
         
         titleLabel.font = .boldSystemFont(ofSize: 28)
-        titleLabel.textColor = .orange
+        titleLabel.textColor = .primaryOrange
         titleLabel.numberOfLines = 0
         
         subtitleLabel.font = .italicSystemFont(ofSize: 18)
-        subtitleLabel.textColor = .customBlue
+        subtitleLabel.textColor = .primaryBlueColor
         
         descriptionLabel.font = .boldSystemFont(ofSize: 16)
         descriptionLabel.textColor = .black
         descriptionLabel.numberOfLines = 0
         
         pageControl.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.6)
-        pageControl.currentPageIndicatorTintColor = .orange
+        pageControl.currentPageIndicatorTintColor = .primaryOrange
         
         // MARK: - SnapKit Constraints
         collectionView.snp.makeConstraints { make in
