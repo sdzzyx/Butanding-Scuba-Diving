@@ -22,6 +22,13 @@ class AppConstant {
     }
     
     struct SignUp {
-        
+        static let signUpTitle = "Sign Up"
+        static let submitTitle = "Submit"
+        static let firstNamePlaceholder = "First Name"
+        static let lastNamePlaceholder = "Last Name"
+        static let emailPlaceholder = "Email"
+        static let passwordPlaceholder = "Password"
+        static let confirmPasswordPlaceholder = "Confirm Password"
+        static let footerText = "By joining, you agree with our Terms and Privacy Policy"
     }
 }
