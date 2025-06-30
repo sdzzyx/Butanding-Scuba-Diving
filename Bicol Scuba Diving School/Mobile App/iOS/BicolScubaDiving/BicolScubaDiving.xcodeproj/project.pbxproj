@@ -75,6 +75,12 @@
 		A8A66F832E02FE030017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */; };
 		A8A66FC12E0D1DCE0017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FBF2E0D1DCE0017F98B /* WelcomeModel.swift */; };
 		A8A66FC22E0D1DCE0017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FBF2E0D1DCE0017F98B /* WelcomeModel.swift */; };
+		A8A66FCE2E0F80020017F98B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FCD2E0F7FFF0017F98B /* SignUpViewModel.swift */; };
+		A8A66FCF2E0F80020017F98B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FCD2E0F7FFF0017F98B /* SignUpViewModel.swift */; };
+		A8A66FDB2E121A0B0017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FDA2E121A050017F98B /* SignUpViewController.swift */; };
+		A8A66FDC2E121A0B0017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FDA2E121A050017F98B /* SignUpViewController.swift */; };
+		A8A66FDF2E121A220017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FDE2E121A1E0017F98B /* SignUpView.swift */; };
+		A8A66FE02E121A220017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A66FDE2E121A1E0017F98B /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +130,9 @@
 		27EA81C62E09863D00D8CC31 /* ExtensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionButton.swift; sourceTree = "<group>"; };
 		A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		A8A66FBF2E0D1DCE0017F98B /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
+		A8A66FCD2E0F7FFF0017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A8A66FDA2E121A050017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A8A66FDE2E121A1E0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -286,6 +295,7 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8A66FCD2E0F7FFF0017F98B /* SignUpViewModel.swift */,
 				A8A66F812E02FDFE0017F98B /* OnBoardingViewModel.swift */,
 				27EA80882DF86EC600D8CC31 /* LoginViewModel.swift */,
 			);
@@ -326,6 +336,7 @@
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8A66FC32E0EC61C0017F98B /* SignUp */,
 				A8A66F8A2E03DB450017F98B /* OnBoarding */,
 				27EA81952E09143B00D8CC31 /* Reusable Component */,
 				27EA80332DF83B3300D8CC31 /* Login */,
@@ -433,6 +444,31 @@
 				A8A66FBF2E0D1DCE0017F98B /* WelcomeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A8A66FC32E0EC61C0017F98B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A8A66FD92E1219FD0017F98B /* ViewController */,
+				A8A66FD82E1219F40017F98B /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A8A66FD82E1219F40017F98B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8A66FDE2E121A1E0017F98B /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8A66FD92E1219FD0017F98B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8A66FDA2E121A050017F98B /* SignUpViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,8 +688,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EA80832DF86D6A00D8CC31 /* LoginView.swift in Sources */,
+				A8A66FDB2E121A0B0017F98B /* SignUpViewController.swift in Sources */,
 				A8A66F822E02FE030017F98B /* OnBoardingViewModel.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
+				A8A66FE02E121A220017F98B /* SignUpView.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
 				27EA81C42E09821300D8CC31 /* ExtensionString.swift in Sources */,
@@ -661,6 +699,7 @@
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
 				27EA81C72E09864100D8CC31 /* ExtensionButton.swift in Sources */,
 				27EA805D2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
+				A8A66FCE2E0F80020017F98B /* SignUpViewModel.swift in Sources */,
 				27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA808A2DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
 				27EA81982E09144D00D8CC31 /* CustomTextField.swift in Sources */,
@@ -691,8 +730,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EA80842DF86D6A00D8CC31 /* LoginView.swift in Sources */,
+				A8A66FDC2E121A0B0017F98B /* SignUpViewController.swift in Sources */,
 				A8A66F832E02FE030017F98B /* OnBoardingViewModel.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
+				A8A66FDF2E121A220017F98B /* SignUpView.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
 				27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */,
@@ -700,6 +741,7 @@
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
 				27EA81C82E09864100D8CC31 /* ExtensionButton.swift in Sources */,
 				27EA805E2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
+				A8A66FCF2E0F80020017F98B /* SignUpViewModel.swift in Sources */,
 				27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA80892DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
 				27EA81972E09144D00D8CC31 /* CustomTextField.swift in Sources */,
@@ -1013,7 +1055,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
@@ -1050,7 +1092,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
