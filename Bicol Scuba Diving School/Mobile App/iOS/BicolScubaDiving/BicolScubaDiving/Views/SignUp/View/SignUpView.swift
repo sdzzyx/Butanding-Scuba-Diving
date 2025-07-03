@@ -144,36 +144,38 @@ class SignUpView: UIView {
         
         
         // Configure Sign Up label
-        let fullSignUpText = data.signUpTitle
-        let attributedSignUpString = NSMutableAttributedString(string: fullSignUpText)
+        // New reusable highlighting extension for "Sign Up" title
+        let signHighlights = [
+            NSAttributedString.HighlightStyle(substring: "Sign", font: UIFont.roboto(.bold, size: 30), color: .primaryBlueColor),
+            NSAttributedString.HighlightStyle(substring: "Up", font: UIFont.roboto(.bold, size: 30), color: .primaryOrange)
+        ]
         
-        let signRange = (fullSignUpText as NSString).range(of: "Sign")
-        if signRange.location != NSNotFound {
-            attributedSignUpString.addAttributes([
-                .foregroundColor: UIColor.primaryBlueColor,
-                .font: UIFont.roboto(.bold, size: 30)
-            ], range: signRange)
-        }
-        
-        let upRange = (fullSignUpText as NSString).range(of: "Up")
-        if upRange.location != NSNotFound {
-            attributedSignUpString.addAttributes([
-                .foregroundColor: UIColor.primaryOrange,
-                .font: UIFont.roboto(.bold, size: 30)
-            ], range: upRange)
-        }
-        signUpLabel.attributedText = attributedSignUpString
-        
-        // Configure Privacy Policy label
-        let attributedPolicyText = NSAttributedString.makeHighlighting(
-            fullText: data.footerText,
-            highlights: data.footerTextHighlights,
-            baseFont: UIFont.systemFont(ofSize: 13),
-            baseTextColor: .gray,
-            highlightFont: UIFont.boldSystemFont(ofSize: 13),
-            highlightColor: .primaryBlueColor
+        let signUpAttrString = NSAttributedString.highlightedString(
+            fullText: data.signUpTitle,
+            baseFont: UIFont.roboto(.regular, size: 30),
+            baseColor: .black,
+            highlights: signHighlights
         )
-        privacyPolicyLabel.attributedText = attributedPolicyText
+        
+        signUpLabel.attributedText = signUpAttrString
+        
+        // New reusable highlighting extension for footer text
+        let footerHighlights = data.footerTextHighlights.map {
+            NSAttributedString.HighlightStyle(
+                substring: $0,
+                font: UIFont.boldSystemFont(ofSize: 13),
+                color: .primaryBlueColor
+            )
+        }
+        
+        let footerAttrString = NSAttributedString.highlightedString(
+            fullText: data.footerText,
+            baseFont: UIFont.systemFont(ofSize: 13),
+            baseColor: .gray,
+            highlights: footerHighlights
+        )
+        
+        privacyPolicyLabel.attributedText = footerAttrString
     }
     
     // MARK: - Actions
