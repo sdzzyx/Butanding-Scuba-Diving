@@ -77,6 +77,8 @@
 		A8A670622E1293F60017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670602E1293F20017F98B /* SignUpViewController.swift */; };
 		A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670632E1294050017F98B /* SignUpViewModel.swift */; };
 		A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670632E1294050017F98B /* SignUpViewModel.swift */; };
+		A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */; };
+		A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,7 @@
 		A8A6705D2E1293EB0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSAttributedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -404,6 +407,7 @@
 		27EA81992E0915BF00D8CC31 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */,
 				27EA81C62E09863D00D8CC31 /* ExtensionButton.swift */,
 				27EA81C32E09821000D8CC31 /* ExtensionString.swift */,
 				27EA81C02E0981EB00D8CC31 /* ExtensionAttributeString.swift */,
@@ -668,6 +672,7 @@
 				A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
+				A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C42E09821300D8CC31 /* ExtensionString.swift in Sources */,
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
@@ -708,6 +713,7 @@
 				A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
+				A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */,
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
