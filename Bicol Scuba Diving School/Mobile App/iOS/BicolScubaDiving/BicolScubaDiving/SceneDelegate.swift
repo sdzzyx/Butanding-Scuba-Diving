@@ -21,6 +21,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = SignUpViewController()
         self.window = window
         window.makeKeyAndVisible()
+        
+        let window = UIWindow(windowScene: windowScene)
+        
+        let splashVc = SplashViewController()
+        
+        window.rootViewController = splashVc
+        self.window = window
+        window.makeKeyAndVisible()
+        
+        // After Splash is done will transition to OnBoarding
+        splashVc.completionHandler = { [weak self] in
+            DispatchQueue.main.async {
+                let onBoardingVc = OnBoardingViewController()
+                self?.window?.rootViewController = onBoardingVc
+                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
