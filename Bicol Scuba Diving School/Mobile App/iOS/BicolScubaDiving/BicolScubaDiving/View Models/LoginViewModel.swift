@@ -29,6 +29,9 @@ class LoginViewModel {
     let forgotPasswordText = AppConstant.Login.forgotPasswordTitle
     let footerText = AppConstant.Login.footerText
     
+    var onLoginSuccess: (() -> Void)?
+    var onLoginFailure: ((Error) -> Void)?
+    
     var viewData: LoginViewData {
         return LoginViewData(
             logoImage: UIImage(named: "logo"), 
@@ -44,7 +47,12 @@ class LoginViewModel {
     }
     
     func login(username: String, password: String) {
+        // TODO: Add logic here
         
+        // Simulate success
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.onLoginSuccess?()
+        }
     }
     
     func forgotPasswordTapped() {

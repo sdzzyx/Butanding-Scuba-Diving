@@ -214,12 +214,12 @@ class LoginView: UIView {
         button.applyTapEffectWithConfiguration()
     }
     
-    func bindLoginAction(target: Any?, action: Selector) {
-        loginButton.addTarget(target, action: action, for: .touchUpInside)
+    func bindLoginAction() {
+        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
     }
     
-    func bindFogotPasswordAction(target: Any?, action: Selector) {
-        forgotPasswordButton.addTarget(target, action: action, for: .touchUpInside)
+    func bindFogotPasswordAction() {
+        forgotPasswordButton.addTarget(self, action: #selector(handleForgotPassword), for: .touchUpInside)
     }
     
     @objc private func dismissKeyboard() {
