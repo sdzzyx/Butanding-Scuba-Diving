@@ -2,7 +2,7 @@
 //  OnBoardingViewModel.swift
 //  BicolScubaDiving
 //
-//  Created by Lenard Cortuna on 6/18/25.
+//  Created by Lenard Cortuna on 7/9/25.
 //
 
 import Foundation
@@ -15,13 +15,13 @@ class OnboardingViewModel {
             onCurrentSlideChanged?()
         }
     }
-
+    
     var onCurrentSlideChanged: (() -> Void)?
-
+    
     init() {
         setupSlides()
     }
-
+    
     private func setupSlides() {
         
         slides = [
@@ -31,21 +31,21 @@ class OnboardingViewModel {
             WelcomeModel(image: UIImage(named: "Welcome_Screen_4") ?? UIImage(), title: "Dive Training",subtitle: "Learn to Dive with Expert Guidance", description: "Sharpen your dive skills with focused, hands-on training. Learn safety procedures, underwater navigation, and gear handling in guided sessions. Ideal for beginners or divers looking to refresh and improve.")
         ]
     }
-
+    
     var numberOfSlides: Int {
         return slides.count
     }
-
+    
     func slide(at index: Int) -> WelcomeModel? {
         guard index >= 0 && index < slides.count else { return nil }
         return slides[index]
     }
-
+    
     func setCurrentSlide(to index: Int) {
         guard index >= 0 && index < slides.count else { return }
         currentSlideIndex = index
     }
-
+    
     var currentSlide: WelcomeModel? {
         return slide(at: currentSlideIndex)
     }
