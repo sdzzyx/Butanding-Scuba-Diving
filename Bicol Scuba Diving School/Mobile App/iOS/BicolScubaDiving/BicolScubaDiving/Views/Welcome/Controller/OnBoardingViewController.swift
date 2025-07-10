@@ -24,13 +24,13 @@ class OnboardingViewController: UIViewController {
         onboardingView.getStartedButton.setTitle(viewModel.getStartedButtonTitle, for: .normal)
         onboardingView.getStartedButton.addTarget(self, action: #selector(getStartedTapped), for: .touchUpInside)
         onboardingView.pageControl.numberOfPages = viewModel.numberOfSlides
-        updateSlideContent(for: 0)
     }
     
     private func setupBindings() {
         viewModel.onCurrentSlideChanged = { [weak self] in
             guard let self = self else { return }
-            self.updateSlideContent(for: self.viewModel.currentSlideIndex)
+            self.onboardingView.pageControl.currentPage = self.viewModel.currentSlideIndex
+            self.onboardingView.getStartedButton.isHidden = false
         }
     }
     
@@ -43,14 +43,6 @@ class OnboardingViewController: UIViewController {
         )
     }
     
-    private func updateSlideContent(for index: Int) {
-        guard let slide = viewModel.slide(at: index) else { return }
-        onboardingView.titleLabel.text = slide.title
-        onboardingView.subtitleLabel.text = slide.subtitle
-        onboardingView.descriptionLabel.text = slide.description
-        onboardingView.pageControl.currentPage = index
-        onboardingView.getStartedButton.isHidden = index != viewModel.numberOfSlides - 1
-    }
     
     @objc private func getStartedTapped() {
         print("Get Started button tapped")
@@ -73,6 +65,9 @@ extension OnboardingViewController: UICollectionViewDataSource {
         
         if let slide = viewModel.slide(at: indexPath.item) {
             cell.imageView.image = slide.image
+            cell.titleLabel.text = slide.title
+            cell.subtitleLabel.text = slide.subtitle
+            cell.descriptionLabel.text = slide.description
         }
         
         return cell
