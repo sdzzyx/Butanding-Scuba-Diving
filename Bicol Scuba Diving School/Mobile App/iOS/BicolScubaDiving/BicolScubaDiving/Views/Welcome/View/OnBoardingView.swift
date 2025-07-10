@@ -21,9 +21,6 @@ class OnboardingView: UIView {
         return cv
     }()
     
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
-    let descriptionLabel = UILabel()
     let pageControl = CustomPageControl()
     
     let getStartedButton: UIButton = {
@@ -32,7 +29,7 @@ class OnboardingView: UIView {
         button.backgroundColor = .primaryOrange
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 10
-        button.isHidden = true
+        button.isHidden = false
         return button
     }()
     
@@ -50,49 +47,12 @@ class OnboardingView: UIView {
         backgroundColor = .systemBackground
         
         addSubview(collectionView)
-        addSubview(titleLabel)
-        addSubview(subtitleLabel)
-        addSubview(descriptionLabel)
         addSubview(pageControl)
         addSubview(getStartedButton)
         
-        [titleLabel, subtitleLabel, descriptionLabel].forEach {
-            $0.textAlignment = .center
-        }
-        
-        titleLabel.font = .boldSystemFont(ofSize: 28)
-        titleLabel.textColor = .primaryOrange
-        titleLabel.numberOfLines = 0
-        
-        subtitleLabel.font = .italicSystemFont(ofSize: 18)
-        subtitleLabel.textColor = .primaryBlueColor
-        
-        descriptionLabel.font = .boldSystemFont(ofSize: 16)
-        descriptionLabel.textColor = .black
-        descriptionLabel.numberOfLines = 0
-        
-        pageControl.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.6)
-        pageControl.currentPageIndicatorTintColor = .primaryOrange
-        
-        // MARK: - SnapKit Constraints
         collectionView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.5)
-        }
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(30)
-            make.leading.trailing.equalToSuperview().inset(20)
-        }
-        
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.leading.trailing.equalTo(titleLabel)
-        }
-        
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalTo(titleLabel)
+            make.bottom.equalToSuperview()
         }
         
         getStartedButton.snp.makeConstraints { make in
