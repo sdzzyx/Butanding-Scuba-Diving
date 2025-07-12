@@ -79,6 +79,24 @@
 		A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670632E1294050017F98B /* SignUpViewModel.swift */; };
 		A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */; };
 		A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */; };
+		A8A670CB2E1E2AC00017F98B /* OnBoardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C72E1E2AC00017F98B /* OnBoardingCell.swift */; };
+		A8A670CC2E1E2AC00017F98B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C42E1E2AC00017F98B /* OnBoardingViewController.swift */; };
+		A8A670CD2E1E2AC00017F98B /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C62E1E2AC00017F98B /* CustomPageControl.swift */; };
+		A8A670CE2E1E2AC00017F98B /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C82E1E2AC00017F98B /* OnBoardingView.swift */; };
+		A8A670CF2E1E2AC00017F98B /* OnBoardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C72E1E2AC00017F98B /* OnBoardingCell.swift */; };
+		A8A670D02E1E2AC00017F98B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C42E1E2AC00017F98B /* OnBoardingViewController.swift */; };
+		A8A670D12E1E2AC00017F98B /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C62E1E2AC00017F98B /* CustomPageControl.swift */; };
+		A8A670D22E1E2AC00017F98B /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670C82E1E2AC00017F98B /* OnBoardingView.swift */; };
+		A8A670D52E1E2AD10017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670D32E1E2AD10017F98B /* WelcomeModel.swift */; };
+		A8A670D62E1E2AD10017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670D32E1E2AD10017F98B /* WelcomeModel.swift */; };
+		A8A670D82E1E2ADD0017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670D72E1E2ADD0017F98B /* OnBoardingViewModel.swift */; };
+		A8A670D92E1E2ADD0017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670D72E1E2ADD0017F98B /* OnBoardingViewModel.swift */; };
+		A8A670E12E1E30D10017F98B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670E02E1E30CD0017F98B /* ProfileViewController.swift */; };
+		A8A670E22E1E30D10017F98B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670E02E1E30CD0017F98B /* ProfileViewController.swift */; };
+		A8A670E42E1E33000017F98B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670E32E1E32FB0017F98B /* ProfileModel.swift */; };
+		A8A670E52E1E33000017F98B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670E32E1E32FB0017F98B /* ProfileModel.swift */; };
+		A8A670E72E1E34BC0017F98B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670E62E1E34B70017F98B /* ProfileViewModel.swift */; };
+		A8A670E82E1E34BC0017F98B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670E62E1E34B70017F98B /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +148,15 @@
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSAttributedString.swift; sourceTree = "<group>"; };
+		A8A670C42E1E2AC00017F98B /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		A8A670C62E1E2AC00017F98B /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		A8A670C72E1E2AC00017F98B /* OnBoardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCell.swift; sourceTree = "<group>"; };
+		A8A670C82E1E2AC00017F98B /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		A8A670D32E1E2AD10017F98B /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
+		A8A670D72E1E2ADD0017F98B /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		A8A670E02E1E30CD0017F98B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A8A670E32E1E32FB0017F98B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		A8A670E62E1E34B70017F98B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -287,6 +314,8 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8A670E62E1E34B70017F98B /* ProfileViewModel.swift */,
+				A8A670D72E1E2ADD0017F98B /* OnBoardingViewModel.swift */,
 				A8A670632E1294050017F98B /* SignUpViewModel.swift */,
 				27EA80882DF86EC600D8CC31 /* LoginViewModel.swift */,
 			);
@@ -327,6 +356,8 @@
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8A670DA2E1E30A60017F98B /* Profile */,
+				A8A670CA2E1E2AC00017F98B /* OnBoarding */,
 				A8A6705A2E1293D60017F98B /* SignUp */,
 				27EA81952E09143B00D8CC31 /* Reusable Component */,
 				27EA80332DF83B3300D8CC31 /* Login */,
@@ -340,6 +371,7 @@
 		27EA803C2DF83B3300D8CC31 /* BicolScubaDiving */ = {
 			isa = PBXGroup;
 			children = (
+				A8A670D42E1E2AD10017F98B /* Model */,
 				27EA80BD2DF990EB00D8CC31 /* Utilities */,
 				27EA80542DF83FFA00D8CC31 /* Configuration */,
 				27EA80272DF83B3300D8CC31 /* Constants */,
@@ -451,6 +483,58 @@
 				A8A670602E1293F20017F98B /* SignUpViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A8A670C52E1E2AC00017F98B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670C42E1E2AC00017F98B /* OnBoardingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8A670C92E1E2AC00017F98B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670C62E1E2AC00017F98B /* CustomPageControl.swift */,
+				A8A670C72E1E2AC00017F98B /* OnBoardingCell.swift */,
+				A8A670C82E1E2AC00017F98B /* OnBoardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8A670CA2E1E2AC00017F98B /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670C52E1E2AC00017F98B /* Controller */,
+				A8A670C92E1E2AC00017F98B /* View */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		A8A670D42E1E2AD10017F98B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670E32E1E32FB0017F98B /* ProfileModel.swift */,
+				A8A670D32E1E2AD10017F98B /* WelcomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8A670DA2E1E30A60017F98B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670DC2E1E30BB0017F98B /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A8A670DC2E1E30BB0017F98B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670E02E1E30CD0017F98B /* ProfileViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -667,6 +751,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A670D82E1E2ADD0017F98B /* OnBoardingViewModel.swift in Sources */,
 				27EA80832DF86D6A00D8CC31 /* LoginView.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */,
@@ -677,10 +762,18 @@
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
 				A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */,
+				A8A670E72E1E34BC0017F98B /* ProfileViewModel.swift in Sources */,
+				A8A670E12E1E30D10017F98B /* ProfileViewController.swift in Sources */,
 				27EA81C72E09864100D8CC31 /* ExtensionButton.swift in Sources */,
+				A8A670E52E1E33000017F98B /* ProfileModel.swift in Sources */,
 				27EA805D2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
 				27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA808A2DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				A8A670CB2E1E2AC00017F98B /* OnBoardingCell.swift in Sources */,
+				A8A670D62E1E2AD10017F98B /* WelcomeModel.swift in Sources */,
+				A8A670CC2E1E2AC00017F98B /* OnBoardingViewController.swift in Sources */,
+				A8A670CD2E1E2AC00017F98B /* CustomPageControl.swift in Sources */,
+				A8A670CE2E1E2AC00017F98B /* OnBoardingView.swift in Sources */,
 				27EA81982E09144D00D8CC31 /* CustomTextField.swift in Sources */,
 				27EA81AB2E091CE200D8CC31 /* ExtensionFont.swift in Sources */,
 				27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
@@ -708,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A670D92E1E2ADD0017F98B /* OnBoardingViewModel.swift in Sources */,
 				27EA80842DF86D6A00D8CC31 /* LoginView.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */,
@@ -718,10 +812,18 @@
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
 				A8A670622E1293F60017F98B /* SignUpViewController.swift in Sources */,
+				A8A670E82E1E34BC0017F98B /* ProfileViewModel.swift in Sources */,
+				A8A670E22E1E30D10017F98B /* ProfileViewController.swift in Sources */,
 				27EA81C82E09864100D8CC31 /* ExtensionButton.swift in Sources */,
+				A8A670E42E1E33000017F98B /* ProfileModel.swift in Sources */,
 				27EA805E2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
 				27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA80892DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				A8A670CF2E1E2AC00017F98B /* OnBoardingCell.swift in Sources */,
+				A8A670D52E1E2AD10017F98B /* WelcomeModel.swift in Sources */,
+				A8A670D02E1E2AC00017F98B /* OnBoardingViewController.swift in Sources */,
+				A8A670D12E1E2AC00017F98B /* CustomPageControl.swift in Sources */,
+				A8A670D22E1E2AC00017F98B /* OnBoardingView.swift in Sources */,
 				27EA81972E09144D00D8CC31 /* CustomTextField.swift in Sources */,
 				27EA81AC2E091CE200D8CC31 /* ExtensionFont.swift in Sources */,
 				27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
