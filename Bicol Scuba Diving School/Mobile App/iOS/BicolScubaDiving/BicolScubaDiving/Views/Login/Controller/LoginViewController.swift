@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
     }
     
     private func bindViewActions() {
+        loginView.bindLoginAction()
+        loginView.bindFogotPasswordAction()
+        
         loginView.onLoginTapped = { [weak self] email, password in 
             self?.loginViewModel.login(username: email, password: password)
         }
@@ -59,6 +62,24 @@ class LoginViewController: UIViewController {
                 }
             })
         }
+        
+        loginViewModel.onLoginSuccess = { [weak self] in
+            self?.transitionToMainTab()
+        }
+    }
+    
+    // MARK: - Navigation Transition
+    private func transitionToMainTab() {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = scene.delegate as? SceneDelegate,
+              let window = sceneDelegate.window else {
+            return
+        }
+        
+        let tabBarVC = MainTabBarController()
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = tabBarVC
+        })
     }
 
 }

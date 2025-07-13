@@ -1,29 +1,36 @@
-//
-//  ProfileViewController.swift
-//  BicolScubaDiving
-//
-//  Created by Lenard Cortuna on 7/9/25.
+
+//  Created by Melvin Ballesteros on 7/9/25.
 //
 
 import UIKit
-import SnapKit
 
-class ProfileViewController: UITableViewController {
-    
+class ProfileViewController: UIViewController {
+
     private let viewModel = ProfileViewModel()
     private var itemButtons: [String: UIButton] = [:]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.tableFooterView = createFooterView()
         
         setupTableHeader()
+
+        // Do any additional setup after loading the view.
     }
     
-    private func setupTableHeader() {
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+private func setupTableHeader() {
         let headerView = UIView()
         let logoImageView = UIImageView(image: viewModel.logoImage)
         logoImageView.contentMode = .scaleAspectFit
@@ -188,5 +195,5 @@ class ProfileViewController: UITableViewController {
         default:
             break
         }
-    }
+
 }
