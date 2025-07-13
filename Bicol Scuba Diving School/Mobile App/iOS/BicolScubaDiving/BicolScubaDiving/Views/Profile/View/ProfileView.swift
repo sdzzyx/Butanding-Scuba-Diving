@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileView: UIView {
 
@@ -17,4 +18,30 @@ class ProfileView: UIView {
     }
     */
 
+    let tableView = UITableView(frame: .zero, style: .grouped)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .white
+        setupTableView()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupTableView() {
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
+    }
+    
+    private func setupConstraints() {
+        addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
 }
