@@ -35,7 +35,7 @@ class AppConstant {
         static let footerText = "By joining, you agree with our Terms and Privacy Policy"
     }
     
-    struct Profile{
+    struct Profile {
         static let title = "Profile"
         static let accountSettings = "Account Settings"
         static let generalInformation = "General Information"
