@@ -10,27 +10,51 @@ import SnapKit
 
 class ProfileTableViewCell: UITableViewCell {
     
-    let button = UIButton()
+    let containerView = UIView()
+    let titleLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
         selectionStyle = .none
-        setupButton()
+        setupContainerView()
+        setUpLabel()
+        setupBackgroundView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupButton() {
-        contentView.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(5)
-            make.height.equalTo(45)
+    private func setupContainerView() {
+        contentView.addSubview(containerView)
+        containerView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
+            make.bottom.equalToSuperview().offset(-10)
         }
-        button.contentHorizontalAlignment = .leading
-        button.layer.cornerRadius = 8
+        
+        containerView.backgroundColor = UIColor.primaryGrayLight
+        containerView.layer.cornerRadius = 8
+        containerView.clipsToBounds = true
+    }
+    
+    private func setUpLabel() {
+        containerView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.centerY.equalToSuperview()
+        }
+        titleLabel.textAlignment = .left
+        titleLabel.font = UIFont.roboto(.medium, size: 13)
+        titleLabel.textColor = .black
+    }
+    
+    private func setupBackgroundView() {
+        let bgView = UIView()
+        bgView.backgroundColor = .clear
+        selectedBackgroundView = bgView
     }
 }
