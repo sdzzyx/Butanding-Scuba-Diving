@@ -107,6 +107,18 @@
 		A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670632E1294050017F98B /* SignUpViewModel.swift */; };
 		A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */; };
 		A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */; };
+		A8A670FD2E1EA5780017F98B /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670FC2E1EA5720017F98B /* OnBoardingView.swift */; };
+		A8A670FE2E1EA5780017F98B /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670FC2E1EA5720017F98B /* OnBoardingView.swift */; };
+		A8A671002E1EA5800017F98B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670FF2E1EA57B0017F98B /* OnBoardingViewController.swift */; };
+		A8A671012E1EA5800017F98B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670FF2E1EA57B0017F98B /* OnBoardingViewController.swift */; };
+		A8A671032E1EA5B30017F98B /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671022E1EA5AF0017F98B /* CustomPageControl.swift */; };
+		A8A671042E1EA5B30017F98B /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671022E1EA5AF0017F98B /* CustomPageControl.swift */; };
+		A8A671062E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671052E1EA5B70017F98B /* OnBoardingCell.swift */; };
+		A8A671072E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671052E1EA5B70017F98B /* OnBoardingCell.swift */; };
+		A8A671172E1EA7CC0017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671162E1EA7C90017F98B /* WelcomeModel.swift */; };
+		A8A671182E1EA7CC0017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671162E1EA7C90017F98B /* WelcomeModel.swift */; };
+		A8A6711B2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */; };
+		A8A6711C2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +184,12 @@
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A8A670662E16D3A20017F98B /* ExtensionNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSAttributedString.swift; sourceTree = "<group>"; };
+		A8A670FC2E1EA5720017F98B /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		A8A670FF2E1EA57B0017F98B /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		A8A671022E1EA5AF0017F98B /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		A8A671052E1EA5B70017F98B /* OnBoardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCell.swift; sourceTree = "<group>"; };
+		A8A671162E1EA7C90017F98B /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
+		A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -323,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				A84AAB512E23736E00B5139B /* ProfileViewModel.swift */,
+				A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */,
 				27EA82E82E1E8F9C00D8CC31 /* TabBarViewModel.swift */,
 				A8A670632E1294050017F98B /* SignUpViewModel.swift */,
 				27EA80882DF86EC600D8CC31 /* LoginViewModel.swift */,
@@ -347,16 +366,10 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		27EA80372DF83B3300D8CC31 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Welcome;
-			sourceTree = "<group>";
-		};
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8A670F92E1EA5430017F98B /* Welcome */,
 				27EA82E42E1E8EDF00D8CC31 /* MainTabBar */,
 				27EA82E22E1E8EBE00D8CC31 /* Home */,
 				27EA80332DF83B3300D8CC31 /* Login */,
@@ -366,7 +379,6 @@
 				27EA81952E09143B00D8CC31 /* Reusable Component */,
 				A8A6705A2E1293D60017F98B /* SignUp */,
 				27EA80362DF83B3300D8CC31 /* Splash */,
-				27EA80372DF83B3300D8CC31 /* Welcome */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -575,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				A84AAB4E2E23736500B5139B /* ProfileModel.swift */,
+				A8A671162E1EA7C90017F98B /* WelcomeModel.swift */,
 				27EA831F2E1E931800D8CC31 /* TabItem.swift */,
 			);
 			path = Models;
@@ -603,6 +616,33 @@
 				A8A670602E1293F20017F98B /* SignUpViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A8A670F92E1EA5430017F98B /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670FB2E1EA5620017F98B /* Controller */,
+				A8A670FA2E1EA55A0017F98B /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		A8A670FA2E1EA55A0017F98B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8A671052E1EA5B70017F98B /* OnBoardingCell.swift */,
+				A8A671022E1EA5AF0017F98B /* CustomPageControl.swift */,
+				A8A670FC2E1EA5720017F98B /* OnBoardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8A670FB2E1EA5620017F98B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8A670FF2E1EA57B0017F98B /* OnBoardingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -835,6 +875,7 @@
 				A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C42E09821300D8CC31 /* ExtensionString.swift in Sources */,
 				27EA82FF2E1E907700D8CC31 /* ProfileView.swift in Sources */,
+				A8A671172E1EA7CC0017F98B /* WelcomeModel.swift in Sources */,
 				27EA83212E1E931A00D8CC31 /* TabItem.swift in Sources */,
 				27EA83012E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
@@ -845,14 +886,19 @@
 				27EA83092E1E90A800D8CC31 /* ReservationView.swift in Sources */,
 				27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA808A2DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				A8A671032E1EA5B30017F98B /* CustomPageControl.swift in Sources */,
 				27EA81982E09144D00D8CC31 /* CustomTextField.swift in Sources */,
 				27EA81AB2E091CE200D8CC31 /* ExtensionFont.swift in Sources */,
+				A8A670FD2E1EA5780017F98B /* OnBoardingView.swift in Sources */,
 				27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
 				27EA808C2DF87B9200D8CC31 /* SplashViewController.swift in Sources */,
 				A84AAB532E23737200B5139B /* ProfileViewModel.swift in Sources */,
 				27EA82EF2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819B2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
 				A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */,
+				A8A671072E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
+				A8A671012E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
+				A8A6711B2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +936,7 @@
 				A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */,
 				27EA82FE2E1E907700D8CC31 /* ProfileView.swift in Sources */,
+				A8A671182E1EA7CC0017F98B /* WelcomeModel.swift in Sources */,
 				27EA83202E1E931A00D8CC31 /* TabItem.swift in Sources */,
 				27EA83022E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
@@ -900,14 +947,19 @@
 				27EA830A2E1E90A800D8CC31 /* ReservationView.swift in Sources */,
 				27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA80892DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				A8A671042E1EA5B30017F98B /* CustomPageControl.swift in Sources */,
 				27EA81972E09144D00D8CC31 /* CustomTextField.swift in Sources */,
 				27EA81AC2E091CE200D8CC31 /* ExtensionFont.swift in Sources */,
+				A8A670FE2E1EA5780017F98B /* OnBoardingView.swift in Sources */,
 				27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
 				27EA808D2DF87B9200D8CC31 /* SplashViewController.swift in Sources */,
 				A84AAB522E23737200B5139B /* ProfileViewModel.swift in Sources */,
 				27EA82EE2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819C2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
 				A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */,
+				A8A671062E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
+				A8A671002E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
+				A8A6711C2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
