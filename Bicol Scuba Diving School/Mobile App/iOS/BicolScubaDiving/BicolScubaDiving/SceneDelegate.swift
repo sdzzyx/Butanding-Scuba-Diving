@@ -28,8 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // After Splash is done will transition to OnBoarding, SignUp, or Login depends on ViewController Instantiation
         splashVc.completionHandler = { [weak self] in
             DispatchQueue.main.async {
-                let onBoardingVc = SignUpViewController()
-                self?.window?.rootViewController = onBoardingVc
+                let onboardingVc = OnboardingViewController()
+                self?.window?.rootViewController = onboardingVc
                 UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
             }
         }
