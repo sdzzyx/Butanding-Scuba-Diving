@@ -50,4 +50,14 @@ class AppConstant {
         static let callUs = "Call Us"
         static let followUs = "Follow us on social media"
     }
+    
+    struct PersonalInformation {
+        static let title = "Personal Information"
+        static let firstNamePlaceholder = "First Name"
+        static let lastNamePlaceholder = "Last Name"
+        static let emailPlaceholder = "Email"
+        static let phoneNumberPlaceholder = "Phone Number"
+        static let updateButtonTitle = "Update"
+
+    }
 }
