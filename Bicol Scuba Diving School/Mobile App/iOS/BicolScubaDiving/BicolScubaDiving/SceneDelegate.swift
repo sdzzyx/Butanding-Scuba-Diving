@@ -31,7 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                 let onBoardingVc = MainTabBarController()
                 self?.window?.rootViewController = onBoardingVc
-
                 UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
             }
         }
