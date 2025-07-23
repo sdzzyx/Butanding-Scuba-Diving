@@ -35,7 +35,7 @@ class ProfileTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview().offset(-10)
         }
         
-        containerView.backgroundColor = UIColor.primaryGrayLight
+        containerView.backgroundColor = UIColor.primaryGrayDisableBackground
         containerView.layer.cornerRadius = 8
         containerView.clipsToBounds = true
     }
