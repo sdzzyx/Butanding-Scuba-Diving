@@ -31,70 +31,65 @@ class PersonalInformationViewController: UIViewController {
     }
     
     private func updateView() {
-        let data = PersonalInformationViewData(
-            backLogoImage: UIImage(named: "back-logo"),
-            title: AppConstant.PersonalInformation.title,
-            firstNameTitle: viewModel.personalInfomation.firstname,
-            lastNameTitle: viewModel.personalInfomation.lastname,
-            emailTitle: viewModel.personalInfomation.email,
-            phoneTitle: viewModel.personalInfomation.phoneNumber,
-            updateButtonTitle: AppConstant.PersonalInformation.updateButtonTitle
-        )
+        let data = viewModel.viewData
         mainView.configure(with: data)
     }
     
     private func setupActions() {
-        mainView.firstNameButton.addTarget(self, action: #selector(firstNameButtonTapped), for: .touchUpInside)
-        mainView.lastNameButton.addTarget(self, action: #selector(lastNameButtonTapped), for: .touchUpInside)
-        mainView.emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
-        mainView.phoneButton.addTarget(self, action: #selector(phoneButtonTapped), for: .touchUpInside)
+        // TextField Editing Handlers
+        mainView.firstNameField.addTarget(self, action: #selector(firstNameFieldFocused), for: .editingDidBegin)
+        mainView.lastNameField.addTarget(self, action: #selector(lastNameFieldFocused), for: .editingDidBegin)
+        mainView.emailField.addTarget(self, action: #selector(emailFieldFocused), for: .editingDidBegin)
+        mainView.phoneField.addTarget(self, action: #selector(phoneFieldFocused), for: .editingDidBegin)
+        
+        // Update and Back button
         mainView.updateButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
         mainView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         
+        // Dismiss keyboard and reset highlights
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackgroundTap))
-        tapGesture.cancelsTouchesInView = false // allow button taps to still work
+        tapGesture.cancelsTouchesInView = false
         mainView.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func firstNameButtonTapped() {
-        mainView.highlightButton(mainView.firstNameButton)
+    // MARK: - Focus Actions (Highlighting)
+    
+    @objc private func firstNameFieldFocused() {
+        mainView.highlightField(mainView.firstNameField)
         mainView.activateUpdateButton()
     }
     
-    @objc private func lastNameButtonTapped() {
-        mainView.highlightButton(mainView.lastNameButton)
+    @objc private func lastNameFieldFocused() {
+        mainView.highlightField(mainView.lastNameField)
         mainView.activateUpdateButton()
     }
     
-    @objc private func emailButtonTapped() {
-        mainView.highlightButton(mainView.emailButton)
+    @objc private func emailFieldFocused() {
+        mainView.highlightField(mainView.emailField)
         mainView.activateUpdateButton()
     }
     
-    @objc private func phoneButtonTapped() {
-        mainView.highlightButton(mainView.phoneButton)
+    @objc private func phoneFieldFocused() {
+        mainView.highlightField(mainView.phoneField)
         mainView.activateUpdateButton()
     }
     
     @objc private func updateButtonTapped() {
+        // Save changes from fields to model
+        viewModel.updateFirstName(mainView.firstNameField.text ?? "")
         viewModel.saveChanges()
-        let alert = UIAlertController(title: "Updated", message: "Your information has been updated.", preferredStyle: .alert)
+        
+        let alert = UIAlertController(
+            title: "Updated",
+            message: "Your Information has been updated.",
+            preferredStyle: .alert
+        )
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alert, animated: true)
     }
     
     @objc private func handleBackgroundTap(_ sender: UITapGestureRecognizer) {
-        let location = sender.location(in: mainView)
-        
-        // Check if the tap is inside any button
-        if mainView.firstNameButton.frame.contains(location)
-            || mainView.lastNameButton.frame.contains(location)
-            || mainView.emailButton.frame.contains(location)
-            || mainView.phoneButton.frame.contains(location) {
-            return // Do nothing, let button handle it
-        }
-        
-        // Else reset
+        self.view.endEditing(true)
         mainView.resetAllButtonHighlights()
     }
     
