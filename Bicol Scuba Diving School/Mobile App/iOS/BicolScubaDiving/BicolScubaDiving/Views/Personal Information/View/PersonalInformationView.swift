@@ -27,56 +27,36 @@ class PersonalInformationView: UIView {
         return label
     }()
     
-    let firstNameButton: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = UIColor(white: 0.95, alpha: 1)
-        config.baseForegroundColor = .primaryGrayDarkTextColor
-        config.titleAlignment = .leading
-        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-        let button = UIButton(configuration: config, primaryAction: nil)
-        button.contentHorizontalAlignment = .leading
-        button.layer.cornerRadius = 8
-        button.clipsToBounds = true
-        return button
+    let firstNameField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.PersonalInformation.firstNamePlaceholder)
+        field.layer.borderColor = UIColor.clear.cgColor
+        field.backgroundColor = .primaryGrayDisableBackground
+        return field
     }()
     
-    let lastNameButton: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = UIColor(white: 0.95, alpha: 1)
-        config.baseForegroundColor = .primaryGrayTextColor
-        config.titleAlignment = .leading
-        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-        let button = UIButton(configuration: config, primaryAction: nil)
-        button.contentHorizontalAlignment = .leading
-        button.layer.cornerRadius = 8
-        button.clipsToBounds = true
-        return button
+    let lastNameField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.PersonalInformation.lastNamePlaceholder)
+        field.layer.borderColor = UIColor.clear.cgColor
+        field.backgroundColor = .primaryGrayDisableBackground
+        return field
     }()
-    
-    let emailButton: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = UIColor(white: 0.95, alpha: 1)
-        config.baseForegroundColor = .primaryGrayTextColor
-        config.titleAlignment = .leading
-        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-        let button = UIButton(configuration: config, primaryAction: nil)
-        button.contentHorizontalAlignment = .leading
-        button.layer.cornerRadius = 8
-        button.clipsToBounds = true
-        return button
+
+    let emailField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.PersonalInformation.emailPlaceholder)
+        field.layer.borderColor = UIColor.clear.cgColor
+        field.backgroundColor = .primaryGrayDisableBackground
+        return field
     }()
-    
-    let phoneButton: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = UIColor(white: 0.95, alpha: 1)
-        config.baseForegroundColor = .primaryGrayTextColor
-        config.titleAlignment = .leading
-        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-        let button = UIButton(configuration: config, primaryAction: nil)
-        button.contentHorizontalAlignment = .leading
-        button.layer.cornerRadius = 8
-        button.clipsToBounds = true
-        return button
+
+    let phoneField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.PersonalInformation.phoneNumberPlaceholder)
+        field.layer.borderColor = UIColor.clear.cgColor
+        field.backgroundColor = .primaryGrayDisableBackground
+        return field
     }()
     
     let updateButton: CustomButton = {
@@ -98,15 +78,17 @@ class PersonalInformationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func highlightButton(_ button: UIButton) {
+    func highlightField(_ field: CustomTextField) {
         
-        [firstNameButton, lastNameButton, emailButton, phoneButton].forEach {
+        [firstNameField, lastNameField, emailField, phoneField].forEach {
             $0.layer.borderWidth = 0
-            $0.layer.borderColor = UIColor.primaryOrange.cgColor
+            $0.layer.borderColor = UIColor.clear.cgColor // Make sure it's clear here
+            $0.backgroundColor = .primaryGrayDisableBackground
         }
         
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.primaryOrange.cgColor
+        field.layer.borderWidth = 2
+        field.layer.borderColor = UIColor.primaryOrange.cgColor
+        field.backgroundColor = .primaryGrayDisableBackground
     }
     
     func activateUpdateButton() {
@@ -115,9 +97,10 @@ class PersonalInformationView: UIView {
     }
     
     func resetAllButtonHighlights() {
-        [firstNameButton, lastNameButton, emailButton, phoneButton].forEach {
+        [firstNameField, lastNameField, emailField, phoneField].forEach {
             $0.layer.borderWidth = 0
             $0.layer.borderColor = UIColor.clear.cgColor
+            $0.backgroundColor = .primaryGrayDisableBackground
         }
         
         updateButton.isEnabled = false
@@ -126,10 +109,10 @@ class PersonalInformationView: UIView {
     
     func configure(with data: PersonalInformationViewData) {
         titleLabel.text = data.title
-        firstNameButton.setTitle(data.firstNameTitle, for: .normal)
-        lastNameButton.setTitle(data.lastNameTitle, for: .normal)
-        emailButton.setTitle(data.emailTitle, for: .normal)
-        phoneButton.setTitle(data.phoneTitle, for: .normal)
+        firstNameField.text = data.firstNameTitle
+        lastNameField.text = data.lastNameTitle
+        emailField.text = data.emailTitle
+        phoneField.text = data.phoneTitle
         updateButton.setTitle(data.updateButtonTitle, for: .normal)
         
         if let originalImage = data.backLogoImage {
@@ -156,34 +139,25 @@ class PersonalInformationView: UIView {
         
         let buttonFont = UIFont.roboto(.medium, size: 13)
         
-        firstNameButton.setAttributedTitle(NSAttributedString(
-            string: data.firstNameTitle,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
+        firstNameField.text = data.firstNameTitle
+        firstNameField.font = buttonFont
         
-        lastNameButton.setAttributedTitle(NSAttributedString(
-            string: data.lastNameTitle,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
+        lastNameField.text = data.lastNameTitle
+        lastNameField.font = buttonFont
         
-        emailButton.setAttributedTitle(NSAttributedString(
-            string: data.emailTitle,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
+        emailField.text = data.emailTitle
+        emailField.font = buttonFont
         
-        phoneButton.setAttributedTitle(NSAttributedString(
-            string: data.phoneTitle,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
-        
+        phoneField.text = data.phoneTitle
+        phoneField.font = buttonFont
+
     }
-    
     
     
     // MARK: - Setup
     
     private func setupViews() {
-        [backButton, titleLabel, firstNameButton, lastNameButton, emailButton, phoneButton, updateButton].forEach(addSubview)
+        [backButton, titleLabel, firstNameField, lastNameField, emailField, phoneField, updateButton].forEach(addSubview)
     }
     
     private func setupConstraints() {
@@ -198,30 +172,30 @@ class PersonalInformationView: UIView {
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).inset(30)
         }
         
-        firstNameButton.snp.makeConstraints { make in
+        firstNameField.snp.makeConstraints { make in
             make.top.equalTo(backButton.snp.bottom).offset(60)
             make.leading.trailing.equalToSuperview().inset(25)
             make.height.equalTo(50)
         }
         
-        lastNameButton.snp.makeConstraints { make in
-            make.top.equalTo(firstNameButton.snp.bottom).offset(16)
-            make.leading.trailing.height.equalTo(firstNameButton)
+        lastNameField.snp.makeConstraints { make in
+            make.top.equalTo(firstNameField.snp.bottom).offset(16)
+                make.leading.trailing.height.equalTo(firstNameField)
         }
         
-        emailButton.snp.makeConstraints { make in
-            make.top.equalTo(lastNameButton.snp.bottom).offset(16)
-            make.leading.trailing.height.equalTo(firstNameButton)
+        emailField.snp.makeConstraints { make in
+            make.top.equalTo(lastNameField.snp.bottom).offset(16)
+            make.leading.trailing.height.equalTo(firstNameField)
         }
-        
-        phoneButton.snp.makeConstraints { make in
-            make.top.equalTo(emailButton.snp.bottom).offset(16)
-            make.leading.trailing.height.equalTo(firstNameButton)
+
+        phoneField.snp.makeConstraints { make in
+            make.top.equalTo(emailField.snp.bottom).offset(16)
+            make.leading.trailing.height.equalTo(firstNameField)
         }
         
         updateButton.snp.makeConstraints { make in
-            make.top.equalTo(phoneButton.snp.bottom).offset(270)
-            make.leading.trailing.equalTo(phoneButton)
+            make.top.equalTo(phoneField.snp.bottom).offset(270)
+            make.leading.trailing.equalTo(phoneField)
             make.height.equalTo(55)
         }
     }
