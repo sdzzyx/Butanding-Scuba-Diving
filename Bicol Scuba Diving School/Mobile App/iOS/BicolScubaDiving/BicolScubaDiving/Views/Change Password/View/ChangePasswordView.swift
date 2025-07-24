@@ -27,9 +27,33 @@ class ChangePasswordView: UIView {
         return label
     }()
     
-    let oldPasswordButton = ChangePasswordView.createFieldButton()
-    let newPasswordButton = ChangePasswordView.createFieldButton()
-    let confirmPasswordButton = ChangePasswordView.createFieldButton()
+    let oldPasswordField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.ChangePassword.oldPasswordPlaceholder)
+        field.isSecureTextEntry = true
+        field.backgroundColor = .primaryGrayDisableBackground
+        field.layer.borderColor = UIColor.clear.cgColor
+        return field
+    }()
+    
+    let newPasswordField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.ChangePassword.newPasswordPlaceholder)
+        field.isSecureTextEntry = true
+        field.backgroundColor = .primaryGrayDisableBackground
+        field.layer.borderColor = UIColor.clear.cgColor
+        return field
+    }()
+    
+    let confirmPasswordField: CustomTextField = {
+        let field = CustomTextField()
+        field.setPlaceholder(AppConstant.ChangePassword.confirmNewPasswordPlaceholder)
+        field.isSecureTextEntry = true
+        field.backgroundColor = .primaryGrayDisableBackground
+        field.layer.borderColor = UIColor.clear.cgColor
+        return field
+    }()
+
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
@@ -74,13 +98,16 @@ class ChangePasswordView: UIView {
         return button
     }
     
-    func highlightButton(_ button: UIButton) {
-        [oldPasswordButton, newPasswordButton, confirmPasswordButton].forEach {
+    func highlightButton(_ field: CustomTextField) {
+        [oldPasswordField, newPasswordField, confirmPasswordField].forEach {
             $0.layer.borderWidth = 0
             $0.layer.borderColor = UIColor.clear.cgColor
+            $0.backgroundColor = .primaryGrayDisableBackground
         }
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.primaryOrange.cgColor
+        
+        field.layer.borderWidth = 2
+        field.layer.borderColor = UIColor.primaryOrange.cgColor
+        field.backgroundColor = .primaryGrayDisableBackground
     }
     
     func activateSubmitButton() {
@@ -89,19 +116,21 @@ class ChangePasswordView: UIView {
     }
     
     func resetAllButtonHighlights() {
-        [oldPasswordButton, newPasswordButton, confirmPasswordButton].forEach {
+        [oldPasswordField, newPasswordField, confirmPasswordField].forEach {
             $0.layer.borderWidth = 0
             $0.layer.borderColor = UIColor.clear.cgColor
+            $0.backgroundColor = .primaryGrayDisableBackground
         }
+        
         submitButton.isEnabled = false
         submitButton.backgroundColor = UIColor(white: 0.95, alpha: 1)
     }
     
     func configure(with data: ChangePasswordViewData) {
         titleLabel.text = data.title
-        oldPasswordButton.setTitle(data.oldPasswordPlaceholder, for: .normal)
-        newPasswordButton.setTitle(data.newPasswordPlaceholder, for: .normal)
-        confirmPasswordButton.setTitle(data.confirmNewPasswordPlaceholder, for: .normal)
+        oldPasswordField.setPlaceholder(data.oldPasswordPlaceholder)
+        newPasswordField.setPlaceholder(data.newPasswordPlaceholder)
+        confirmPasswordField.setPlaceholder(data.confirmNewPasswordPlaceholder)
         descriptionLabel.text = data.descriptionText
         submitButton.setTitle(data.submitTitle, for: .normal)
         
@@ -112,23 +141,6 @@ class ChangePasswordView: UIView {
         } else {
             backButton.setImage(nil, for: .normal)
         }
-        
-        let buttonFont = UIFont.roboto(.medium, size: 13)
-        
-        oldPasswordButton.setAttributedTitle(NSAttributedString(
-            string: data.oldPasswordPlaceholder,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
-        
-        newPasswordButton.setAttributedTitle(NSAttributedString(
-            string: data.newPasswordPlaceholder,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
-        
-        confirmPasswordButton.setAttributedTitle(NSAttributedString(
-            string: data.confirmNewPasswordPlaceholder,
-            attributes: [.font: buttonFont]
-        ), for: .normal)
         
         if let originalImage = data.backLogoImage {
             let desiredSize = CGSize(width: 65, height: 65)
@@ -157,7 +169,7 @@ class ChangePasswordView: UIView {
     // MARK: - Setup
     
     private func setupViews() {
-        [backButton, titleLabel, oldPasswordButton, newPasswordButton, confirmPasswordButton, descriptionLabel, submitButton].forEach(addSubview)
+        [backButton, titleLabel, oldPasswordField, newPasswordField, confirmPasswordField, descriptionLabel, submitButton].forEach(addSubview)
     }
     
     private func setupConstraints() {
@@ -172,30 +184,30 @@ class ChangePasswordView: UIView {
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).inset(30)
         }
         
-        oldPasswordButton.snp.makeConstraints { make in
+        oldPasswordField.snp.makeConstraints { make in
             make.top.equalTo(backButton.snp.bottom).offset(60)
             make.leading.trailing.equalToSuperview().inset(25)
             make.height.equalTo(50)
         }
-        
-        newPasswordButton.snp.makeConstraints { make in
-            make.top.equalTo(oldPasswordButton.snp.bottom).offset(16)
-            make.leading.trailing.height.equalTo(oldPasswordButton)
+
+        newPasswordField.snp.makeConstraints { make in
+            make.top.equalTo(oldPasswordField.snp.bottom).offset(16)
+            make.leading.trailing.height.equalTo(oldPasswordField)
         }
-        
-        confirmPasswordButton.snp.makeConstraints { make in
-            make.top.equalTo(newPasswordButton.snp.bottom).offset(16)
-            make.leading.trailing.height.equalTo(oldPasswordButton)
+
+        confirmPasswordField.snp.makeConstraints { make in
+            make.top.equalTo(newPasswordField.snp.bottom).offset(16)
+            make.leading.trailing.height.equalTo(oldPasswordField)
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(confirmPasswordButton.snp.bottom).offset(16)
-            make.leading.trailing.equalTo(oldPasswordButton)
+            make.top.equalTo(confirmPasswordField.snp.bottom).offset(16)
+            make.leading.trailing.equalTo(oldPasswordField)
         }
         
         submitButton.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(270)
-            make.leading.trailing.equalTo(confirmPasswordButton)
+            make.leading.trailing.equalTo(confirmPasswordField)
             make.height.equalTo(55)
         }
     }
