@@ -29,29 +29,54 @@ class ChangePasswordViewController: UIViewController {
     }
     
     private func setupActions() {
-        mainView.oldPasswordButton.addTarget(self, action: #selector(oldPasswordTapped), for: .touchUpInside)
-        mainView.newPasswordButton.addTarget(self, action: #selector(newPasswordTapped), for: .touchUpInside)
-        mainView.confirmPasswordButton.addTarget(self, action: #selector(confirmPasswordTapped), for: .touchUpInside)
+        // TextField Editing Handlers
+        mainView.oldPasswordField.addTarget(self, action: #selector(oldPasswordTapped), for: .editingDidBegin)
+        mainView.newPasswordField.addTarget(self, action: #selector(newPasswordTapped), for: .editingDidBegin)
+        mainView.confirmPasswordField.addTarget(self, action: #selector(confirmPasswordTapped), for: .editingDidBegin)
+        
         mainView.submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         mainView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         
+        mainView.oldPasswordField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        mainView.newPasswordField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        mainView.confirmPasswordField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+
+        
+        // Dismiss keyboard and reset highlights
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackgroundTap))
         tapGesture.cancelsTouchesInView = false
         mainView.addGestureRecognizer(tapGesture)
     }
     
+    private func validateFields() {
+        let isOldFilled = !(mainView.oldPasswordField.text ?? "").isEmpty
+        let isNewFilled = !(mainView.newPasswordField.text ?? "").isEmpty
+        let isConfirmFilled = !(mainView.confirmPasswordField.text ?? "").isEmpty
+        
+        if isOldFilled && isNewFilled && isConfirmFilled {
+            mainView.activateSubmitButton()
+        } else {
+            mainView.submitButton.isEnabled = false
+            mainView.submitButton.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        }
+    }
+    
+    @objc private func textFieldDidChange() {
+        validateFields()
+    }
+    
     @objc private func oldPasswordTapped() {
-        mainView.highlightButton(mainView.oldPasswordButton)
+        mainView.highlightButton(mainView.oldPasswordField)
         mainView.activateSubmitButton()
     }
     
     @objc private func newPasswordTapped() {
-        mainView.highlightButton(mainView.newPasswordButton)
+        mainView.highlightButton(mainView.newPasswordField)
         mainView.activateSubmitButton()
     }
     
     @objc private func confirmPasswordTapped() {
-        mainView.highlightButton(mainView.confirmPasswordButton)
+        mainView.highlightButton(mainView.confirmPasswordField)
         mainView.activateSubmitButton()
     }
     
@@ -66,13 +91,15 @@ class ChangePasswordViewController: UIViewController {
     @objc private func handleBackgroundTap(_ sender: UITapGestureRecognizer) {
         let location = sender.location(in: mainView)
         
-        if mainView.oldPasswordButton.frame.contains(location)
-            || mainView.newPasswordButton.frame.contains(location)
-            || mainView.confirmPasswordButton.frame.contains(location) {
+        if mainView.oldPasswordField.frame.contains(location)
+            || mainView.newPasswordField.frame.contains(location)
+            || mainView.confirmPasswordField.frame.contains(location) {
             return
         }
         
+        view.endEditing(true)
         mainView.resetAllButtonHighlights()
+        validateFields()
     }
     
     @objc private func backButtonTapped() {
