@@ -82,7 +82,7 @@ class PersonalInformationView: UIView {
         
         [firstNameField, lastNameField, emailField, phoneField].forEach {
             $0.layer.borderWidth = 0
-            $0.layer.borderColor = UIColor.clear.cgColor // Make sure it's clear here
+            $0.layer.borderColor = UIColor.clear.cgColor
             $0.backgroundColor = .primaryGrayDisableBackground
         }
         
