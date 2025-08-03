@@ -34,4 +34,20 @@ class AppConstant {
         static let confirmPasswordPlaceholder = "Confirm Password"
         static let footerText = "By joining, you agree with our Terms and Privacy Policy"
     }
+    
+    struct Profile {
+        static let title = "Profile"
+        static let accountSettings = "Account Settings"
+        static let generalInformation = "General Information"
+        static let support = "Support"
+        static let personalInfo = "Personal Information"
+        static let changePassword = "Change Password"
+        static let logout = "Logout"
+        static let privacyPolicy = "Privacy Policy"
+        static let refundPolicy = "Refund Policy"
+        static let termsAndConditions = "Terms & Conditions"
+        static let emailUs = "Email Us"
+        static let callUs = "Call Us"
+        static let followUs = "Follow us on social media"
+    }
 }

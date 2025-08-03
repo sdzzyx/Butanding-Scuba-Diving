@@ -93,6 +93,12 @@
 		27EA830A2E1E90A800D8CC31 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83082E1E90A800D8CC31 /* ReservationView.swift */; };
 		27EA83202E1E931A00D8CC31 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA831F2E1E931800D8CC31 /* TabItem.swift */; };
 		27EA83212E1E931A00D8CC31 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA831F2E1E931800D8CC31 /* TabItem.swift */; };
+		A84AAB4F2E23736700B5139B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB4E2E23736500B5139B /* ProfileModel.swift */; };
+		A84AAB502E23736700B5139B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB4E2E23736500B5139B /* ProfileModel.swift */; };
+		A84AAB522E23737200B5139B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB512E23736E00B5139B /* ProfileViewModel.swift */; };
+		A84AAB532E23737200B5139B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB512E23736E00B5139B /* ProfileViewModel.swift */; };
+		A84AAB552E23748600B5139B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB542E23747F00B5139B /* ProfileTableViewCell.swift */; };
+		A84AAB562E23748600B5139B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB542E23747F00B5139B /* ProfileTableViewCell.swift */; };
 		A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670602E1293F20017F98B /* SignUpViewController.swift */; };
@@ -171,6 +177,9 @@
 		27EA83052E1E909C00D8CC31 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		27EA83082E1E90A800D8CC31 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		27EA831F2E1E931800D8CC31 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		A84AAB4E2E23736500B5139B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		A84AAB512E23736E00B5139B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A84AAB542E23747F00B5139B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A8A6705D2E1293EB0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -331,6 +340,7 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A84AAB512E23736E00B5139B /* ProfileViewModel.swift */,
 				A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */,
 				27EA82E82E1E8F9C00D8CC31 /* TabBarViewModel.swift */,
 				A8A670632E1294050017F98B /* SignUpViewModel.swift */,
@@ -543,6 +553,7 @@
 		27EA82FB2E1E905C00D8CC31 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A84AAB542E23747F00B5139B /* ProfileTableViewCell.swift */,
 				27EA82FD2E1E907700D8CC31 /* ProfileView.swift */,
 			);
 			path = View;
@@ -575,6 +586,7 @@
 		27EA831E2E1E930E00D8CC31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A84AAB4E2E23736500B5139B /* ProfileModel.swift */,
 				A8A671162E1EA7C90017F98B /* WelcomeModel.swift */,
 				27EA831F2E1E931800D8CC31 /* TabItem.swift */,
 			);
@@ -849,10 +861,12 @@
 			files = (
 				27EA82F12E1E902400D8CC31 /* HomeViewController.swift in Sources */,
 				27EA80832DF86D6A00D8CC31 /* LoginView.swift in Sources */,
+				A84AAB4F2E23736700B5139B /* ProfileModel.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				27EA82F62E1E904900D8CC31 /* PackageView.swift in Sources */,
 				27EA83072E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
+				A84AAB552E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82EA2E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
 				27EA82E72E1E8F5800D8CC31 /* MainTabBarController.swift in Sources */,
 				A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */,
@@ -878,6 +892,7 @@
 				A8A670FD2E1EA5780017F98B /* OnBoardingView.swift in Sources */,
 				27EA80C02DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
 				27EA808C2DF87B9200D8CC31 /* SplashViewController.swift in Sources */,
+				A84AAB532E23737200B5139B /* ProfileViewModel.swift in Sources */,
 				27EA82EF2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819B2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
 				A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */,
@@ -907,10 +922,12 @@
 			files = (
 				27EA82F22E1E902400D8CC31 /* HomeViewController.swift in Sources */,
 				27EA80842DF86D6A00D8CC31 /* LoginView.swift in Sources */,
+				A84AAB502E23736700B5139B /* ProfileModel.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				27EA82F72E1E904900D8CC31 /* PackageView.swift in Sources */,
 				27EA83062E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
+				A84AAB562E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82E92E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
 				27EA82E62E1E8F5800D8CC31 /* MainTabBarController.swift in Sources */,
 				A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */,
@@ -936,6 +953,7 @@
 				A8A670FE2E1EA5780017F98B /* OnBoardingView.swift in Sources */,
 				27EA80BF2DF990F700D8CC31 /* CryptoUtils.swift in Sources */,
 				27EA808D2DF87B9200D8CC31 /* SplashViewController.swift in Sources */,
+				A84AAB522E23737200B5139B /* ProfileViewModel.swift in Sources */,
 				27EA82EE2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819C2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
 				A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */,
