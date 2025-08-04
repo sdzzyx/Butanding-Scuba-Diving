@@ -60,4 +60,14 @@ class AppConstant {
         static let updateButtonTitle = "Update"
 
     }
+    
+    struct ChangePassword {
+        static let title = "Change Password"
+        static let oldPasswordPlaceholder = "Old Password"
+        static let newPasswordPlaceholder = "New Password"
+        static let confirmNewPasswordPlaceholder = "Confirm New Password"
+        static let descriptionLabel = "Password must be at least 8 characters long and include an uppercase letter, a number, and a special character."
+        static let submitTitle = "Submit"
+        
+    }
 }
