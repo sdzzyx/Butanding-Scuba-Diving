@@ -107,6 +107,14 @@
 		A84AABFE2E2A638400B5139B /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AABFC2E2A638000B5139B /* PersonalInformationView.swift */; };
 		A84AAC002E2A639000B5139B /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AABFF2E2A638B00B5139B /* PersonalInformationViewController.swift */; };
 		A84AAC012E2A639000B5139B /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AABFF2E2A638B00B5139B /* PersonalInformationViewController.swift */; };
+		A84AAE342E4123C900B5139B /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE332E4123C100B5139B /* ChangePasswordModel.swift */; };
+		A84AAE352E4123C900B5139B /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE332E4123C100B5139B /* ChangePasswordModel.swift */; };
+		A84AAE372E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */; };
+		A84AAE382E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */; };
+		A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE392E41241C00B5139B /* ChangePasswordView.swift */; };
+		A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE392E41241C00B5139B /* ChangePasswordView.swift */; };
+		A84AAE3D2E41242800B5139B /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */; };
+		A84AAE3E2E41242800B5139B /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */; };
 		A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670602E1293F20017F98B /* SignUpViewController.swift */; };
@@ -192,6 +200,10 @@
 		A84AABF62E2A632F00B5139B /* PersonalInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewModel.swift; sourceTree = "<group>"; };
 		A84AABFC2E2A638000B5139B /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
 		A84AABFF2E2A638B00B5139B /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewController.swift; sourceTree = "<group>"; };
+		A84AAE332E4123C100B5139B /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		A84AAE392E41241C00B5139B /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		A8A6705D2E1293EB0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -352,6 +364,7 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */,
 				A84AAB512E23736E00B5139B /* ProfileViewModel.swift */,
 				A84AABF62E2A632F00B5139B /* PersonalInformationViewModel.swift */,
 				A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */,
@@ -382,6 +395,7 @@
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A84AAE2F2E4123A000B5139B /* Change Password */,
 				A84AABF92E2A634300B5139B /* Personal Information */,
 				A8A670F92E1EA5430017F98B /* Welcome */,
 				27EA82E42E1E8EDF00D8CC31 /* MainTabBar */,
@@ -600,6 +614,7 @@
 		27EA831E2E1E930E00D8CC31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A84AAE332E4123C100B5139B /* ChangePasswordModel.swift */,
 				A84AAB4E2E23736500B5139B /* ProfileModel.swift */,
 				A84AABF32E2A631600B5139B /* PersonalInformationModel.swift */,
 				A8A671162E1EA7C90017F98B /* WelcomeModel.swift */,
@@ -631,6 +646,31 @@
 				A84AABFF2E2A638B00B5139B /* PersonalInformationViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A84AAE2F2E4123A000B5139B /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+				A84AAE312E4123AE00B5139B /* ViewController */,
+				A84AAE302E4123AA00B5139B /* View */,
+			);
+			path = "Change Password";
+			sourceTree = "<group>";
+		};
+		A84AAE302E4123AA00B5139B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A84AAE392E41241C00B5139B /* ChangePasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A84AAE312E4123AE00B5139B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A8A6705A2E1293D60017F98B /* SignUp */ = {
@@ -905,7 +945,9 @@
 				A84AAB4F2E23736700B5139B /* ProfileModel.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
+				A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				27EA82F62E1E904900D8CC31 /* PackageView.swift in Sources */,
+				A84AAE372E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */,
 				27EA83072E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
 				A84AAB552E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82EA2E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
@@ -920,6 +962,7 @@
 				A8A671172E1EA7CC0017F98B /* WelcomeModel.swift in Sources */,
 				A84AAC002E2A639000B5139B /* PersonalInformationViewController.swift in Sources */,
 				27EA83212E1E931A00D8CC31 /* TabItem.swift in Sources */,
+				A84AAE352E4123C900B5139B /* ChangePasswordModel.swift in Sources */,
 				27EA83012E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
@@ -943,6 +986,7 @@
 				A8A671072E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
 				A8A671012E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
 				A8A6711B2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
+				A84AAE3E2E41242800B5139B /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,7 +1014,9 @@
 				A84AAB502E23736700B5139B /* ProfileModel.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
+				A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				27EA82F72E1E904900D8CC31 /* PackageView.swift in Sources */,
+				A84AAE382E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */,
 				27EA83062E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
 				A84AAB562E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82E92E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
@@ -985,6 +1031,7 @@
 				A8A671182E1EA7CC0017F98B /* WelcomeModel.swift in Sources */,
 				A84AAC012E2A639000B5139B /* PersonalInformationViewController.swift in Sources */,
 				27EA83202E1E931A00D8CC31 /* TabItem.swift in Sources */,
+				A84AAE342E4123C900B5139B /* ChangePasswordModel.swift in Sources */,
 				27EA83022E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
@@ -1008,6 +1055,7 @@
 				A8A671062E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
 				A8A671002E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
 				A8A6711C2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
+				A84AAE3D2E41242800B5139B /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
