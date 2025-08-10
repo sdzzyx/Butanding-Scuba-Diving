@@ -70,4 +70,15 @@ class AppConstant {
         static let submitTitle = "Submit"
         
     }
+    
+    struct Home {
+        static let logoImageName = "logo"
+        static let notificationImageName = "notification"
+        static let greetingText = "Hey John!"
+        static let subGreetingText = "What do you need today?"
+        static let sectionTitle = "Packages"
+        static let viewAllButtonText = "View All"
+        static let title = "Swim with the"
+        static let subtitle = "Gentle Giants of the Sea"
+    }
 }
