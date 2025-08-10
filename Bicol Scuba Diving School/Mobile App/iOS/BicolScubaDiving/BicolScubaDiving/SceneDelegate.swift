@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         splashVc.completionHandler = { [weak self] in
             DispatchQueue.main.async {
 
-                let onBoardingVc = ChangePasswordViewController()
+                let onBoardingVc = MainTabBarController()
                 self?.window?.rootViewController = onBoardingVc
                 UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
             }
