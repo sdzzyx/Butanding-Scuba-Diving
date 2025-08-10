@@ -6,28 +6,71 @@
 //
 
 import Foundation
-//import FirebaseFirestoreInternal
 import FirebaseFirestore
 
-class PackageViewModel: ObservableObject {
-    @Published var packages: [PackageModel] = []
-    private var db = Firestore.firestore()
+final class HomeViewModel {
     
+    // MARK: - Data Properties
+    private(set) var packages: [DivePackage] = []
+    var onDataUpdated: (() -> Void)?
+    
+    var galleryImages: [String] = []
+    var onGalleryFetched: (() -> Void)?
+    
+    // MARK: - Firestore Data Fetch
     func fetchPackages() {
-        db.collection("homepage-packages").getDocuments { snapshot, error in
-            if let error = error {
-                print("Error fetching documents: \(error)")
-                return
-            }
-            
-            guard let documents = snapshot?.documents else {
-                print("No documents found.")
-                return
-            }
-            
-            self.packages = documents.compactMap { doc in
-                PackageModel(id: doc.documentID, data: doc.data())
-            }
+        FirestoreService.shared.fetchDivePackages { [weak self] packages in
+            self?.packages = packages
+            self?.onDataUpdated?()
         }
+    }
+    
+    func fetchHomepageData() {
+        FirestoreService.shared.fetchHomepageData { [weak self] gallery in
+            self?.galleryImages = gallery
+            self?.onGalleryFetched?()
+        }
+    }
+    
+    // MARK: - Packages Helpers
+    func numberOfItems() -> Int {
+        return packages.count
+    }
+    
+    func package(at index: Int) -> DivePackage {
+        return packages[index]
+    }
+    
+    // MARK: - UI Configuration (from AppConstant)
+    var logoImage: UIImage? {
+        return UIImage(named: AppConstant.Home.logoImageName)
+    }
+    
+    var notificationImage: UIImage? {
+        return UIImage(named: AppConstant.Home.notificationImageName)
+    }
+    
+    var greetingText: String {
+        return AppConstant.Home.greetingText
+    }
+    
+    var subGreetingText: String {
+        return AppConstant.Home.subGreetingText
+    }
+    
+    var sectionTitleText: String {
+        return AppConstant.Home.sectionTitle
+    }
+    
+    var viewAllButtonText: String {
+        return AppConstant.Home.viewAllButtonText
+    }
+    
+    var homeTitleText: String {
+        return AppConstant.Home.title
+    }
+    
+    var homeSubtitleText: String {
+        return AppConstant.Home.subtitle
     }
 }
