@@ -93,6 +93,20 @@
 		27EA830A2E1E90A800D8CC31 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83082E1E90A800D8CC31 /* ReservationView.swift */; };
 		27EA83202E1E931A00D8CC31 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA831F2E1E931800D8CC31 /* TabItem.swift */; };
 		27EA83212E1E931A00D8CC31 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA831F2E1E931800D8CC31 /* TabItem.swift */; };
+		A83E4BBF2E43518D00B58D6E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BBE2E43518D00B58D6E /* FirebaseDatabase */; };
+		A83E4BC12E43518D00B58D6E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BC02E43518D00B58D6E /* FirebaseFirestore */; };
+		A83E4BD02E43680E00B58D6E /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BCF2E43680B00B58D6E /* PackageModel.swift */; };
+		A83E4BD12E43680E00B58D6E /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BCF2E43680B00B58D6E /* PackageModel.swift */; };
+		A83E4BD32E43681600B58D6E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BD22E43681100B58D6E /* HomeViewModel.swift */; };
+		A83E4BD42E43681600B58D6E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BD22E43681100B58D6E /* HomeViewModel.swift */; };
+		A83E4BD62E43691200B58D6E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BD52E43691200B58D6E /* FirebaseDatabase */; };
+		A83E4BD82E43691200B58D6E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BD72E43691200B58D6E /* FirebaseFirestore */; };
+		A83E4BDB2E436B2600B58D6E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BDA2E436B2000B58D6E /* FirestoreService.swift */; };
+		A83E4BDC2E436B2600B58D6E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BDA2E436B2000B58D6E /* FirestoreService.swift */; };
+		A83E4BDE2E436B6800B58D6E /* HomePackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BDD2E436B6200B58D6E /* HomePackageCell.swift */; };
+		A83E4BDF2E436B6800B58D6E /* HomePackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BDD2E436B6200B58D6E /* HomePackageCell.swift */; };
+		A83E4BE42E464A9200B58D6E /* GalleryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BE32E464A8E00B58D6E /* GalleryImageCell.swift */; };
+		A83E4BE52E464A9200B58D6E /* GalleryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BE32E464A8E00B58D6E /* GalleryImageCell.swift */; };
 		A84AAB4F2E23736700B5139B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB4E2E23736500B5139B /* ProfileModel.swift */; };
 		A84AAB502E23736700B5139B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB4E2E23736500B5139B /* ProfileModel.swift */; };
 		A84AAB522E23737200B5139B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAB512E23736E00B5139B /* ProfileViewModel.swift */; };
@@ -193,6 +207,11 @@
 		27EA83052E1E909C00D8CC31 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		27EA83082E1E90A800D8CC31 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		27EA831F2E1E931800D8CC31 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		A83E4BCF2E43680B00B58D6E /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
+		A83E4BD22E43681100B58D6E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A83E4BDA2E436B2000B58D6E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		A83E4BDD2E436B6200B58D6E /* HomePackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePackageCell.swift; sourceTree = "<group>"; };
+		A83E4BE32E464A8E00B58D6E /* GalleryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCell.swift; sourceTree = "<group>"; };
 		A84AAB4E2E23736500B5139B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		A84AAB512E23736E00B5139B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A84AAB542E23747F00B5139B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -220,6 +239,7 @@
 		27EA81092E0033EA00D8CC31 /* Exceptions for "Configuration" folder in "BicolScubaDiving_Prod" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Plists/GoogleService-Info_Dev.plist",
 				Plists/Info.plist,
 			);
 			target = 272362D12DF830B100C16E5E /* BicolScubaDiving_Prod */;
@@ -227,6 +247,7 @@
 		27EA810A2E0033EA00D8CC31 /* Exceptions for "Configuration" folder in "BicolScubaDiving_Dev" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Plists/GoogleService-Info_Prod.plist",
 				Plists/Info.plist,
 			);
 			target = 27EA80452DF83E1D00D8CC31 /* BicolScubaDiving_Dev */;
@@ -260,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83E4BBF2E43518D00B58D6E /* FirebaseDatabase in Frameworks */,
 				27EA807D2DF856CE00D8CC31 /* IQKeyboardManagerSwift in Frameworks */,
 				27EA80752DF856A700D8CC31 /* Kingfisher in Frameworks */,
 				27EA80792DF856B200D8CC31 /* FirebaseAuth in Frameworks */,
@@ -268,6 +290,7 @@
 				27EA807B2DF856B700D8CC31 /* FirebaseCore in Frameworks */,
 				27EA80712DF856A000D8CC31 /* SnapKit in Frameworks */,
 				27EA807F2DF856DA00D8CC31 /* FirebaseRemoteConfig in Frameworks */,
+				A83E4BC12E43518D00B58D6E /* FirebaseFirestore in Frameworks */,
 				27EA80BA2DF87EBF00D8CC31 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +313,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83E4BD62E43691200B58D6E /* FirebaseDatabase in Frameworks */,
 				27EA806D2DF8567300D8CC31 /* FirebaseAnalytics in Frameworks */,
 				27EA80652DF8563400D8CC31 /* Kingfisher in Frameworks */,
 				27EA80672DF8564200D8CC31 /* IQKeyboardManagerSwift in Frameworks */,
@@ -298,6 +322,7 @@
 				27EA806B2DF8566300D8CC31 /* FirebaseCore in Frameworks */,
 				27EA80692DF8565A00D8CC31 /* FirebaseRemoteConfig in Frameworks */,
 				27EA806F2DF8568C00D8CC31 /* FirebaseAuth in Frameworks */,
+				A83E4BD82E43691200B58D6E /* FirebaseFirestore in Frameworks */,
 				27EA80BC2DF9904F00D8CC31 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +389,7 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A83E4BD22E43681100B58D6E /* HomeViewModel.swift */,
 				A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */,
 				A84AAB512E23736E00B5139B /* ProfileViewModel.swift */,
 				A84AABF62E2A632F00B5139B /* PersonalInformationViewModel.swift */,
@@ -414,6 +440,7 @@
 		27EA803C2DF83B3300D8CC31 /* BicolScubaDiving */ = {
 			isa = PBXGroup;
 			children = (
+				A83E4BD92E436B1000B58D6E /* Service */,
 				27EA80BD2DF990EB00D8CC31 /* Utilities */,
 				27EA80542DF83FFA00D8CC31 /* Configuration */,
 				27EA80272DF83B3300D8CC31 /* Constants */,
@@ -549,6 +576,8 @@
 		27EA82EB2E1E8FFD00D8CC31 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A83E4BE32E464A8E00B58D6E /* GalleryImageCell.swift */,
+				A83E4BDD2E436B6200B58D6E /* HomePackageCell.swift */,
 				27EA82ED2E1E901500D8CC31 /* HomeView.swift */,
 			);
 			path = View;
@@ -614,6 +643,7 @@
 		27EA831E2E1E930E00D8CC31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A83E4BCF2E43680B00B58D6E /* PackageModel.swift */,
 				A84AAE332E4123C100B5139B /* ChangePasswordModel.swift */,
 				A84AAB4E2E23736500B5139B /* ProfileModel.swift */,
 				A84AABF32E2A631600B5139B /* PersonalInformationModel.swift */,
@@ -621,6 +651,14 @@
 				27EA831F2E1E931800D8CC31 /* TabItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A83E4BD92E436B1000B58D6E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A83E4BDA2E436B2000B58D6E /* FirestoreService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		A84AABF92E2A634300B5139B /* Personal Information */ = {
@@ -754,6 +792,8 @@
 				27EA807C2DF856CE00D8CC31 /* IQKeyboardManagerSwift */,
 				27EA807E2DF856DA00D8CC31 /* FirebaseRemoteConfig */,
 				27EA80B92DF87EBF00D8CC31 /* GoogleSignIn */,
+				A83E4BBE2E43518D00B58D6E /* FirebaseDatabase */,
+				A83E4BC02E43518D00B58D6E /* FirebaseFirestore */,
 			);
 			productName = BicolScubaDiving;
 			productReference = 272362D22DF830B100C16E5E /* BicolScubaDiving_Prod.app */;
@@ -831,6 +871,8 @@
 				27EA806C2DF8567300D8CC31 /* FirebaseAnalytics */,
 				27EA806E2DF8568C00D8CC31 /* FirebaseAuth */,
 				27EA80BB2DF9904F00D8CC31 /* GoogleSignIn */,
+				A83E4BD52E43691200B58D6E /* FirebaseDatabase */,
+				A83E4BD72E43691200B58D6E /* FirebaseFirestore */,
 			);
 			productName = BicolScubaDiving;
 			productReference = 27EA80522DF83E1D00D8CC31 /* BicolScubaDiving_Dev.app */;
@@ -941,8 +983,10 @@
 			files = (
 				27EA82F12E1E902400D8CC31 /* HomeViewController.swift in Sources */,
 				A84AABFD2E2A638400B5139B /* PersonalInformationView.swift in Sources */,
+				A83E4BDF2E436B6800B58D6E /* HomePackageCell.swift in Sources */,
 				27EA80832DF86D6A00D8CC31 /* LoginView.swift in Sources */,
 				A84AAB4F2E23736700B5139B /* ProfileModel.swift in Sources */,
+				A83E4BD02E43680E00B58D6E /* PackageModel.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
@@ -953,7 +997,9 @@
 				27EA82EA2E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
 				A84AABF82E2A633800B5139B /* PersonalInformationViewModel.swift in Sources */,
 				27EA82E72E1E8F5800D8CC31 /* MainTabBarController.swift in Sources */,
+				A83E4BD32E43681600B58D6E /* HomeViewModel.swift in Sources */,
 				A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */,
+				A83E4BE42E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
@@ -966,6 +1012,7 @@
 				27EA83012E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
+				A83E4BDC2E436B2600B58D6E /* FirestoreService.swift in Sources */,
 				A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */,
 				27EA81C72E09864100D8CC31 /* ExtensionButton.swift in Sources */,
 				27EA805D2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
@@ -1010,8 +1057,10 @@
 			files = (
 				27EA82F22E1E902400D8CC31 /* HomeViewController.swift in Sources */,
 				A84AABFE2E2A638400B5139B /* PersonalInformationView.swift in Sources */,
+				A83E4BDE2E436B6800B58D6E /* HomePackageCell.swift in Sources */,
 				27EA80842DF86D6A00D8CC31 /* LoginView.swift in Sources */,
 				A84AAB502E23736700B5139B /* ProfileModel.swift in Sources */,
+				A83E4BD12E43680E00B58D6E /* PackageModel.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
@@ -1022,7 +1071,9 @@
 				27EA82E92E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
 				A84AABF72E2A633800B5139B /* PersonalInformationViewModel.swift in Sources */,
 				27EA82E62E1E8F5800D8CC31 /* MainTabBarController.swift in Sources */,
+				A83E4BD42E43681600B58D6E /* HomeViewModel.swift in Sources */,
 				A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */,
+				A83E4BE52E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
@@ -1035,6 +1086,7 @@
 				27EA83022E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
+				A83E4BDB2E436B2600B58D6E /* FirestoreService.swift in Sources */,
 				A8A670622E1293F60017F98B /* SignUpViewController.swift in Sources */,
 				27EA81C82E09864100D8CC31 /* ExtensionButton.swift in Sources */,
 				27EA805E2DF850AF00D8CC31 /* AppConstant.swift in Sources */,
@@ -1364,7 +1416,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1375,7 +1427,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sti.bicolscubadiving.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.Bicolscubadiving.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1401,7 +1453,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_DISPLAY_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1412,13 +1464,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sti.bicolscubadiving.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sti.Bicolscubadiving.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = DEV;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1616,6 +1669,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 27EA80B82DF87E5F00D8CC31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		A83E4BBE2E43518D00B58D6E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 272363662DF836BD00C16E5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A83E4BC02E43518D00B58D6E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 272363662DF836BD00C16E5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		A83E4BD52E43691200B58D6E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 272363662DF836BD00C16E5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A83E4BD72E43691200B58D6E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 272363662DF836BD00C16E5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
