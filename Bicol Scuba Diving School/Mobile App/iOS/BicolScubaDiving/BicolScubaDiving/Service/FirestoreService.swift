@@ -14,7 +14,7 @@ final class FirestoreService {
     private init() {}
     
     func fetchDivePackages(completion: @escaping ([DivePackage]) -> Void) {
-        db.collection("homapage-packages").getDocuments { snapshot, error in
+        db.collection(AppConstant.FirestoreKeys.Collections.homepagePackages).getDocuments { snapshot, error in
             guard let documents = snapshot?.documents, error == nil else {
                 print("Firestore error: \(error?.localizedDescription ?? "Unknown error")")
                 completion([])
@@ -25,13 +25,13 @@ final class FirestoreService {
                 let data = doc.data()
                 return DivePackage(
                     id: doc.documentID,
-                    title: data["title"] as? String ?? "",
-                    description: data["description"] as? String ?? "",
-                    imageUrl: data["image_url"] as? String ?? "",
-                    price: data["price"] as? String ?? "",
-                    isActive: data["is_active"] as? Bool ?? false,
-                    totalSlot: data["total-slot"] as? Int ?? 0,
-                    bookedSlot: data["booked-slot"] as? Int ?? 0
+                    title: data[AppConstant.FirestoreKeys.Fields.title] as? String ?? "",
+                    description: data[AppConstant.FirestoreKeys.Fields.description] as? String ?? "",
+                    imageUrl: data[AppConstant.FirestoreKeys.Fields.imageUrl] as? String ?? "",
+                    price: data[AppConstant.FirestoreKeys.Fields.price] as? String ?? "",
+                    isActive: data[AppConstant.FirestoreKeys.Fields.isActive] as? Bool ?? false,
+                    totalSlot: data[AppConstant.FirestoreKeys.Fields.totalSlot] as? Int ?? 0,
+                    bookedSlot: data[AppConstant.FirestoreKeys.Fields.bookedSlot] as? Int ?? 0
                 )
             }
             
@@ -40,7 +40,7 @@ final class FirestoreService {
     }
     
     func fetchHomepageData(completion: @escaping ([String]) -> Void) {
-        let docRef = db.collection("homepage-data").document("homepage-data")
+        let docRef = db.collection(AppConstant.FirestoreKeys.Collections.homepageData).document(AppConstant.FirestoreKeys.Documents.homepageData)
         
         docRef.getDocument { snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
@@ -51,13 +51,13 @@ final class FirestoreService {
             
             var galleryImages: [String] = []
             
-            if let img1 = data["image"] as? String {
+            if let img1 = data[AppConstant.FirestoreKeys.Fields.image] as? String {
                 galleryImages.append(img1)
             }
-            if let img2 = data["imagetwo"] as? String {
+            if let img2 = data[AppConstant.FirestoreKeys.Fields.imageTwo] as? String {
                 galleryImages.append(img2)
             }
-            if let img3 = data["imagethree"] as? String {
+            if let img3 = data[AppConstant.FirestoreKeys.Fields.imageThree] as? String {
                 galleryImages.append(img3)
             }
             
