@@ -24,11 +24,12 @@ class SignUpViewController: UIViewController {
     }
     
     private func bindViewActions() {
-        signUpView.onSubmitTapped = { [weak self] firstName, lastName, email, password, confirmPassword in
+        signUpView.onSubmitTapped = { [weak self] firstName, lastName, email, phoneNumber, password, confirmPassword in
             self?.signUpViewModel.submit(
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
+                phoneNumber: phoneNumber,
                 password: password,
                 confirmPassword: confirmPassword
             )
