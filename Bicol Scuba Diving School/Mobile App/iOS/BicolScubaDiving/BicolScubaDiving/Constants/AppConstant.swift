@@ -81,4 +81,28 @@ class AppConstant {
         static let title = "Swim with the"
         static let subtitle = "Gentle Giants of the Sea"
     }
+    
+    struct FirestoreKeys {
+        struct Collections {
+            static let homepagePackages = "homapage-packages"
+            static let homepageData = "homepage-data"
+        }
+        
+        struct Documents {
+            static let homepageData = "homepage-data"
+        }
+        
+        struct Fields {
+            static let title = "title"
+            static let description = "description"
+            static let imageUrl = "image_url"
+            static let price = "price"
+            static let isActive = "is_active"
+            static let totalSlot = "total-slot"
+            static let bookedSlot = "booked-slot"
+            static let image = "image"
+            static let imageTwo = "imagetwo"
+            static let imageThree = "imagethree"
+        }
+    }
 }
