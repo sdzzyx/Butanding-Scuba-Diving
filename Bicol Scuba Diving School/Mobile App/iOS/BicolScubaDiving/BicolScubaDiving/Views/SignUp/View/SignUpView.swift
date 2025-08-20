@@ -11,7 +11,7 @@ import SnapKit
 class SignUpView: UIView {
     
     // MARK: - Callbacks
-    var onSubmitTapped: ((String, String, String, String, String) -> Void)?
+    var onSubmitTapped: ((String, String, String, String, String, String) -> Void)?
     var onBackTapped: (() -> Void)?
     var onTextFieldDidBeginEditing: ((UITextField) -> Void)?
     var onTextFieldDidEndEditing: ((UITextField) -> Void)?
@@ -49,6 +49,14 @@ class SignUpView: UIView {
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.keyboardType = .emailAddress
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
+        return textField
+    }()
+    
+    let phoneNumberTextField: CustomTextField = {
+        let textField = CustomTextField()
+        textField.keyboardType = .phonePad
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         return textField
@@ -104,7 +112,7 @@ class SignUpView: UIView {
     private func setupViews() {
         [backButton, signUpLabel,
          firstNameTextField, lastNameTextField,
-         emailTextField, passwordTextField, confirmPasswordTextField,
+         emailTextField, phoneNumberTextField, passwordTextField, confirmPasswordTextField,
          submitButton, privacyPolicyLabel].forEach(addSubview)
     }
     
@@ -114,7 +122,7 @@ class SignUpView: UIView {
     }
     
     private func setupObservers() {
-        [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, confirmPasswordTextField].forEach {
+        [firstNameTextField, lastNameTextField, emailTextField, phoneNumberTextField, passwordTextField, confirmPasswordTextField].forEach {
             $0.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
             $0.delegate = self // Set delegate to self to handle text field appearance
         }
@@ -132,6 +140,7 @@ class SignUpView: UIView {
         firstNameTextField.setPlaceholder(data.firstNamePlaceholder)
         lastNameTextField.setPlaceholder(data.lastNamePlaceholder)
         emailTextField.setPlaceholder(data.emailPlaceholder)
+        phoneNumberTextField.setPlaceholder(data.phoneNumberPlaceholder)
         passwordTextField.setPlaceholder(data.passwordPlaceholder)
         confirmPasswordTextField.setPlaceholder(data.confirmPasswordPlaceholder)
         submitButton.setTitle(data.submitButtonTitle, for: .normal)
@@ -180,7 +189,7 @@ class SignUpView: UIView {
     
     // MARK: - Actions
     @objc private func textFieldsDidChange() {
-        let isFilled = ![firstNameTextField, lastNameTextField, emailTextField, passwordTextField, confirmPasswordTextField]
+        let isFilled = ![firstNameTextField, lastNameTextField, emailTextField, phoneNumberTextField, passwordTextField, confirmPasswordTextField]
             .map { $0.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true }
             .contains(true)
         submitButton.isEnabled = isFilled
@@ -194,10 +203,11 @@ class SignUpView: UIView {
         guard let firstName = firstNameTextField.text,
               let lastName = lastNameTextField.text,
               let email = emailTextField.text,
+              let phoneNumber = phoneNumberTextField.text,
               let password = passwordTextField.text,
               let confirmPassword = confirmPasswordTextField.text else { return }
         
-        onSubmitTapped?(firstName, lastName, email, password, confirmPassword)
+        onSubmitTapped?(firstName, lastName, email, phoneNumber, password, confirmPassword)
     }
     
     @objc private func dismissKeyboard() {
@@ -235,9 +245,15 @@ class SignUpView: UIView {
             make.height.equalTo(50)
         }
         
-        passwordTextField.snp.makeConstraints { make in
+        phoneNumberTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(16)
             make.leading.trailing.equalTo(emailTextField)
+            make.height.equalTo(50)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(16)
+            make.leading.trailing.equalTo(phoneNumberTextField)
             make.height.equalTo(50)
         }
         
@@ -248,7 +264,7 @@ class SignUpView: UIView {
         }
         
         submitButton.snp.makeConstraints { make in
-            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(220)
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(190)
             make.leading.trailing.equalTo(confirmPasswordTextField)
             make.height.equalTo(55)
         }

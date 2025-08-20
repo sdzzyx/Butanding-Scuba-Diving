@@ -13,6 +13,7 @@ struct SignUpViewData {
     let firstNamePlaceholder: String
     let lastNamePlaceholder: String
     let emailPlaceholder: String
+    let phoneNumberPlaceholder: String
     let passwordPlaceholder: String
     let confirmPasswordPlaceholder: String
     let submitButtonTitle: String
@@ -29,6 +30,7 @@ class SignUpViewModel {
             firstNamePlaceholder: AppConstant.SignUp.firstNamePlaceholder,
             lastNamePlaceholder: AppConstant.SignUp.lastNamePlaceholder,
             emailPlaceholder: AppConstant.SignUp.emailPlaceholder,
+            phoneNumberPlaceholder: AppConstant.SignUp.phoneNumberPlaceholder,
             passwordPlaceholder: AppConstant.SignUp.passwordPlaceholder,
             confirmPasswordPlaceholder: AppConstant.SignUp.confirmPasswordPlaceholder,
             submitButtonTitle: AppConstant.SignUp.submitTitle,
@@ -37,7 +39,7 @@ class SignUpViewModel {
         )
     }
     
-    func submit(firstName: String, lastName: String, email: String, password: String, confirmPassword: String) {
+    func submit(firstName: String, lastName: String, email: String, phoneNumber: String, password: String, confirmPassword: String) {
         
     }
     
