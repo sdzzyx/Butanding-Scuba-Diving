@@ -72,12 +72,9 @@ final class PackageDetailView: UIView {
     }()
     
     let bookButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = CustomButton()
         button.setTitle(AppConstant.PackagesDetail.bookButtonTitle, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .primaryOrange
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = .roboto(.bold, size: 16)
+        button.isEnabled = true
         return button
     }()
     
