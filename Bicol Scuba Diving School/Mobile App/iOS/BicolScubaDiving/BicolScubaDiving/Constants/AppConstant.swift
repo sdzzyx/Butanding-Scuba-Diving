@@ -106,4 +106,9 @@ class AppConstant {
             static let imageThree = "imagethree"
         }
     }
+    
+    struct Packages {
+        static let logo = "logo"
+        static let packageTitle = "Diving Packages"
+    }
 }

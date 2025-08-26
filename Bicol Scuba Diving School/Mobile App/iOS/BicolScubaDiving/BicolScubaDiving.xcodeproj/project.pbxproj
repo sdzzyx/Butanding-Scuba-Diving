@@ -149,6 +149,10 @@
 		A8A671182E1EA7CC0017F98B /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A671162E1EA7C90017F98B /* WelcomeModel.swift */; };
 		A8A6711B2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */; };
 		A8A6711C2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */; };
+		A8F6610B2E55F8E700CA5B2F /* PackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6610A2E55F8E300CA5B2F /* PackageViewModel.swift */; };
+		A8F6610C2E55F8E700CA5B2F /* PackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6610A2E55F8E300CA5B2F /* PackageViewModel.swift */; };
+		A8F6610E2E55F92000CA5B2F /* PackagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6610D2E55F91C00CA5B2F /* PackagCell.swift */; };
+		A8F6610F2E55F92000CA5B2F /* PackagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6610D2E55F91C00CA5B2F /* PackagCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +237,8 @@
 		A8A671052E1EA5B70017F98B /* OnBoardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCell.swift; sourceTree = "<group>"; };
 		A8A671162E1EA7C90017F98B /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
 		A8A6711A2E1EA8420017F98B /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		A8F6610A2E55F8E300CA5B2F /* PackageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewModel.swift; sourceTree = "<group>"; };
+		A8F6610D2E55F91C00CA5B2F /* PackagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -389,6 +395,7 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8F6610A2E55F8E300CA5B2F /* PackageViewModel.swift */,
 				A83E4BD22E43681100B58D6E /* HomeViewModel.swift */,
 				A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */,
 				A84AAB512E23736E00B5139B /* ProfileViewModel.swift */,
@@ -594,6 +601,7 @@
 		27EA82F32E1E903000D8CC31 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				A8F6610D2E55F91C00CA5B2F /* PackagCell.swift */,
 				27EA82F52E1E904900D8CC31 /* PackageView.swift */,
 			);
 			path = VIew;
@@ -1019,6 +1027,7 @@
 				27EA83092E1E90A800D8CC31 /* ReservationView.swift in Sources */,
 				27EA80422DF83B3300D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA808A2DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				A8F6610B2E55F8E700CA5B2F /* PackageViewModel.swift in Sources */,
 				A8A671032E1EA5B30017F98B /* CustomPageControl.swift in Sources */,
 				A84AABF42E2A631600B5139B /* PersonalInformationModel.swift in Sources */,
 				27EA81982E09144D00D8CC31 /* CustomTextField.swift in Sources */,
@@ -1030,6 +1039,7 @@
 				27EA82EF2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819B2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
 				A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */,
+				A8F6610E2E55F92000CA5B2F /* PackagCell.swift in Sources */,
 				A8A671072E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
 				A8A671012E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
 				A8A6711B2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
@@ -1093,6 +1103,7 @@
 				27EA830A2E1E90A800D8CC31 /* ReservationView.swift in Sources */,
 				27EA80492DF83E1D00D8CC31 /* SceneDelegate.swift in Sources */,
 				27EA80892DF86EC900D8CC31 /* LoginViewModel.swift in Sources */,
+				A8F6610C2E55F8E700CA5B2F /* PackageViewModel.swift in Sources */,
 				A8A671042E1EA5B30017F98B /* CustomPageControl.swift in Sources */,
 				A84AABF52E2A631600B5139B /* PersonalInformationModel.swift in Sources */,
 				27EA81972E09144D00D8CC31 /* CustomTextField.swift in Sources */,
@@ -1104,6 +1115,7 @@
 				27EA82EE2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819C2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
 				A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */,
+				A8F6610F2E55F92000CA5B2F /* PackagCell.swift in Sources */,
 				A8A671062E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
 				A8A671002E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
 				A8A6711C2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
