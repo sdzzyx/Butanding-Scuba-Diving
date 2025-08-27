@@ -113,21 +113,21 @@ class AppConstant {
     }
     
     struct PackagesDetail {
-            static let logo = "back-detail-logo"
-            static let descriptionTitle = "Description"
-            static let priceTitle = "Price"
-            static let slotTitle = "Slot Available"
-            static let bookButtonTitle = "Book"
-        }
+        static let logo = "back-detail-logo"
+        static let descriptionTitle = "Description"
+        static let priceTitle = "Price"
+        static let slotTitle = "Slot Available"
+        static let bookButtonTitle = "Book"
+    }
+    
+    struct Reservation {
+        static let logo = "logo"
+        static let reservationTitle = "My Booking"
         
-        struct Reservation {
-            static let logo = "logo"
-            static let reservationTitle = "My Booking"
-            
-            struct Tabs {
-                static let active = "Active"
-                static let completed = "Completed"
-                static let cancelled = "Cancelled"
-            }
+        struct Tabs {
+            static let active = "Active"
+            static let completed = "Completed"
+            static let cancelled = "Cancelled"
         }
+    }
 }
