@@ -70,8 +70,11 @@ extension PackageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
-    
-    
-    
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let package = viewModel.package(at: indexPath.row)
+        let detailVM = PackageDetailViewModel(package: package)
+        let detailVC = PackageDetailViewController(viewModel: detailVM)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
