@@ -130,4 +130,35 @@ class AppConstant {
             static let cancelled = "Cancelled"
         }
     }
+    
+    struct Booking {
+        static let logo = "logo"
+        static let bookingTitle = "Booking"
+        static let informationTitle = "Information"
+        static let nameTitle = "Name:"
+        static let emailTitle = "Email:"
+        static let namePlaceholder = "Juan Dela Cruz"
+        static let emailPlaceholder = "juan@example.com"
+        static let dateReservationTitle = "Date of Reservation"
+        static let preferreDateTitle = "Preferred Date:"
+        static let preferredDatePlaceholder = "Tap to select available date"
+        static let additionalInformationTitle = "Additional Information"
+        static let mobileNumberTitle = "Mobile Number:"
+        static let mobileNumberPlaceholder = "Tap to select Mobile Number"
+        static let amountTitle = "Amount"
+        static let priceTitle = "Price:"
+        static let continueButtonTitle = "Continue"
+    }
+    
+    struct Payment {
+        static let logo = "logo"
+        static let paymentTitle = "Payment Method"
+        static let cashTitle = "Cash"
+        static let cashPaymentTitle = "Cash"
+        static let cashLogo = "cash-logo"
+        static let morePaymentOptionsTitle = "More Payment Options"
+        static let gcashLogo = "gcash-logo"
+        static let paypalLogo = "paypal-logo"
+        static let continueButtonTitle = "Continue"
+    }
 }
