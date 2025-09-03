@@ -41,6 +41,10 @@ extension UIColor {
         return UIColor(hex: "A6A8AA") ?? .darkText
     }
     
+    static var primaryLightGrayColor: UIColor {
+        return UIColor(hex: "BCBCBC") ?? .darkText
+    }
+    
     static var primaryGrayDarkTextColor: UIColor {
         return UIColor(hex: "9C9C9C") ?? .darkText
     }
