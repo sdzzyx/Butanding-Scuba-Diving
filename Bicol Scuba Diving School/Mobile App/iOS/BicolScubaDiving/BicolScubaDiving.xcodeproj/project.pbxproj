@@ -129,6 +129,20 @@
 		A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE392E41241C00B5139B /* ChangePasswordView.swift */; };
 		A84AAE3D2E41242800B5139B /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */; };
 		A84AAE3E2E41242800B5139B /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */; };
+		A89B5EA32E67DD2B00EE55D3 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA22E67DD2900EE55D3 /* BookingView.swift */; };
+		A89B5EA42E67DD2B00EE55D3 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA22E67DD2900EE55D3 /* BookingView.swift */; };
+		A89B5EA62E67DD3200EE55D3 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA52E67DD2E00EE55D3 /* BookingViewController.swift */; };
+		A89B5EA72E67DD3200EE55D3 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA52E67DD2E00EE55D3 /* BookingViewController.swift */; };
+		A89B5EA92E67DD3700EE55D3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */; };
+		A89B5EAA2E67DD3700EE55D3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */; };
+		A89B5EAC2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */; };
+		A89B5EAD2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */; };
+		A89B5EAF2E67DD5B00EE55D3 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */; };
+		A89B5EB02E67DD5B00EE55D3 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */; };
+		A89B5EB22E67DD6500EE55D3 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */; };
+		A89B5EB32E67DD6500EE55D3 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */; };
+		A89B5EB52E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */; };
+		A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */; };
 		A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670602E1293F20017F98B /* SignUpViewController.swift */; };
@@ -237,6 +251,13 @@
 		A84AAE362E4123CD00B5139B /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		A84AAE392E41241C00B5139B /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A84AAE3C2E41242200B5139B /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		A89B5EA22E67DD2900EE55D3 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		A89B5EA52E67DD2E00EE55D3 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodRow.swift; sourceTree = "<group>"; };
+		A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		A8A6705D2E1293EB0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -410,6 +431,8 @@
 		27EA80322DF83B3300D8CC31 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */,
+				A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */,
 				A8F662402E5DA2CA00CA5B2F /* PackageDetailViewModel.swift */,
 				A8F6623D2E5DA2B500CA5B2F /* ReservationViewModel.swift */,
 				A8F6610A2E55F8E300CA5B2F /* PackageViewModel.swift */,
@@ -445,6 +468,8 @@
 		27EA80382DF83B3300D8CC31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A89B5E9F2E67DD0700EE55D3 /* Payment */,
+				A89B5E9C2E67DCFA00EE55D3 /* Booking */,
 				A84AAE2F2E4123A000B5139B /* Change Password */,
 				A84AABF92E2A634300B5139B /* Personal Information */,
 				A8A670F92E1EA5430017F98B /* Welcome */,
@@ -739,6 +764,57 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		A89B5E9C2E67DCFA00EE55D3 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5E9E2E67DD0300EE55D3 /* Controller */,
+				A89B5E9D2E67DCFF00EE55D3 /* View */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		A89B5E9D2E67DCFF00EE55D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5EA22E67DD2900EE55D3 /* BookingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A89B5E9E2E67DD0300EE55D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5EA52E67DD2E00EE55D3 /* BookingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A89B5E9F2E67DD0700EE55D3 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5EA12E67DD2300EE55D3 /* Controller */,
+				A89B5EA02E67DD1D00EE55D3 /* View */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		A89B5EA02E67DD1D00EE55D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */,
+				A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A89B5EA12E67DD2300EE55D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A8A6705A2E1293D60017F98B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,18 +1095,22 @@
 				A8F6624B2E5DC9AE00CA5B2F /* PackageDetailViewController.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
+				A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
 				27EA82F62E1E904900D8CC31 /* PackageView.swift in Sources */,
 				A84AAE372E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */,
 				27EA83072E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
+				A89B5EA32E67DD2B00EE55D3 /* BookingView.swift in Sources */,
 				A8F6623E2E5DA2B900CA5B2F /* ReservationViewModel.swift in Sources */,
 				A84AAB552E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82EA2E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
 				A84AABF82E2A633800B5139B /* PersonalInformationViewModel.swift in Sources */,
+				A89B5EA62E67DD3200EE55D3 /* BookingViewController.swift in Sources */,
 				27EA82E72E1E8F5800D8CC31 /* MainTabBarController.swift in Sources */,
 				A83E4BD32E43681600B58D6E /* HomeViewModel.swift in Sources */,
 				A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */,
 				A83E4BE42E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
+				A89B5EAD2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C42E09821300D8CC31 /* ExtensionString.swift in Sources */,
@@ -1043,6 +1123,7 @@
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
 				A83E4BDC2E436B2600B58D6E /* FirestoreService.swift in Sources */,
+				A89B5EAA2E67DD3700EE55D3 /* PaymentView.swift in Sources */,
 				A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */,
 				27EA81C72E09864100D8CC31 /* ExtensionButton.swift in Sources */,
 				A8F662472E5DC98E00CA5B2F /* PackageDetailView.swift in Sources */,
@@ -1063,8 +1144,10 @@
 				A84AAB532E23737200B5139B /* ProfileViewModel.swift in Sources */,
 				27EA82EF2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819B2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
+				A89B5EB32E67DD6500EE55D3 /* BookingViewModel.swift in Sources */,
 				A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */,
 				A8F6610E2E55F92000CA5B2F /* PackagCell.swift in Sources */,
+				A89B5EAF2E67DD5B00EE55D3 /* PaymentViewController.swift in Sources */,
 				A8A671072E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
 				A8A671012E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
 				A8A6711B2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
@@ -1100,18 +1183,22 @@
 				A8F6624A2E5DC9AE00CA5B2F /* PackageDetailViewController.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
+				A89B5EB52E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
 				27EA82F72E1E904900D8CC31 /* PackageView.swift in Sources */,
 				A84AAE382E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */,
 				27EA83062E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
+				A89B5EA42E67DD2B00EE55D3 /* BookingView.swift in Sources */,
 				A8F6623F2E5DA2B900CA5B2F /* ReservationViewModel.swift in Sources */,
 				A84AAB562E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82E92E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
 				A84AABF72E2A633800B5139B /* PersonalInformationViewModel.swift in Sources */,
+				A89B5EA72E67DD3200EE55D3 /* BookingViewController.swift in Sources */,
 				27EA82E62E1E8F5800D8CC31 /* MainTabBarController.swift in Sources */,
 				A83E4BD42E43681600B58D6E /* HomeViewModel.swift in Sources */,
 				A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */,
 				A83E4BE52E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
+				A89B5EAC2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */,
@@ -1124,6 +1211,7 @@
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
 				A83E4BDB2E436B2600B58D6E /* FirestoreService.swift in Sources */,
+				A89B5EA92E67DD3700EE55D3 /* PaymentView.swift in Sources */,
 				A8A670622E1293F60017F98B /* SignUpViewController.swift in Sources */,
 				27EA81C82E09864100D8CC31 /* ExtensionButton.swift in Sources */,
 				A8F662482E5DC98E00CA5B2F /* PackageDetailView.swift in Sources */,
@@ -1144,8 +1232,10 @@
 				A84AAB522E23737200B5139B /* ProfileViewModel.swift in Sources */,
 				27EA82EE2E1E901500D8CC31 /* HomeView.swift in Sources */,
 				27EA819C2E09160B00D8CC31 /* ExtensionColor.swift in Sources */,
+				A89B5EB22E67DD6500EE55D3 /* BookingViewModel.swift in Sources */,
 				A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */,
 				A8F6610F2E55F92000CA5B2F /* PackagCell.swift in Sources */,
+				A89B5EB02E67DD5B00EE55D3 /* PaymentViewController.swift in Sources */,
 				A8A671062E1EA5BB0017F98B /* OnBoardingCell.swift in Sources */,
 				A8A671002E1EA5800017F98B /* OnBoardingViewController.swift in Sources */,
 				A8A6711C2E1EA8480017F98B /* OnBoardingViewModel.swift in Sources */,
