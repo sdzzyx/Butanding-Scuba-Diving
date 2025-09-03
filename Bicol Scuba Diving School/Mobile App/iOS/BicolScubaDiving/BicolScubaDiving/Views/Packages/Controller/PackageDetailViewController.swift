@@ -73,7 +73,8 @@ final class PackageDetailViewController: UIViewController {
     }
     
     @objc private func bookTapped() {
-        print("Book button tapped for: \(viewModel.title)")
         // Navigate to booking flow
+        let bookingVC = BookingViewController(package: viewModel)
+        navigationController?.pushViewController(bookingVC, animated: true)
     }
 }
