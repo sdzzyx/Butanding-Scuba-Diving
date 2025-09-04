@@ -57,17 +57,17 @@ class PaymentViewController: UIViewController {
     // MARK: - Selection Handlers
     @objc private func selectCash() {
         updateSelection(selected: paymentView.cashRow)
-        viewModel.selectMethod(at: 0)
+        viewModel.selectMethod(.cash)
     }
     
     @objc private func selectGCash() {
         updateSelection(selected: paymentView.gcashRow)
-        viewModel.selectMethod(at: 1)
+        viewModel.selectMethod(.gcash)
     }
     
     @objc private func selectPayPal() {
         updateSelection(selected: paymentView.paypalRow)
-        viewModel.selectMethod(at: 2)
+        viewModel.selectMethod(.paypal)
     }
     
     private func updateSelection(selected row: PaymentMethodRow) {
