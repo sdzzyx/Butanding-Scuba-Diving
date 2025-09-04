@@ -160,5 +160,7 @@ class AppConstant {
         static let gcashLogo = "gcash-logo"
         static let paypalLogo = "paypal-logo"
         static let continueButtonTitle = "Continue"
+        static let paymentHighlightsTitle = "Payment"
+        static let methodHighlightsTitle = "Method"
     }
 }
