@@ -143,6 +143,8 @@
 		A89B5EB32E67DD6500EE55D3 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */; };
 		A89B5EB52E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */; };
 		A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */; };
+		A89B5EB92E69989000EE55D3 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */; };
+		A89B5EBA2E69989000EE55D3 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */; };
 		A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670602E1293F20017F98B /* SignUpViewController.swift */; };
@@ -258,6 +260,7 @@
 		A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		A8A6705D2E1293EB0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -489,6 +492,7 @@
 		27EA803C2DF83B3300D8CC31 /* BicolScubaDiving */ = {
 			isa = PBXGroup;
 			children = (
+				A89B5EB72E69987900EE55D3 /* Enumerator */,
 				A83E4BD92E436B1000B58D6E /* Service */,
 				27EA80BD2DF990EB00D8CC31 /* Utilities */,
 				27EA80542DF83FFA00D8CC31 /* Configuration */,
@@ -815,6 +819,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A89B5EB72E69987900EE55D3 /* Enumerator */ = {
+			isa = PBXGroup;
+			children = (
+				A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */,
+			);
+			path = Enumerator;
+			sourceTree = "<group>";
+		};
 		A8A6705A2E1293D60017F98B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1111,6 +1123,7 @@
 				A83E4BE42E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
 				A89B5EAD2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */,
+				A89B5EB92E69989000EE55D3 /* PaymentMethod.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C42E09821300D8CC31 /* ExtensionString.swift in Sources */,
@@ -1199,6 +1212,7 @@
 				A83E4BE52E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
 				A89B5EAC2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */,
+				A89B5EBA2E69989000EE55D3 /* PaymentMethod.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
 				27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */,
