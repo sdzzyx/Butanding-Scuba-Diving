@@ -10,12 +10,8 @@ import Foundation
 class PaymentViewModel {
     
     // MARK: - Properties
-    private(set) var paymentMethods: [String] = [
-        AppConstant.Payment.cashTitle,
-        AppConstant.Payment.morePaymentOptionsTitle
-    ]
-    
-    private(set) var selectedMethod: String?
+    private(set) var paymentMethods: [PaymentMethod] = PaymentMethod.allCases
+    private(set) var selectedMethod: PaymentMethod?
     
     var isLoading: Bool = false {
         didSet {
@@ -26,7 +22,7 @@ class PaymentViewModel {
     // MARK: - Callbacks for UI Binding
     var onLoadingStateChange: ((Bool) -> Void)?
     var onPaymentMethodsLoaded: (() -> Void)?
-    var onMethodSelected: ((String) -> Void)?
+    var onMethodSelected: ((PaymentMethod) -> Void)?
     
     // MARK: - Methods
     func fetchPaymentMethods() {
@@ -37,9 +33,8 @@ class PaymentViewModel {
         }
     }
     
-    func selectMethod(at index: Int) {
-        guard index < paymentMethods.count else { return }
-        selectedMethod = paymentMethods[index]
-        onMethodSelected?(selectedMethod!)
+    func selectMethod(_ method: PaymentMethod) {
+        selectedMethod = method
+        onMethodSelected?(method)
     }
 }
