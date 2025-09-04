@@ -22,12 +22,12 @@ class PaymentView: UIView {
         let label = UILabel()
         let highlights = [
             NSAttributedString.HighlightStyle(
-                substring: "Payment",
+                substring: AppConstant.Payment.paymentHighlightsTitle,
                 font: .roboto(.bold, size: 28),
                 color: .primaryBlueColor
             ),
             NSAttributedString.HighlightStyle(
-                substring: "Method",
+                substring: AppConstant.Payment.methodHighlightsTitle,
                 font: .roboto(.bold, size: 28),
                 color: .primaryOrange
             )
