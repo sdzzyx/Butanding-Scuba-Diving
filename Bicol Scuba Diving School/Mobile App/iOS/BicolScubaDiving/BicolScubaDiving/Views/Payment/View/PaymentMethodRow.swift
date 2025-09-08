@@ -74,6 +74,7 @@ class PaymentMethodRow: UIView {
             addSubview(mainStack)
             mainStack.snp.makeConstraints { make in
                 make.edges.equalToSuperview().inset(12)
+                make.height.equalTo(30)
             }
         }
     }
