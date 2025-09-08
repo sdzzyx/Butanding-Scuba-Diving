@@ -19,14 +19,22 @@ class PaymentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         setupBindings()
         viewModel.fetchPaymentMethods()
-        setupActions()
     }
     
-    // MARK: - Bindings with ViewModel
+    private func setupTableView() {
+        paymentView.tableView.register(UITableViewCell.self,
+                                       forCellReuseIdentifier: PaymentMethodCell.identifier)
+        paymentView.tableView.register(PaymentSectionHeaderView.self,
+                                       forHeaderFooterViewReuseIdentifier: PaymentSectionHeaderView.identifier)
+        paymentView.tableView.dataSource = self
+        paymentView.tableView.delegate = self
+    }
+    
+    // MARK: - Bindings
     private func setupBindings() {
-
         viewModel.onLoadingStateChange = { [weak self] isLoading in
             DispatchQueue.main.async {
                 if isLoading {
@@ -38,47 +46,62 @@ class PaymentViewController: UIViewController {
         }
         
         viewModel.onPaymentMethodsLoaded = { [weak self] in
-            guard let self = self else { return }
-            print("Loaded methods: \(self.viewModel.paymentMethods)")
+            DispatchQueue.main.async {
+                self?.paymentView.tableView.reloadData()
+            }
         }
         
         viewModel.onMethodSelected = { selected in
-            print("Selected: \(selected)")
+            print("Selected method: \(selected.type)")
         }
     }
-    
-    // MARK: - Setup Actions
-    private func setupActions() {
-        paymentView.cashRow.radioButton.addTarget(self, action: #selector(selectCash), for: .touchUpInside)
-        paymentView.gcashRow.radioButton.addTarget(self, action: #selector(selectGCash), for: .touchUpInside)
-        paymentView.paypalRow.radioButton.addTarget(self, action: #selector(selectPayPal), for: .touchUpInside)
+}
+
+extension PaymentViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return PaymentMethodSection.allCases.count
     }
     
-    // MARK: - Selection Handlers
-    @objc private func selectCash() {
-        updateSelection(selected: paymentView.cashRow)
-        viewModel.selectMethod(.cash)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionType = PaymentMethodSection(rawValue: section)!
+        return viewModel.methods(for: sectionType).count
     }
     
-    @objc private func selectGCash() {
-        updateSelection(selected: paymentView.gcashRow)
-        viewModel.selectMethod(.gcash)
-    }
-    
-    @objc private func selectPayPal() {
-        updateSelection(selected: paymentView.paypalRow)
-        viewModel.selectMethod(.paypal)
-    }
-    
-    private func updateSelection(selected row: PaymentMethodRow) {
-        
-        [paymentView.cashRow, paymentView.gcashRow, paymentView.paypalRow].forEach {
-            $0.radioButton.isSelected = ($0 == row)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionType = PaymentMethodSection(rawValue: section),
+              let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PaymentSectionHeaderView.identifier) as? PaymentSectionHeaderView else {
+            return nil
         }
+        header.configure(with: sectionType.title)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sectionType = PaymentMethodSection(rawValue: indexPath.section)!
+        let method = viewModel.methods(for: sectionType)[indexPath.row]
+        let cell = PaymentMethodCell(method: method)
         
-        let anySelected = [paymentView.cashRow, paymentView.gcashRow, paymentView.paypalRow]
-            .contains { $0.radioButton.isSelected }
+        cell.methodRow.radioButton.isSelected = (viewModel.selectedMethod?.type == method.type)
         
-        paymentView.setContinueButtonEnabled(anySelected)
+        cell.methodRow.radioButton.tag = indexPath.section * 100 + indexPath.row
+        cell.methodRow.radioButton.addTarget(self, action: #selector(selectMethod(_:)), for: .touchUpInside)
+        
+        return cell
+    }
+    
+    @objc private func selectMethod(_ sender: UIButton) {
+        let section = sender.tag / 100
+        let row = sender.tag % 100
+        guard let sectionType = PaymentMethodSection(rawValue: section) else { return }
+        
+        let method = viewModel.methods(for: sectionType)[row]
+        viewModel.selectMethod(method)
+        paymentView.setContinueButtonEnabled(true)
+        paymentView.tableView.reloadData()
     }
 }
