@@ -45,39 +45,13 @@ class PaymentView: UIView {
         return label
     }()
     
-    let cashLabel: UILabel = {
-        let label = UILabel()
-        label.text = AppConstant.Payment.cashTitle
-        label.font = UIFont.roboto(.bold, size: 16)
-        label.textColor = .primaryBlueColor
-        return label
-    }()
-    
-    let morePaymentOptionsLabel: UILabel = {
-        let label = UILabel()
-        label.text = AppConstant.Payment.morePaymentOptionsTitle
-        label.font = UIFont.roboto(.bold, size: 16)
-        label.textColor = .primaryBlueColor
-        return label
-    }()
-    
-    let cashRow = PaymentMethodRow(
-        iconName: AppConstant.Payment.cashLogo,
-        title: AppConstant.Payment.cashPaymentTitle,
-        iconSize: 30
-    )
-    
-    let gcashRow = PaymentMethodRow(
-        iconName: AppConstant.Payment.gcashLogo,
-        title: nil,
-        iconSize: 100
-    )
-    
-    let paypalRow = PaymentMethodRow(
-        iconName: AppConstant.Payment.paypalLogo,
-        title: nil,
-        iconSize: 100
-    )
+    let tableView: UITableView = {
+            let tableView = UITableView(frame: .zero, style: .grouped)
+            tableView.separatorStyle = .none
+            tableView.backgroundColor = .clear
+            tableView.showsVerticalScrollIndicator = false
+            return tableView
+        }()
     
     let activityIndicator: UIActivityIndicatorView = {
         let indiator = UIActivityIndicatorView(style: .large)
@@ -111,11 +85,7 @@ class PaymentView: UIView {
         addSubview(headerImageView)
         addSubview(headerTitleLabel)
         addSubview(activityIndicator)
-        addSubview(cashLabel)
-        addSubview(cashRow)
-        addSubview(morePaymentOptionsLabel)
-        addSubview(gcashRow)
-        addSubview(paypalRow)
+        addSubview(tableView)
         addSubview(continueButton)
         
         headerImageView.snp.makeConstraints { make in
@@ -130,33 +100,11 @@ class PaymentView: UIView {
             make.leading.greaterThanOrEqualTo(headerImageView.snp.trailing).offset(8)
         }
         
-        cashLabel.snp.makeConstraints { make in
-            make.top.equalTo(headerImageView.snp.bottom).offset(28)
-            make.leading.equalToSuperview().offset(25)
-        }
-        
-        cashRow.snp.makeConstraints { make in
-            make.top.equalTo(cashLabel.snp.bottom).offset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-        
-        morePaymentOptionsLabel.snp.makeConstraints { make in
-            make.top.equalTo(cashRow.snp.bottom).offset(25)
-            make.leading.equalToSuperview().offset(25)
-        }
-        
-        gcashRow.snp.makeConstraints { make in
-            make.top.equalTo(morePaymentOptionsLabel.snp.bottom).offset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-        
-        paypalRow.snp.makeConstraints { make in
-            make.top.equalTo(gcashRow.snp.bottom).offset(12)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
+        tableView.snp.makeConstraints { make in
+                    make.top.equalTo(headerImageView.snp.bottom).offset(20)
+                    make.leading.trailing.equalToSuperview()
+                    make.bottom.equalTo(continueButton.snp.top).offset(-12)
+                }
         
         continueButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
