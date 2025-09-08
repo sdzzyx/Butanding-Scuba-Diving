@@ -38,8 +38,10 @@ class PaymentViewController: UIViewController {
         viewModel.onLoadingStateChange = { [weak self] isLoading in
             DispatchQueue.main.async {
                 if isLoading {
+                    self?.paymentView.tableView.isHidden = true
                     self?.paymentView.activityIndicator.startAnimating()
                 } else {
+                    self?.paymentView.tableView.isHidden = false
                     self?.paymentView.activityIndicator.stopAnimating()
                 }
             }
