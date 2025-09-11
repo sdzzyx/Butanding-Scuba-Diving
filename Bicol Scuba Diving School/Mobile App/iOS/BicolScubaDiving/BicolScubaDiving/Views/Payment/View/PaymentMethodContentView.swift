@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PaymentMethodRow: UIView {
+class PaymentMethodContentView: UIView {
     
     let iconImageView = UIImageView()
     let titleLabel = UILabel()
