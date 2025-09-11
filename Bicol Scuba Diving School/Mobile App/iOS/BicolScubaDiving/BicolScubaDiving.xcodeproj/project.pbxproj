@@ -145,6 +145,10 @@
 		A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */; };
 		A89B5EB92E69989000EE55D3 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */; };
 		A89B5EBA2E69989000EE55D3 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */; };
+		A89B5ECA2E6E83C700EE55D3 /* PaymentSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EC92E6E83C100EE55D3 /* PaymentSectionHeaderView.swift */; };
+		A89B5ECB2E6E83C700EE55D3 /* PaymentSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EC92E6E83C100EE55D3 /* PaymentSectionHeaderView.swift */; };
+		A89B5ED62E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5ED52E6EAAC300EE55D3 /* PaymentMethodCell.swift */; };
+		A89B5ED72E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5ED52E6EAAC300EE55D3 /* PaymentMethodCell.swift */; };
 		A8A6705E2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A6705F2E1293EE0017F98B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6705D2E1293EB0017F98B /* SignUpView.swift */; };
 		A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A670602E1293F20017F98B /* SignUpViewController.swift */; };
@@ -261,6 +265,8 @@
 		A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		A89B5EB82E69988500EE55D3 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		A89B5EC92E6E83C100EE55D3 /* PaymentSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSectionHeaderView.swift; sourceTree = "<group>"; };
+		A89B5ED52E6EAAC300EE55D3 /* PaymentMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCell.swift; sourceTree = "<group>"; };
 		A8A6705D2E1293EB0017F98B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8A670602E1293F20017F98B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8A670632E1294050017F98B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -805,6 +811,8 @@
 		A89B5EA02E67DD1D00EE55D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A89B5ED52E6EAAC300EE55D3 /* PaymentMethodCell.swift */,
+				A89B5EC92E6E83C100EE55D3 /* PaymentSectionHeaderView.swift */,
 				A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */,
 				A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */,
 			);
@@ -1105,6 +1113,7 @@
 				A83E4BD02E43680E00B58D6E /* PackageModel.swift in Sources */,
 				27EA80B72DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				A8F6624B2E5DC9AE00CA5B2F /* PackageDetailViewController.swift in Sources */,
+				A89B5ED62E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
@@ -1112,6 +1121,7 @@
 				A84AAE372E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */,
 				27EA83072E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
 				A89B5EA32E67DD2B00EE55D3 /* BookingView.swift in Sources */,
+				A89B5ECB2E6E83C700EE55D3 /* PaymentSectionHeaderView.swift in Sources */,
 				A8F6623E2E5DA2B900CA5B2F /* ReservationViewModel.swift in Sources */,
 				A84AAB552E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82EA2E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
@@ -1194,6 +1204,7 @@
 				A83E4BD12E43680E00B58D6E /* PackageModel.swift in Sources */,
 				27EA80B62DF87D6200D8CC31 /* SocialAuthManager.swift in Sources */,
 				A8F6624A2E5DC9AE00CA5B2F /* PackageDetailViewController.swift in Sources */,
+				A89B5ED72E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				A89B5EB52E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
@@ -1201,6 +1212,7 @@
 				A84AAE382E4123D400B5139B /* ChangePasswordViewModel.swift in Sources */,
 				27EA83062E1E909C00D8CC31 /* ReservationViewController.swift in Sources */,
 				A89B5EA42E67DD2B00EE55D3 /* BookingView.swift in Sources */,
+				A89B5ECA2E6E83C700EE55D3 /* PaymentSectionHeaderView.swift in Sources */,
 				A8F6623F2E5DA2B900CA5B2F /* ReservationViewModel.swift in Sources */,
 				A84AAB562E23748600B5139B /* ProfileTableViewCell.swift in Sources */,
 				27EA82E92E1E8FA000D8CC31 /* TabBarViewModel.swift in Sources */,
@@ -1559,7 +1571,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
@@ -1596,7 +1608,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DY9KFZXZVA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BicolScubaDiving/Configuration/Plists/Dev Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Bicol Scuba DEV";
