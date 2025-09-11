@@ -135,8 +135,8 @@
 		A89B5EA72E67DD3200EE55D3 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA52E67DD2E00EE55D3 /* BookingViewController.swift */; };
 		A89B5EA92E67DD3700EE55D3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */; };
 		A89B5EAA2E67DD3700EE55D3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */; };
-		A89B5EAC2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */; };
-		A89B5EAD2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */; };
+		A89B5EAC2E67DD4200EE55D3 /* PaymentMethodContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodContentView.swift */; };
+		A89B5EAD2E67DD4200EE55D3 /* PaymentMethodContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodContentView.swift */; };
 		A89B5EAF2E67DD5B00EE55D3 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */; };
 		A89B5EB02E67DD5B00EE55D3 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */; };
 		A89B5EB22E67DD6500EE55D3 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */; };
@@ -260,7 +260,7 @@
 		A89B5EA22E67DD2900EE55D3 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		A89B5EA52E67DD2E00EE55D3 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
-		A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodRow.swift; sourceTree = "<group>"; };
+		A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodContentView.swift; sourceTree = "<group>"; };
 		A89B5EAE2E67DD5600EE55D3 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		A89B5EB12E67DD6100EE55D3 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		A89B5EB42E67DD6800EE55D3 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
@@ -813,7 +813,7 @@
 			children = (
 				A89B5ED52E6EAAC300EE55D3 /* PaymentMethodCell.swift */,
 				A89B5EC92E6E83C100EE55D3 /* PaymentSectionHeaderView.swift */,
-				A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodRow.swift */,
+				A89B5EAB2E67DD3C00EE55D3 /* PaymentMethodContentView.swift */,
 				A89B5EA82E67DD3500EE55D3 /* PaymentView.swift */,
 			);
 			path = View;
@@ -1132,7 +1132,7 @@
 				A8A670642E12940A0017F98B /* SignUpViewModel.swift in Sources */,
 				A83E4BE42E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80442DF83D7500D8CC31 /* LoginViewController.swift in Sources */,
-				A89B5EAD2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */,
+				A89B5EAD2E67DD4200EE55D3 /* PaymentMethodContentView.swift in Sources */,
 				A89B5EB92E69989000EE55D3 /* PaymentMethod.swift in Sources */,
 				27EA80412DF83B3300D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670672E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
@@ -1223,7 +1223,7 @@
 				A8A670652E12940A0017F98B /* SignUpViewModel.swift in Sources */,
 				A83E4BE52E464A9200B58D6E /* GalleryImageCell.swift in Sources */,
 				27EA80472DF83E1D00D8CC31 /* LoginViewController.swift in Sources */,
-				A89B5EAC2E67DD4200EE55D3 /* PaymentMethodRow.swift in Sources */,
+				A89B5EAC2E67DD4200EE55D3 /* PaymentMethodContentView.swift in Sources */,
 				A89B5EBA2E69989000EE55D3 /* PaymentMethod.swift in Sources */,
 				27EA80482DF83E1D00D8CC31 /* AppDelegate.swift in Sources */,
 				A8A670682E16D3AA0017F98B /* ExtensionNSAttributedString.swift in Sources */,
