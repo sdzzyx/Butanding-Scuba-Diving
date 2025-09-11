@@ -28,11 +28,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // After Splash is done will transition to OnBoarding, SignUp, or Login depends on ViewController Instantiation
         splashVc.completionHandler = { [weak self] in
             DispatchQueue.main.async {
-
-                let onBoardingVc = MainTabBarController()
-                self?.window?.rootViewController = onBoardingVc
+                let welcomeController = OnboardingViewController()
+                welcomeController.edgesForExtendedLayout = [.top, .bottom]
+                welcomeController.extendedLayoutIncludesOpaqueBars = true
+                
+                welcomeController.completionHandler = { [weak self] in
+                    self?.showLogin()
+                }
+                
+                let navController = UINavigationController(rootViewController: welcomeController)
+                navController.setNavigationBarHidden(true, animated: false)
+                navController.navigationBar.isTranslucent = true
+                self?.window?.rootViewController = navController
                 UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
             }
+        }
+    }
+    
+    private func showLogin() {
+        let controller = LoginViewController()
+        if let navController = self.window?.rootViewController as? UINavigationController {
+            navController.pushViewController(controller, animated: true)
+        } else {
+            // fallback: wrap in nav controller if needed
+            let navController = UINavigationController(rootViewController: controller)
+            self.window?.rootViewController = navController
         }
     }
 
