@@ -10,10 +10,10 @@ import UIKit
 class PaymentMethodCell: UITableViewCell {
     static let identifier = "PaymentMethodCell"
     
-    let methodRow: PaymentMethodRow
+    let methodRow: PaymentMethodContentView
     
     init(method: PaymentMethod) {
-        self.methodRow = PaymentMethodRow(iconName: method.iconName,
+        self.methodRow = PaymentMethodContentView(iconName: method.iconName,
                                           title: method.title,
                                           iconSize: method.iconSize)
         super.init(style: .default, reuseIdentifier: PaymentMethodCell.identifier)
