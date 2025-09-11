@@ -18,6 +18,7 @@ class OnboardingView: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.isPagingEnabled = true
         cv.showsHorizontalScrollIndicator = false
+        cv.contentInsetAdjustmentBehavior = .never
         return cv
     }()
     
