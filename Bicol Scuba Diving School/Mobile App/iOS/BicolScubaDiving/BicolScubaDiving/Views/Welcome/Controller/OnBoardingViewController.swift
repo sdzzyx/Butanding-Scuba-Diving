@@ -24,6 +24,10 @@ class OnboardingViewController: UIViewController {
         onboardingView.getStartedButton.setTitle(viewModel.getStartedButtonTitle, for: .normal)
         onboardingView.getStartedButton.addTarget(self, action: #selector(getStartedTapped), for: .touchUpInside)
         onboardingView.pageControl.numberOfPages = viewModel.numberOfSlides
+        
+        // Initial Default Screen 
+        FirebaseAnalyticsManager.shared.logScreenView(screenName: AppConstant.Analytics.WelcomeScreen.screen(viewModel.currentSlideIndex), 
+                                                      screenClass: String(describing: type(of: self)))
     }
     
     private func setupBindings() {
@@ -47,6 +51,12 @@ class OnboardingViewController: UIViewController {
     @objc private func getStartedTapped() {
         print("Get Started button tapped")
         UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+        
+        // Analytics
+        FirebaseAnalyticsManager.shared.logEvent(name: AppConstant.Analytics.EventName.click,
+                                                 parameters: [AppConstant.Analytics.Parameter.screen: AppConstant.Analytics.WelcomeScreen.screen(viewModel.currentSlideIndex),
+                                                              AppConstant.Analytics.Parameter.buttonName: AppConstant.Analytics.WelcomeScreen.buttonGetStarted])
+        
         completionHandler?()
     }
 }
@@ -83,5 +93,9 @@ extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
         viewModel.setCurrentSlide(to: currentPage)
+        
+        // Set the current welcome screen page for the Analytics Screen
+        FirebaseAnalyticsManager.shared.logScreenView(screenName: AppConstant.Analytics.WelcomeScreen.screen(currentPage), 
+                                                      screenClass: String(describing: type(of: self)))
     }
 }

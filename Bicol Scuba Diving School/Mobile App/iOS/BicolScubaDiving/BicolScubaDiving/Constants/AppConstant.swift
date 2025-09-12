@@ -6,6 +6,68 @@
 //
 
 class AppConstant {
+    
+    struct Analytics {
+        
+        struct EventName {
+            static let click = "click"
+            static let view = "view"
+            static let tryAgain = "try_again"
+            static let next = "next"
+            static let purchase = "purchase"
+        }
+        
+        struct Parameter {
+            static let screen = "screen"
+            static let buttonName = "button_name"
+            static let itemId = "item_id"
+            static let price = "price"
+            static let currency = "currency"
+            static let paymentMethod = "payment_method"
+        }
+        
+        struct Endpoint {
+            static let loginWithGoogle = "Login with Google"
+            static let loginWithApple = "Login with Apple"
+            static let loginWithFacebook = "Login with Facebook"
+            static let loginWithEmail = "Login with Email"
+        }
+        
+        struct SplashScreen {
+            static let screen = "Splash"
+        }
+
+        struct LoginScreen {
+            static let screen = "Login"
+            static let buttonLogin = "Login"
+            static let buttonForgotPassword = "Forgot Password"
+            static let buttonSignUp = "Sign Up"
+            static let buttonGoogle = "Login with Google"
+            static let buttonApple = "Login with Apple"
+            static let buttonFacebook = "Login with Facebook"
+        }
+        
+        struct SignUpScreen {
+            
+        }
+        
+        struct WelcomeScreen {
+            static func screen(_ page: Int) -> String {
+                return "Welcome Screen Page \(page)"
+            }
+            
+            static let buttonGetStarted = "Let's Get Started"
+        }
+       
+        struct HomeScreen {
+            
+        }
+        
+        struct ProfileScreen {
+            
+        }
+    }
+    
     struct Configuration {
         static let appEnvironment = "AppEnvironment"
         static let dev = "DEV"

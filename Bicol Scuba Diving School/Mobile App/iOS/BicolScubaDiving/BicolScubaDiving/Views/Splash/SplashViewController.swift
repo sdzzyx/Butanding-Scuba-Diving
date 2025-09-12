@@ -16,6 +16,10 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        // Analytics
+        FirebaseAnalyticsManager.shared.logScreenView(screenName: AppConstant.Analytics.SplashScreen.screen, 
+                                                      screenClass: String(describing: type(of: self)))
+        
         let logo = UIImageView(image: UIImage(named: "butanding-logo"))
         view.addSubview(logo)
         

@@ -93,6 +93,10 @@
 		27EA830A2E1E90A800D8CC31 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83082E1E90A800D8CC31 /* ReservationView.swift */; };
 		27EA83202E1E931A00D8CC31 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA831F2E1E931800D8CC31 /* TabItem.swift */; };
 		27EA83212E1E931A00D8CC31 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA831F2E1E931800D8CC31 /* TabItem.swift */; };
+		27EA839B2E6E946400D8CC31 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA839A2E6E945E00D8CC31 /* AnalyticsManager.swift */; };
+		27EA839C2E6E946400D8CC31 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA839A2E6E945E00D8CC31 /* AnalyticsManager.swift */; };
+		27EA83C12E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */; };
+		27EA83C22E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */; };
 		A83E4BBF2E43518D00B58D6E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BBE2E43518D00B58D6E /* FirebaseDatabase */; };
 		A83E4BC12E43518D00B58D6E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BC02E43518D00B58D6E /* FirebaseFirestore */; };
 		A83E4BD02E43680E00B58D6E /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BCF2E43680B00B58D6E /* PackageModel.swift */; };
@@ -241,6 +245,8 @@
 		27EA83052E1E909C00D8CC31 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		27EA83082E1E90A800D8CC31 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		27EA831F2E1E931800D8CC31 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		27EA839A2E6E945E00D8CC31 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogotPasswordViewController.swift; sourceTree = "<group>"; };
 		A83E4BCF2E43680B00B58D6E /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
 		A83E4BD22E43681100B58D6E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A83E4BDA2E436B2000B58D6E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
@@ -479,6 +485,7 @@
 			children = (
 				A89B5E9F2E67DD0700EE55D3 /* Payment */,
 				A89B5E9C2E67DCFA00EE55D3 /* Booking */,
+				27EA83BD2E726EC700D8CC31 /* Forgot Password */,
 				A84AAE2F2E4123A000B5139B /* Change Password */,
 				A84AABF92E2A634300B5139B /* Personal Information */,
 				A8A670F92E1EA5430017F98B /* Welcome */,
@@ -542,6 +549,7 @@
 		27EA80B42DF87D3100D8CC31 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				27EA839A2E6E945E00D8CC31 /* AnalyticsManager.swift */,
 				27EA80B52DF87D4D00D8CC31 /* SocialAuthManager.swift */,
 			);
 			path = Managers;
@@ -714,6 +722,30 @@
 				27EA831F2E1E931800D8CC31 /* TabItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		27EA83BD2E726EC700D8CC31 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				27EA83BF2E726ED800D8CC31 /* Controller */,
+				27EA83BE2E726ED000D8CC31 /* Views */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		27EA83BE2E726ED000D8CC31 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27EA83BF2E726ED800D8CC31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A83E4BD92E436B1000B58D6E /* Service */ = {
@@ -1115,6 +1147,7 @@
 				A8F6624B2E5DC9AE00CA5B2F /* PackageDetailViewController.swift in Sources */,
 				A89B5ED62E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
+				27EA83C22E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */,
 				A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
 				27EA82F62E1E904900D8CC31 /* PackageView.swift in Sources */,
@@ -1139,6 +1172,7 @@
 				27EA81C42E09821300D8CC31 /* ExtensionString.swift in Sources */,
 				27EA82FF2E1E907700D8CC31 /* ProfileView.swift in Sources */,
 				A8A671172E1EA7CC0017F98B /* WelcomeModel.swift in Sources */,
+				27EA839B2E6E946400D8CC31 /* AnalyticsManager.swift in Sources */,
 				A84AAC002E2A639000B5139B /* PersonalInformationViewController.swift in Sources */,
 				27EA83212E1E931A00D8CC31 /* TabItem.swift in Sources */,
 				A84AAE352E4123C900B5139B /* ChangePasswordModel.swift in Sources */,
@@ -1206,6 +1240,7 @@
 				A8F6624A2E5DC9AE00CA5B2F /* PackageDetailViewController.swift in Sources */,
 				A89B5ED72E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
+				27EA83C12E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */,
 				A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				A89B5EB52E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
 				27EA82F72E1E904900D8CC31 /* PackageView.swift in Sources */,
@@ -1230,6 +1265,7 @@
 				27EA81C52E09821300D8CC31 /* ExtensionString.swift in Sources */,
 				27EA82FE2E1E907700D8CC31 /* ProfileView.swift in Sources */,
 				A8A671182E1EA7CC0017F98B /* WelcomeModel.swift in Sources */,
+				27EA839C2E6E946400D8CC31 /* AnalyticsManager.swift in Sources */,
 				A84AAC012E2A639000B5139B /* PersonalInformationViewController.swift in Sources */,
 				27EA83202E1E931A00D8CC31 /* TabItem.swift in Sources */,
 				A84AAE342E4123C900B5139B /* ChangePasswordModel.swift in Sources */,

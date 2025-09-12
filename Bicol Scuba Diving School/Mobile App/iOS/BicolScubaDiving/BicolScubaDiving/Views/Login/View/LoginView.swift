@@ -15,6 +15,7 @@ class LoginView: UIView {
     var onSignUpTapped: (() -> Void)?
     var onGoogleSignInTapped: (() -> Void)?
     var onAppleSignInTapped: (() -> Void)?
+    var onFacebookSignInTapped: (() -> Void)?
     
     // UI Components
     private let stackView: UIStackView = {
@@ -222,6 +223,22 @@ class LoginView: UIView {
         forgotPasswordButton.addTarget(self, action: #selector(handleForgotPassword), for: .touchUpInside)
     }
     
+    func bindSignUpAction() {
+        footerButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+    }
+    
+    func bindGoogleSignInAction() {
+        googleButton.addTarget(self, action: #selector(handleGoogleSignIn), for: .touchUpInside)
+    }
+    
+    func bindAppleSignInAction() {
+        appleButton.addTarget(self, action: #selector(handleAppleSignIn), for: .touchUpInside)
+    }
+    
+    func bindFacebookSignInAction() {
+        facebookButton.addTarget(self, action: #selector(handleFacebookSignIn), for: .touchUpInside)
+    }
+    
     @objc private func dismissKeyboard() {
         self.endEditing(true)
     }
@@ -254,5 +271,8 @@ class LoginView: UIView {
         onAppleSignInTapped?()
     }
     
+    @objc private func handleFacebookSignIn() {
+        onFacebookSignInTapped?()
+    }
 
 }
