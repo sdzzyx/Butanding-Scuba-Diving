@@ -23,6 +23,15 @@ final class FirestoreService {
             
             let packages = documents.compactMap { doc -> DivePackage? in
                 let data = doc.data()
+                print("Document \(doc.documentID) data: \(data)")
+                
+                
+                let requirements: [String] = [
+                    data[AppConstant.FirestoreKeys.Fields.requirements1] as? String ?? "",
+                    data[AppConstant.FirestoreKeys.Fields.requirements2] as? String ?? "",
+                    data[AppConstant.FirestoreKeys.Fields.requirements3] as? String ?? ""
+                ]
+                
                 return DivePackage(
                     id: doc.documentID,
                     title: data[AppConstant.FirestoreKeys.Fields.title] as? String ?? "",
@@ -31,7 +40,8 @@ final class FirestoreService {
                     price: data[AppConstant.FirestoreKeys.Fields.price] as? String ?? "",
                     isActive: data[AppConstant.FirestoreKeys.Fields.isActive] as? Bool ?? false,
                     totalSlot: data[AppConstant.FirestoreKeys.Fields.totalSlot] as? Int ?? 0,
-                    bookedSlot: data[AppConstant.FirestoreKeys.Fields.bookedSlot] as? Int ?? 0
+                    bookedSlot: data[AppConstant.FirestoreKeys.Fields.bookedSlot] as? Int ?? 0,
+                    requirements: requirements
                 )
             }
             
