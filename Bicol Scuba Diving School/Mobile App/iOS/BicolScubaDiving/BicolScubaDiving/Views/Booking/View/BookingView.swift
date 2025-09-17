@@ -12,6 +12,19 @@ import Kingfisher
 class BookingView: UIView {
     
     var onContinueTap: (() -> Void)?
+    var onUploadTapped: ((Int) -> Void)?
+    
+    // MARK: - Additional Info
+    var uploadCertificateButton: UIButton
+    var certificateRow: UIStackView
+    var numberOfCompanionsRow: UIStackView
+    var numberOfCompanionsTextField: UITextField
+    private let companionsDividerView: UIView
+    let companionsStack = UIStackView()
+    
+    // MARK: - Scrollable containers
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     
     // MARK: - UI Components
     let headerImageView: UIImageView = {
@@ -137,6 +150,10 @@ class BookingView: UIView {
         self.additionalDividerView = BookingView.makeDivider()
         self.amountDividerView = BookingView.makeDivider()
         
+        self.numberOfCompanionsRow = UIStackView()
+        self.numberOfCompanionsTextField = UITextField()
+        self.companionsDividerView = BookingView.makeDivider()
+        
         self.informationTitleLabel = BookingView.makeSectionTitle(AppConstant.Booking.informationTitle)
         self.dateReservationTitleLabel = BookingView.makeSectionTitle(AppConstant.Booking.dateReservationTitle)
         self.additionalInformationTitleLabel = BookingView.makeSectionTitle(AppConstant.Booking.additionalInformationTitle)
@@ -154,7 +171,14 @@ class BookingView: UIView {
         self.mobileNumberRow = UIStackView()
         self.mobileNumberTextField = UITextField()
         
+        let certComponents = BookingView.makeCertificateRowComponents()
+        self.certificateRow = certComponents.row
+        self.uploadCertificateButton = certComponents.button
+        
         super.init(frame: frame)
+        
+        companionsStack.axis = .vertical
+        companionsStack.spacing = 12
         
         let preferredDateStack = makeTextFieldRow(title: AppConstant.Booking.preferreDateTitle,
                                                   placeholder: AppConstant.Booking.preferredDatePlaceholder)
@@ -165,6 +189,14 @@ class BookingView: UIView {
                                                  placeholder: AppConstant.Booking.mobileNumberPlaceholder)
         self.mobileNumberRow = mobileNumberStack
         self.mobileNumberTextField = mobileNumberStack.arrangedSubviews.last as! UITextField
+        
+        uploadCertificateButton.addTarget(self, action: #selector(handleMainCertificateUpload), for: .touchUpInside)
+        
+        let numberOfCompanionsStack = makeTextFieldRow(title: AppConstant.Booking.numberOfCompanionTitle,
+                                                       placeholder: AppConstant.Booking.numberOfCompanionPlaceHolder)
+        self.numberOfCompanionsRow = numberOfCompanionsStack
+        self.numberOfCompanionsTextField = numberOfCompanionsStack.arrangedSubviews.last as! UITextField
+        
         
         setupUI()
         setupTextFieldDelegates()
@@ -177,6 +209,78 @@ class BookingView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func updateCompanions(count: Int) {
+        companionsStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        guard count > 0 else { return }
+        
+        for i in 1...count {
+            let expandableCard = CompanionCardView(index: i)
+            
+            expandableCard.onUploadCertificateTapped = { [weak self] in
+                self?.onUploadTapped?(i)
+            }
+            
+            companionsStack.addArrangedSubview(expandableCard)
+            if i < count {
+                let divider = UIView()
+                divider.backgroundColor = .primaryGrayLight
+                divider.snp.makeConstraints { make in
+                    make.height.equalTo(1)
+                }
+                companionsStack.addArrangedSubview(divider)
+            }
+        }
+        companionsDividerView.isHidden = (count == 0)
+    }
+    
+    
+    private static func makeCertificateRowComponents() -> (row: UIStackView, button: UIButton) {
+        let titleLabel = UILabel()
+        titleLabel.text = AppConstant.Booking.medicalCertificateTitle
+        titleLabel.font = UIFont.roboto(.medium, size: 13)
+        titleLabel.textColor = .black
+        
+        let uploadButton = UIButton(type: .system)
+        uploadButton.setTitle(AppConstant.Booking.uploadCertificateButtonTitle, for: .normal)
+        uploadButton.setTitleColor(.primaryOrange, for: .normal)
+        uploadButton.titleLabel?.font = UIFont.roboto(.medium, size: 13)
+        
+        let spacer = UIView()
+        let row = UIStackView(arrangedSubviews: [titleLabel, spacer, uploadButton])
+        row.axis = .horizontal
+        row.alignment = .center
+        
+        return (row, uploadButton)
+    }
+
+
+    @objc private func handleMainCertificateUpload(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        },
+                       completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                sender.transform = .identity
+            }
+        })
+        onUploadTapped?(0)
+    }
+
+    private var isMainCertificateUploaded = false
+
+    func setMainCertificateUploaded(_ uploaded: Bool) {
+        isMainCertificateUploaded = uploaded
+        validateFields()
+    }
+
+    func companionCard(at index: Int) -> CompanionCardView? {
+        let cards = companionsStack.arrangedSubviews.compactMap { $0 as? CompanionCardView }
+        guard index > 0, index <= cards.count else { return nil }
+        return cards[index - 1]
+    }
+
     
     @objc private func handleContinueTap() {
         onContinueTap?()
@@ -206,6 +310,34 @@ class BookingView: UIView {
         return rowStack
     }
     
+    // MARK: - Companion Card Builder
+    private func makeCompanionCard(index: Int) -> UIView {
+        let container = UIStackView()
+        container.axis = .vertical
+        container.spacing = 8
+        container.layer.cornerRadius = 8
+        container.layer.borderWidth = 1
+        container.layer.borderColor = UIColor.primaryGrayLight.cgColor
+        container.layoutMargins = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        container.isLayoutMarginsRelativeArrangement = true
+        
+        let title = UILabel()
+        title.text = "\(AppConstant.Booking.companionTitle) \(index)"
+        title.font = UIFont.roboto(.bold, size: 14)
+        title.textColor = .primaryBlueColor
+        
+        let nameRow = makeTextFieldRow(title: AppConstant.Booking.fullNameTitle,
+                                       placeholder: AppConstant.Booking.fullNamePlaceholder)
+        let medicalRow = BookingView.makeRow(title: AppConstant.Booking.medicalCertificateTitle,
+                                             placeholder: AppConstant.Booking.uploadCertificateButtonTitle)
+        
+        container.addArrangedSubview(title)
+        container.addArrangedSubview(nameRow)
+        container.addArrangedSubview(medicalRow)
+        
+        return container
+    }
+    
     private func setupUI() {
         backgroundColor = .systemBackground
         
@@ -223,36 +355,21 @@ class BookingView: UIView {
         additionalStack.spacing = 8
         additionalStack.addArrangedSubview(mobileNumberRow)
         
+        additionalStack.addArrangedSubview(certificateRow)
+        
         amountStack.axis = .vertical
         amountStack.spacing = 8
         amountStack.addArrangedSubview(priceRow)
         
-        // Add subviews
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        scrollView.alwaysBounceVertical = true
+        scrollView.showsVerticalScrollIndicator = true
+        
+        addSubview(continueButton)
         addSubview(headerImageView)
         addSubview(headerTitleLabel)
-        addSubview(packageImageView)
-        addSubview(packageTitleLabel)
-        addSubview(packageDescriptionLabel)
         addSubview(activityIndicator)
-        
-        addSubview(topDividerView)
-        
-        addSubview(informationTitleLabel)
-        addSubview(infoStack)
-        addSubview(infoDividerView)
-        
-        addSubview(dateReservationTitleLabel)
-        addSubview(dateStack)
-        addSubview(dateDividerView)
-        
-        addSubview(additionalInformationTitleLabel)
-        addSubview(additionalStack)
-        addSubview(additionalDividerView)
-        
-        addSubview(amountTitleLabel)
-        addSubview(amountStack)
-        addSubview(amountDividerView)
-        addSubview(continueButton)
         
         headerImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
@@ -266,8 +383,52 @@ class BookingView: UIView {
             make.leading.greaterThanOrEqualTo(headerImageView.snp.trailing).offset(8)
         }
         
-        packageImageView.snp.makeConstraints { make in
+        scrollView.snp.makeConstraints { make in
             make.top.equalTo(headerImageView.snp.bottom).offset(16)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(continueButton.snp.top).offset(-12)
+        }
+        
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(scrollView.snp.width)
+        }
+        
+        continueButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(16)
+            make.height.equalTo(50)
+        }
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
+        contentView.addSubview(packageImageView)
+        contentView.addSubview(packageTitleLabel)
+        contentView.addSubview(packageDescriptionLabel)
+        contentView.addSubview(topDividerView)
+        contentView.addSubview(informationTitleLabel)
+        contentView.addSubview(infoStack)
+        contentView.addSubview(infoDividerView)
+        contentView.addSubview(dateReservationTitleLabel)
+        contentView.addSubview(dateStack)
+        contentView.addSubview(dateDividerView)
+        contentView.addSubview(additionalInformationTitleLabel)
+        contentView.addSubview(additionalStack)
+        contentView.addSubview(additionalDividerView)
+        contentView.addSubview(numberOfCompanionsRow)
+        contentView.addSubview(companionsDividerView)
+        contentView.addSubview(companionsStack)
+        companionsStack.axis = .vertical
+        companionsStack.spacing = 12
+        contentView.addSubview(amountTitleLabel)
+        contentView.addSubview(amountStack)
+        contentView.addSubview(amountDividerView)
+        
+        
+        packageImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(0)
             make.leading.equalToSuperview().offset(16)
             make.width.equalTo(120)
             make.height.equalTo(80)
@@ -283,10 +444,6 @@ class BookingView: UIView {
             make.top.equalTo(packageTitleLabel.snp.bottom).offset(4)
             make.leading.equalTo(packageTitleLabel.snp.leading)
             make.trailing.equalToSuperview().inset(16)
-        }
-        
-        activityIndicator.snp.makeConstraints { make in
-            make.center.equalToSuperview()
         }
         
         topDividerView.snp.makeConstraints { make in
@@ -343,8 +500,24 @@ class BookingView: UIView {
             make.height.equalTo(1)
         }
         
-        amountTitleLabel.snp.makeConstraints { make in
+        numberOfCompanionsRow.snp.makeConstraints { make in
             make.top.equalTo(additionalDividerView.snp.bottom).offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        companionsStack.snp.makeConstraints { make in
+            make.top.equalTo(numberOfCompanionsRow.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        companionsDividerView.snp.makeConstraints { make in
+            make.top.equalTo(companionsStack.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(1)
+        }
+        
+        amountTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(companionsDividerView.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
         }
         
@@ -357,12 +530,7 @@ class BookingView: UIView {
             make.top.equalTo(amountStack.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(1)
-        }
-        
-        continueButton.snp.makeConstraints { make in
-            make.top.equalTo(amountDividerView.snp.bottom).offset(135)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
+            make.bottom.equalToSuperview().inset(20)
         }
     }
     
@@ -401,13 +569,10 @@ class BookingView: UIView {
         let isDateFilled = !(preferredDateTextField.text?.isEmpty ?? true)
         let isMobileNumberValid = (mobileNumberTextField.text?.count == 11)
         
-        if isDateFilled && isMobileNumberValid {
-            continueButton.isEnabled = true
-            continueButton.backgroundColor = .primaryOrange
-        } else {
-            continueButton.isEnabled = false
-            continueButton.backgroundColor = .primaryGrayLight
-        }
+        let isValid = isDateFilled && isMobileNumberValid && isMainCertificateUploaded
+        
+        continueButton.isEnabled = isValid
+        continueButton.backgroundColor = isValid ? .primaryOrange : .primaryGrayLight
     }
 }
 
