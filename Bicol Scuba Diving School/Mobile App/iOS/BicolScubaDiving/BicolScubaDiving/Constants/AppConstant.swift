@@ -36,7 +36,7 @@ class AppConstant {
         struct SplashScreen {
             static let screen = "Splash"
         }
-
+        
         struct LoginScreen {
             static let screen = "Login"
             static let buttonLogin = "Login"
@@ -58,7 +58,7 @@ class AppConstant {
             
             static let buttonGetStarted = "Let's Get Started"
         }
-       
+        
         struct HomeScreen {
             
         }
@@ -121,7 +121,7 @@ class AppConstant {
         static let emailPlaceholder = "Email"
         static let phoneNumberPlaceholder = "Phone Number"
         static let updateButtonTitle = "Update"
-
+        
     }
     
     struct ChangePassword {
@@ -166,6 +166,10 @@ class AppConstant {
             static let image = "image"
             static let imageTwo = "imagetwo"
             static let imageThree = "imagethree"
+            
+            static let requirements1 = "requirements1"
+            static let requirements2 = "requirements2"
+            static let requirements3 = "requirements3"
         }
     }
     
@@ -180,6 +184,7 @@ class AppConstant {
         static let priceTitle = "Price"
         static let slotTitle = "Slot Available"
         static let bookButtonTitle = "Book"
+        static let requirementsTitle = "Requirements"
     }
     
     struct Reservation {
@@ -210,6 +215,18 @@ class AppConstant {
         static let amountTitle = "Amount"
         static let priceTitle = "Price:"
         static let continueButtonTitle = "Continue"
+        
+        static let numberOfCompanionTitle = "Number of Companion"
+        static let numberOfCompanionPlaceHolder = "Tap to select number of companion"
+        static let companionTitle = "Companion"
+        static let fullNameTitle = "Full Name:"
+        static let medicalCertificateTitle = "Medical Certificate:"
+        static let fullNamePlaceholder = "Tap to enter Full Name"
+        static let uploadCertificateButtonTitle = "Upload Certificate"
+        static let expandedSymbol = "▶"
+        static let collapseSymbol = "▼"
+        static let companionTitlePlaceholder = "▶ Companion"
+        static let certificateUploadedTitle = "Certificate Uploaded"
     }
     
     struct Payment {
