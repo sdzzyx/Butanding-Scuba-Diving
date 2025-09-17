@@ -97,6 +97,10 @@
 		27EA839C2E6E946400D8CC31 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA839A2E6E945E00D8CC31 /* AnalyticsManager.swift */; };
 		27EA83C12E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */; };
 		27EA83C22E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */; };
+		A82743362E78101F0014C1BE /* CompanionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82743352E7810190014C1BE /* CompanionCardView.swift */; };
+		A82743372E78101F0014C1BE /* CompanionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82743352E7810190014C1BE /* CompanionCardView.swift */; };
+		A82743392E794DCB0014C1BE /* CompanionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82743382E794DC50014C1BE /* CompanionModel.swift */; };
+		A827433A2E794DCB0014C1BE /* CompanionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82743382E794DC50014C1BE /* CompanionModel.swift */; };
 		A83E4BBF2E43518D00B58D6E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BBE2E43518D00B58D6E /* FirebaseDatabase */; };
 		A83E4BC12E43518D00B58D6E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A83E4BC02E43518D00B58D6E /* FirebaseFirestore */; };
 		A83E4BD02E43680E00B58D6E /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E4BCF2E43680B00B58D6E /* PackageModel.swift */; };
@@ -247,6 +251,8 @@
 		27EA831F2E1E931800D8CC31 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		27EA839A2E6E945E00D8CC31 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		27EA83C02E726EE100D8CC31 /* FogotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogotPasswordViewController.swift; sourceTree = "<group>"; };
+		A82743352E7810190014C1BE /* CompanionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionCardView.swift; sourceTree = "<group>"; };
+		A82743382E794DC50014C1BE /* CompanionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionModel.swift; sourceTree = "<group>"; };
 		A83E4BCF2E43680B00B58D6E /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
 		A83E4BD22E43681100B58D6E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A83E4BDA2E436B2000B58D6E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
@@ -714,6 +720,7 @@
 		27EA831E2E1E930E00D8CC31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A82743382E794DC50014C1BE /* CompanionModel.swift */,
 				A83E4BCF2E43680B00B58D6E /* PackageModel.swift */,
 				A84AAE332E4123C100B5139B /* ChangePasswordModel.swift */,
 				A84AAB4E2E23736500B5139B /* ProfileModel.swift */,
@@ -818,6 +825,7 @@
 		A89B5E9D2E67DCFF00EE55D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A82743352E7810190014C1BE /* CompanionCardView.swift */,
 				A89B5EA22E67DD2900EE55D3 /* BookingView.swift */,
 			);
 			path = View;
@@ -1148,6 +1156,7 @@
 				A89B5ED62E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */,
 				27EA82FA2E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				27EA83C22E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */,
+				A82743372E78101F0014C1BE /* CompanionCardView.swift in Sources */,
 				A84AAE3A2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				A89B5EB62E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
 				27EA82F62E1E904900D8CC31 /* PackageView.swift in Sources */,
@@ -1179,6 +1188,7 @@
 				27EA83012E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AF2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C12E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
+				A82743392E794DCB0014C1BE /* CompanionModel.swift in Sources */,
 				A83E4BDC2E436B2600B58D6E /* FirestoreService.swift in Sources */,
 				A89B5EAA2E67DD3700EE55D3 /* PaymentView.swift in Sources */,
 				A8A670612E1293F60017F98B /* SignUpViewController.swift in Sources */,
@@ -1241,6 +1251,7 @@
 				A89B5ED72E6EAAC800EE55D3 /* PaymentMethodCell.swift in Sources */,
 				27EA82F92E1E905400D8CC31 /* PackageViewController.swift in Sources */,
 				27EA83C12E726EEA00D8CC31 /* FogotPasswordViewController.swift in Sources */,
+				A82743362E78101F0014C1BE /* CompanionCardView.swift in Sources */,
 				A84AAE3B2E41241F00B5139B /* ChangePasswordView.swift in Sources */,
 				A89B5EB52E67DD6D00EE55D3 /* PaymentViewModel.swift in Sources */,
 				27EA82F72E1E904900D8CC31 /* PackageView.swift in Sources */,
@@ -1272,6 +1283,7 @@
 				27EA83022E1E908500D8CC31 /* ProfileViewController.swift in Sources */,
 				27EA81AE2E0920DF00D8CC31 /* CustomButton.swift in Sources */,
 				27EA81C22E0981F600D8CC31 /* ExtensionAttributeString.swift in Sources */,
+				A827433A2E794DCB0014C1BE /* CompanionModel.swift in Sources */,
 				A83E4BDB2E436B2600B58D6E /* FirestoreService.swift in Sources */,
 				A89B5EA92E67DD3700EE55D3 /* PaymentView.swift in Sources */,
 				A8A670622E1293F60017F98B /* SignUpViewController.swift in Sources */,
