@@ -67,6 +67,53 @@ class BookingView: UIView {
         return label
     }()
     
+    // MARK: - Terms & Privacy
+    private let termsCheckBox: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: AppConstant.Booking.checkBoxUnfilled), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .primaryBlueColor
+        return button
+    }()
+
+    private let termsLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        let fullText = AppConstant.Booking.termsAndPrivacyPolicyTitle
+        
+        let highlights = [
+            NSAttributedString.HighlightStyle(
+                substring: "I agree to the",
+                font: .roboto(.medium, size: 13),
+                color: .primaryBlueColor
+            ),
+            NSAttributedString.HighlightStyle(
+                substring: "Terms and Privacy Policy",
+                font: .roboto(.bold, size: 13),
+                color: .primaryOrange
+            )
+        ]
+        
+        let attrText = NSAttributedString.highlightedString(
+            fullText: fullText,
+            baseFont: .roboto(.medium, size: 13),
+            baseColor: .primaryBlueColor,
+            highlights: highlights
+        )
+        
+        label.attributedText = attrText
+        return label
+    }()
+
+    private lazy var termsStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [termsCheckBox, termsLabel])
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 8
+        return stack
+    }()
+
+    
     let continueButton: CustomButton = {
         let button = CustomButton()
         button.setTitle(AppConstant.Booking.continueButtonTitle, for: .normal)
@@ -204,6 +251,7 @@ class BookingView: UIView {
         
         // Continue Button function
         continueButton.addTarget(self, action: #selector(handleContinueTap), for: .touchUpInside)
+        termsCheckBox.addTarget(self, action: #selector(handleTermsTap), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -269,6 +317,7 @@ class BookingView: UIView {
     }
 
     private var isMainCertificateUploaded = false
+    private var isTermsAccepted = false
 
     func setMainCertificateUploaded(_ uploaded: Bool) {
         isMainCertificateUploaded = uploaded
@@ -284,6 +333,13 @@ class BookingView: UIView {
     
     @objc private func handleContinueTap() {
         onContinueTap?()
+    }
+    
+    @objc private func handleTermsTap() {
+        isTermsAccepted.toggle()
+        let imageName = isTermsAccepted ? AppConstant.Booking.checkBoxFilled : AppConstant.Booking.checkBoxUnfilled
+        termsCheckBox.setImage(UIImage(named: imageName), for: .normal)
+        validateFields()
     }
     
     private static func makeDivider() -> UIView {
@@ -425,6 +481,7 @@ class BookingView: UIView {
         contentView.addSubview(amountTitleLabel)
         contentView.addSubview(amountStack)
         contentView.addSubview(amountDividerView)
+        contentView.addSubview(termsStack)
         
         
         packageImageView.snp.makeConstraints { make in
@@ -530,6 +587,12 @@ class BookingView: UIView {
             make.top.equalTo(amountStack.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(1)
+        }
+        
+        termsStack.snp.makeConstraints { make in
+            make.top.equalTo(amountDividerView.snp.bottom).offset(16)
+            make.width.height.equalTo(20)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(20)
         }
     }
@@ -569,7 +632,7 @@ class BookingView: UIView {
         let isDateFilled = !(preferredDateTextField.text?.isEmpty ?? true)
         let isMobileNumberValid = (mobileNumberTextField.text?.count == 11)
         
-        let isValid = isDateFilled && isMobileNumberValid && isMainCertificateUploaded
+        let isValid = isDateFilled && isMobileNumberValid && isMainCertificateUploaded && isTermsAccepted
         
         continueButton.isEnabled = isValid
         continueButton.backgroundColor = isValid ? .primaryOrange : .primaryGrayLight
