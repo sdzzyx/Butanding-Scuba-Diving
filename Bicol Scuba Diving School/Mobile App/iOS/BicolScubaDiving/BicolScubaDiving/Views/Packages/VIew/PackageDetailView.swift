@@ -11,6 +11,10 @@ import Kingfisher
 
 final class PackageDetailView: UIView {
     
+    // MARK: - Scrollable Content
+    private let scrollView = UIScrollView()
+    private let contentView = UIStackView()
+    
     // MARK: - UI Components
     let headerImageView: UIImageView = {
         let imageView = UIImageView()
@@ -42,6 +46,22 @@ final class PackageDetailView: UIView {
         label.numberOfLines = 0
         return label
     }()
+    
+    let requirementsTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = AppConstant.PackagesDetail.requirementsTitle
+        label.font = .roboto(.bold, size: 16)
+        return label
+    }()
+    
+    let requirementsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .roboto(.regular, size: 14)
+        label.textColor = .darkGray
+        label.numberOfLines = 0
+        return label
+    }()
+    
     
     let priceTitleLabel: UILabel = {
         let label = UILabel()
@@ -93,22 +113,45 @@ final class PackageDetailView: UIView {
         backgroundColor = .systemBackground
         
         addSubview(headerImageView)
-        addSubview(titleLabel)
-        addSubview(descriptionTitleLabel)
-        addSubview(descriptionLabel)
-        addSubview(priceTitleLabel)
-        addSubview(priceLabel)
-        addSubview(slotTitleLabel)
-        addSubview(slotLabel)
+        addSubview(scrollView)
         addSubview(bookButton)
+        
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(descriptionTitleLabel)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(requirementsTitleLabel)
+        contentView.addSubview(requirementsLabel)
+        contentView.addSubview(priceTitleLabel)
+        contentView.addSubview(priceLabel)
+        contentView.addSubview(slotTitleLabel)
+        contentView.addSubview(slotLabel)
         
         headerImageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(300)
         }
         
+        bookButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(16)
+            make.height.equalTo(50)
+        }
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(headerImageView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(bookButton.snp.top).offset(-12)
+        }
+        
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(scrollView.snp.width)
+        }
+        
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(headerImageView.snp.bottom).offset(12)
+            make.top.equalToSuperview().offset(12)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
@@ -122,8 +165,18 @@ final class PackageDetailView: UIView {
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
+        requirementsTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        requirementsLabel.snp.makeConstraints { make in
+            make.top.equalTo(requirementsTitleLabel.snp.bottom).offset(6)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
         priceTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(25)
+            make.top.equalTo(requirementsLabel.snp.bottom).offset(25)
             make.leading.equalToSuperview().inset(16)
         }
         
@@ -140,13 +193,7 @@ final class PackageDetailView: UIView {
         slotLabel.snp.makeConstraints { make in
             make.top.equalTo(slotTitleLabel.snp.bottom).offset(6)
             make.leading.trailing.equalToSuperview().inset(16)
-        }
-        
-        bookButton.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(slotTitleLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(16)
-            make.height.equalTo(50)
+            make.bottom.equalToSuperview().inset(20)
         }
     }
     
@@ -156,5 +203,36 @@ final class PackageDetailView: UIView {
         priceLabel.text = viewModel.price
         slotLabel.text = viewModel.slotAvailable
         headerImageView.kf.setImage(with: URL(string: viewModel.imageUrl))
+        
+        // Build bullet points with proper indentation
+        let nonEmptyRequirements = viewModel.requirements.filter {
+            !$0.trimmingCharacters(in: .whitespaces).isEmpty
+        }
+        
+        if !nonEmptyRequirements.isEmpty {
+            let bulletPoints = nonEmptyRequirements.map { "• \($0)" }.joined(separator: "\n")
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+            paragraphStyle.lineSpacing = 4
+            paragraphStyle.firstLineHeadIndent = 0
+            paragraphStyle.headIndent = 10
+            
+            let attributedString = NSAttributedString(
+                string: bulletPoints,
+                attributes: [
+                    .font: UIFont.roboto(.regular, size: 14),
+                    .foregroundColor: UIColor.darkGray,
+                    .paragraphStyle: paragraphStyle
+                ]
+            )
+            
+            requirementsLabel.attributedText = attributedString
+            requirementsTitleLabel.isHidden = false
+            requirementsLabel.isHidden = false
+        } else {
+            requirementsTitleLabel.isHidden = true
+            requirementsLabel.isHidden = true
+        }
     }
 }

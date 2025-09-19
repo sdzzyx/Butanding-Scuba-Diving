@@ -36,7 +36,7 @@ class AppConstant {
         struct SplashScreen {
             static let screen = "Splash"
         }
-
+        
         struct LoginScreen {
             static let screen = "Login"
             static let buttonLogin = "Login"
@@ -58,7 +58,7 @@ class AppConstant {
             
             static let buttonGetStarted = "Let's Get Started"
         }
-       
+        
         struct HomeScreen {
             
         }
@@ -121,7 +121,7 @@ class AppConstant {
         static let emailPlaceholder = "Email"
         static let phoneNumberPlaceholder = "Phone Number"
         static let updateButtonTitle = "Update"
-
+        
     }
     
     struct ChangePassword {
@@ -166,6 +166,10 @@ class AppConstant {
             static let image = "image"
             static let imageTwo = "imagetwo"
             static let imageThree = "imagethree"
+            
+            static let requirements1 = "requirements1"
+            static let requirements2 = "requirements2"
+            static let requirements3 = "requirements3"
         }
     }
     
@@ -180,6 +184,7 @@ class AppConstant {
         static let priceTitle = "Price"
         static let slotTitle = "Slot Available"
         static let bookButtonTitle = "Book"
+        static let requirementsTitle = "Requirements"
     }
     
     struct Reservation {
@@ -191,5 +196,53 @@ class AppConstant {
             static let completed = "Completed"
             static let cancelled = "Cancelled"
         }
+    }
+    
+    struct Booking {
+        static let logo = "logo"
+        static let bookingTitle = "Booking"
+        static let informationTitle = "Information"
+        static let nameTitle = "Name:"
+        static let emailTitle = "Email:"
+        static let namePlaceholder = "Juan Dela Cruz"
+        static let emailPlaceholder = "juan@example.com"
+        static let dateReservationTitle = "Date of Reservation"
+        static let preferreDateTitle = "Preferred Date:"
+        static let preferredDatePlaceholder = "Tap to select available date"
+        static let additionalInformationTitle = "Additional Information"
+        static let mobileNumberTitle = "Mobile Number:"
+        static let mobileNumberPlaceholder = "Tap to select Mobile Number"
+        static let amountTitle = "Amount"
+        static let priceTitle = "Price:"
+        static let continueButtonTitle = "Continue"
+        
+        static let numberOfCompanionTitle = "Number of Companion"
+        static let numberOfCompanionPlaceHolder = "Tap to select number of companion"
+        static let companionTitle = "Companion"
+        static let fullNameTitle = "Full Name:"
+        static let medicalCertificateTitle = "Medical Certificate:"
+        static let fullNamePlaceholder = "Tap to enter Full Name"
+        static let uploadCertificateButtonTitle = "Upload Certificate"
+        static let expandedSymbol = "▶"
+        static let collapseSymbol = "▼"
+        static let companionTitlePlaceholder = "▶ Companion"
+        static let certificateUploadedTitle = "Certificate Uploaded"
+        static let termsAndPrivacyPolicyTitle = "I agree to the Terms and Privacy Policy"
+        static let checkBoxUnfilled = "check_box_unfilled"
+        static let checkBoxFilled = "check_box_filled"
+    }
+    
+    struct Payment {
+        static let logo = "logo"
+        static let paymentTitle = "Payment Method"
+        static let cashTitle = "Cash"
+        static let cashPaymentTitle = "Cash"
+        static let cashLogo = "cash-logo"
+        static let morePaymentOptionsTitle = "More Payment Options"
+        static let gcashLogo = "gcash-logo"
+        static let paypalLogo = "paypal-logo"
+        static let continueButtonTitle = "Continue"
+        static let paymentHighlightsTitle = "Payment"
+        static let methodHighlightsTitle = "Method"
     }
 }

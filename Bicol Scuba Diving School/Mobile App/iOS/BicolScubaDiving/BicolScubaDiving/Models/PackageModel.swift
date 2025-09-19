@@ -16,4 +16,5 @@ struct DivePackage {
     let isActive: Bool
     let totalSlot: Int
     let bookedSlot: Int
+    let requirements: [String]
 }

@@ -23,6 +23,10 @@ final class PackageDetailViewModel {
         return package.description
     }
     
+    var requirements: [String] {
+        return package.requirements
+    }
+
     var imageUrl: String {
         return package.imageUrl
     }
