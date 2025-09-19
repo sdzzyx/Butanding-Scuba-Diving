@@ -227,6 +227,9 @@ class AppConstant {
         static let collapseSymbol = "▼"
         static let companionTitlePlaceholder = "▶ Companion"
         static let certificateUploadedTitle = "Certificate Uploaded"
+        static let termsAndPrivacyPolicyTitle = "I agree to the Terms and Privacy Policy"
+        static let checkBoxUnfilled = "check_box_unfilled"
+        static let checkBoxFilled = "check_box_filled"
     }
     
     struct Payment {
