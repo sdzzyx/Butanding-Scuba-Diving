@@ -16,6 +16,19 @@ class CompanionCardView: UIView {
     
     var onUploadCertificateTapped: (() -> Void)?
     
+    
+    // New Changes for fetching fullName of Companion
+    private var fullNameTextField: UITextField!
+
+    var fullName: String {
+        get { fullNameTextField.text ?? "" }
+        set { fullNameTextField.text = newValue }
+    }
+
+    var onFullNameChanged: ((String) -> Void)?
+
+    
+    
     init(index: Int) {
         super.init(frame: .zero)
         setupUI(index: index)
@@ -120,6 +133,12 @@ class CompanionCardView: UIView {
         textField.font = .italicSystemFont(ofSize: 13)
         textField.textColor = .primaryGrayDisableText
         
+        // Changes also for fetching full name of companion
+        if title == AppConstant.Booking.fullNameTitle {
+            fullNameTextField = textField
+            textField.addTarget(self, action: #selector(fullNameDidChange(_:)), for: .editingChanged)
+        }
+        
         if shouldStyleOnEdit {
             textField.delegate = self
         }
@@ -129,6 +148,12 @@ class CompanionCardView: UIView {
         row.distribution = .fillProportionally
         return row
     }
+    
+    @objc private func fullNameDidChange(_ textField: UITextField) {
+        onFullNameChanged?(textField.text ?? "")
+    }
+
+    
 }
 
 // MARK: - UITextFieldDelegate

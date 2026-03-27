@@ -14,6 +14,10 @@ class BookingView: UIView {
     var onContinueTap: (() -> Void)?
     var onUploadTapped: ((Int) -> Void)?
     
+    // Changes to fetch phone number
+    var onPhoneNumberChanged: ((String) -> Void)?
+
+    
     // MARK: - Additional Info
     var uploadCertificateButton: UIButton
     var certificateRow: UIStackView
@@ -207,9 +211,9 @@ class BookingView: UIView {
         self.amountTitleLabel = BookingView.makeSectionTitle(AppConstant.Booking.amountTitle)
         
         self.nameRow = BookingView.makeRow(title: AppConstant.Booking.nameTitle,
-                                           placeholder: AppConstant.Booking.namePlaceholder)
+                                           placeholder: "")
         self.emailRow = BookingView.makeRow(title: AppConstant.Booking.emailTitle,
-                                            placeholder: AppConstant.Booking.emailPlaceholder)
+                                            placeholder: "")
         self.priceRow = BookingView.makeRow(title: AppConstant.Booking.priceTitle,
                                             placeholder: "₱ 0.00")
         
@@ -245,14 +249,30 @@ class BookingView: UIView {
         self.numberOfCompanionsTextField = numberOfCompanionsStack.arrangedSubviews.last as! UITextField
         
         
+        mobileNumberTextField.addTarget(self, action: #selector(phoneNumberDidChange(_:)), for: .editingChanged)
+        
+        
         setupUI()
         setupTextFieldDelegates()
         setupGestureRecognizer()
         
+        setupTermsLabelTap()
+        
         // Continue Button function
         continueButton.addTarget(self, action: #selector(handleContinueTap), for: .touchUpInside)
-        termsCheckBox.addTarget(self, action: #selector(handleTermsTap), for: .touchUpInside)
+        //termsCheckBox.addTarget(self, action: #selector(handleTermsTap), for: .touchUpInside)
     }
+    
+    @objc private func phoneNumberDidChange(_ textField: UITextField) {
+            onPhoneNumberChanged?(textField.text ?? "")
+        }
+    
+    private func setupTermsLabelTap() {
+        termsLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTermsLabelTap(_:)))
+        termsLabel.addGestureRecognizer(tapGesture)
+    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -301,6 +321,76 @@ class BookingView: UIView {
         
         return (row, uploadButton)
     }
+    
+    @objc private func handleTermsLabelTap(_ gesture: UITapGestureRecognizer) {
+        let fullText = AppConstant.Booking.termsAndPrivacyPolicyTitle
+        let targetText = "Terms and Privacy Policy"
+
+        if let range = (fullText as NSString).range(of: targetText) as NSRange? {
+            if termsLabel.didTapAttributedText(in: range, gesture: gesture) {
+                UIView.animate(withDuration: 0.15,
+                               animations: {
+                    self.termsLabel.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                }) { _ in
+                    UIView.animate(withDuration: 0.4,
+                                   delay: 0,
+                                   usingSpringWithDamping: 0.4,
+                                   initialSpringVelocity: 3,
+                                   options: .curveEaseOut,
+                                   animations: {
+                        self.termsLabel.transform = .identity
+                    }, completion: { _ in
+                        self.showTermsBottomSheet()
+                    })
+                }
+            }
+        }
+    }
+
+    private func showTermsBottomSheet() {
+        let termsVC = TermsViewController(viewModel: TermsViewModel())
+        termsVC.onAccepted = { [weak self] in
+            guard let self = self else { return }
+            self.isTermsAccepted = true
+            let imageName = AppConstant.Booking.checkBoxFilled
+            self.termsCheckBox.setImage(UIImage(named: imageName), for: .normal)
+            self.validateFields()
+        }
+
+        if let parentVC = self.parentViewController {
+            if let sheet = termsVC.sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
+                sheet.prefersGrabberVisible = true
+            }
+            parentVC.present(termsVC, animated: true)
+        }
+    }
+
+    
+    func configureUserInfo(name: String, email: String, phoneNumber: String? = nil) {
+        if let nameLabel = (nameRow.arrangedSubviews.last as? UILabel) {
+            nameLabel.text = name
+            nameLabel.font = UIFont.roboto(.bold, size: 13)
+            nameLabel.textColor = .primaryOrange
+        }
+        
+        if let emailLabel = (emailRow.arrangedSubviews.last as? UILabel) {
+            emailLabel.text = email
+            emailLabel.font = UIFont.roboto(.bold, size: 13)
+            emailLabel.textColor = .primaryOrange
+        }
+        // for phone number fetching
+        if let phone = phoneNumber, !phone.isEmpty {
+                mobileNumberTextField.text = phone
+                mobileNumberTextField.font = UIFont.roboto(.bold, size: 13)
+                mobileNumberTextField.textColor = .primaryOrange
+            }
+    }
+
+    func visibleCompanionCards() -> [CompanionCardView] {
+        return companionsStack.arrangedSubviews.compactMap { $0 as? CompanionCardView }
+    }
+
 
 
     @objc private func handleMainCertificateUpload(_ sender: UIButton) {
@@ -603,7 +693,16 @@ class BookingView: UIView {
         mobileNumberTextField.delegate = self
         
         mobileNumberTextField.keyboardType = .numberPad
+        
+        // for fetching phone number
+        //mobileNumberTextField.addTarget(self, action: #selector(handlePhoneNumberChange(_:)), for: .editingChanged)
+
     }
+    // for fetching phone number
+//    @objc private func handlePhoneNumberChange(_ textField: UITextField) {
+//        onPhoneNumberChanged?(textField.text ?? "")
+//    }
+
     
     // Method to set up the gesture recognizer for dismissing the keyboard
     private func setupGestureRecognizer() {
@@ -703,6 +802,9 @@ extension BookingView: UITextFieldDelegate {
             }
             
             textField.text = newText
+            
+            phoneNumberDidChange(textField)
+            
             self.validateFields()
             
             return false
@@ -713,5 +815,42 @@ extension BookingView: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+
+extension UILabel {
+    func didTapAttributedText(in range: NSRange, gesture: UITapGestureRecognizer) -> Bool {
+        guard let attributedText = attributedText else { return false }
+
+        let textStorage = NSTextStorage(attributedString: attributedText)
+        let layoutManager = NSLayoutManager()
+        let textContainer = NSTextContainer(size: bounds.size)
+        textContainer.lineFragmentPadding = 0
+        textContainer.maximumNumberOfLines = numberOfLines
+        textContainer.lineBreakMode = lineBreakMode
+
+        layoutManager.addTextContainer(textContainer)
+        textStorage.addLayoutManager(layoutManager)
+
+        let location = gesture.location(in: self)
+        let index = layoutManager.characterIndex(for: location,
+                                                 in: textContainer,
+                                                 fractionOfDistanceBetweenInsertionPoints: nil)
+
+        return NSLocationInRange(index, range)
+    }
+}
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while let responder = parentResponder {
+            if let vc = responder as? UIViewController {
+                return vc
+            }
+            parentResponder = responder.next
+        }
+        return nil
     }
 }

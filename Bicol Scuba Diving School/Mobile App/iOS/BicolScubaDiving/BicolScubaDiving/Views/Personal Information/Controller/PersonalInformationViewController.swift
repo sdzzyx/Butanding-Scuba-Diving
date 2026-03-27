@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PersonalInformationViewController: UIViewController {
     
@@ -75,18 +76,56 @@ class PersonalInformationViewController: UIViewController {
     }
     
     @objc private func updateButtonTapped() {
+        
+        let firstName = mainView.firstNameField.text ?? ""
+        let lastName = mainView.lastNameField.text ?? ""
+        let email = mainView.emailField.text ?? ""
+        let phone = mainView.phoneField.text ?? ""
+        
         // Save changes from fields to model
-        viewModel.updateFirstName(mainView.firstNameField.text ?? "")
+//        viewModel.updateFirstName(mainView.firstNameField.text ?? "")
+//        viewModel.updateLastName(mainView.lastNameField.text ?? "")
+//        viewModel.personalInfomation.email = mainView.emailField.text ?? ""
+//        viewModel.updatePhone(mainView.phoneField.text ?? "")
+        
+        viewModel.updateFirstName(firstName)
+            viewModel.updateLastName(lastName)
+            viewModel.updatePhone(phone)
+        
         viewModel.saveChanges()
         
-        let alert = UIAlertController(
-            title: "Updated",
-            message: "Your Information has been updated.",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true)
+        // Also update FirebaseAuth email if it changed
+        if let user = Auth.auth().currentUser, user.email != email {
+            user.sendEmailVerification(beforeUpdatingEmail: email) { [weak self] error in
+                if let error = error {
+                    print("Failed to update FirebaseAuth email:", error.localizedDescription)
+                    self?.showAlert(
+                        title: "Error",
+                        message: "Could not update email: \(error.localizedDescription)"
+                    )
+                    return
+                }
+                
+                print("Verification email sent to \(email)")
+                self?.showAlert(
+                    title: "Verify Your Email",
+                    message: "A verification link has been sent to \(email). Please verify before using it to log in."
+                )
+            }
+        } else {
+            showAlert(title: "Updated", message: "Your information has been updated.")
+        }
     }
+    
+    private func showAlert(title: String, message: String) {
+            let alert = UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
     
     @objc private func handleBackgroundTap(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)

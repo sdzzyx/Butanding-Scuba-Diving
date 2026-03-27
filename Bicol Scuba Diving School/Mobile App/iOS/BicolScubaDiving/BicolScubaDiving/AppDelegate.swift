@@ -10,6 +10,8 @@ import IQKeyboardManagerSwift
 import SnapKit
 import Firebase
 import FirebaseCore
+import GoogleSignIn
+import FBSDKCoreKit
 
 
 @main
@@ -18,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         configureFirebase()
+        
+        // Facebook SDK initialization
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
         // Override point for customization after application launch.
         IQKeyboardManager.shared.isEnabled = true
@@ -35,6 +43,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("Could not find Firebase plist file for DEV target.")
         }
+    }
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
+        }
+        
+        return ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            options: options
+        )
     }
 
     // MARK: UISceneSession Lifecycle

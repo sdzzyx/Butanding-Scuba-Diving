@@ -6,13 +6,36 @@
 //
 
 import UIKit
+import SafariServices
 
 class PaymentViewController: UIViewController {
     
     private let paymentView = PaymentView()
     private let viewModel = PaymentViewModel()
+    private let paymentService = PaymentService()
     
-    // MARK: - Lifecycle
+    private let bookingViewModel: BookingViewModel
+    
+    var safariVC: SFSafariViewController?
+    
+    // MARK: - Package Data
+        private let package: PackageDetailViewModel
+    
+    // MARK: - Init
+        init(package: PackageDetailViewModel, viewModel: BookingViewModel) {
+            self.package = package
+            self.bookingViewModel = viewModel
+            super.init(nibName: nil, bundle: nil)
+            
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    
+    //var bookingAmount: Double = 100.0 // example only, can be passed from Booking screen
+    
+    // MARK: - Lifecyclenb
     override func loadView() {
         self.view = paymentView
     }
@@ -22,6 +45,15 @@ class PaymentViewController: UIViewController {
         setupTableView()
         setupBindings()
         viewModel.fetchPaymentMethods()
+        
+        paymentView.continueButton.addTarget(self, action: #selector(confirmPaymentTapped), for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handlePaymentSuccess),
+            name: .paymentSuccess,
+            object: nil
+        )
     }
     
     private func setupTableView() {
@@ -105,5 +137,88 @@ extension PaymentViewController: UITableViewDataSource, UITableViewDelegate {
         viewModel.selectMethod(method)
         paymentView.setContinueButtonEnabled(true)
         paymentView.tableView.reloadData()
+    }
+}
+    
+
+// MARK: - Payment Logic
+extension PaymentViewController {
+    
+    @objc private func handlePaymentSuccess() {
+        let paymentVc = PaymentConfirmationViewController(package: package, viewModel: bookingViewModel)
+        navigationController?.pushViewController(paymentVc, animated: true)
+    }
+
+    @objc private func confirmPaymentTapped() {
+        guard let selectedMethod = viewModel.selectedMethod else { return }
+        
+        switch selectedMethod.type {
+        case .cash:
+            let vc = CashConfirmationViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .gcash:
+            startGcashPayment()
+            
+        case .paypal:
+            print("Implement PayPal later")
+        }
+    }
+    
+    private func startGcashPayment() {
+        paymentView.continueButton.isEnabled = false
+        paymentView.activityIndicator.startAnimating()
+        
+        let amount = Double(package.price.replacingOccurrences(of: "[^0-9.]", with: "", options: .regularExpression)) ?? 0.0
+        print("💰 GCash Payment - packageId: \(package.id), price: \(package.price), amount: \(amount)")
+        let description = package.title
+        let packageId = package.id // assuming DivePackage has `id`
+        
+        paymentService.createGcashPayment(packageId: packageId, amount: amount, description: description, email: "testuser@example.com") { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.paymentView.activityIndicator.stopAnimating()
+                self.paymentView.continueButton.isEnabled = true
+                
+                switch result {
+                case .success(let redirectUrl):
+                    guard let url = URL(string: redirectUrl) else { return }
+                    let safariVC = SFSafariViewController(url: url)
+                    safariVC.delegate = self
+                    self.safariVC = safariVC
+                    self.present(safariVC, animated: true)
+                    
+                case .failure(let error):
+                    self.showError(message: "Payment creation failed: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    private func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - Safari Delegate
+extension PaymentViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true)
+    }
+}
+
+// MARK: - Handle Deep Link Callback
+extension PaymentViewController {
+    func handlePaymentResult(from url: URL) {
+        safariVC?.dismiss(animated: true)
+        
+        if url.absoluteString.contains("payment-success") {
+            let vc = PaymentConfirmationViewController(package: package, viewModel: bookingViewModel)
+            navigationController?.pushViewController(vc, animated: true)
+        } else if url.absoluteString.contains("payment-failed") {
+            showError(message: "GCash payment failed. Please try again.")
+        }
     }
 }

@@ -61,25 +61,40 @@ class ProfileView: UIView {
     
     private func createHeaderView() -> UIView {
         let headerView = UIView()
-        let logoImageView = UIImageView(image: logoImage)
-        logoImageView.contentMode = .scaleAspectFit
+        headerView.backgroundColor = .white
+//        let logoImageView = UIImageView(image: logoImage)
+//        logoImageView.contentMode = .scaleAspectFit
+        
+        // Rounded profile image view
+        let profileImageView = RoundedImageView()
+        profileImageView.image = UIImage(named: "placeholder-profile") // fallback
+        profileImageView.cornerRadiusValue = 0 // make circular
+        profileImageView.tag = 999 // so we can update it later from VC
         
         let titleLabel = UILabel()
         titleLabel.text = AppConstant.Profile.title
         titleLabel.font = UIFont.roboto(.bold, size: 28)
         titleLabel.textColor = UIColor.primaryBlueColor
         
-        headerView.addSubview(logoImageView)
+        //headerView.addSubview(logoImageView)
+        headerView.addSubview(profileImageView)
         headerView.addSubview(titleLabel)
         
-        logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.width.height.equalTo(80)
-        }
+//        logoImageView.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(10)
+//            make.leading.equalToSuperview().offset(20)
+//            make.width.height.equalTo(80)
+//        }
+        
+        profileImageView.snp.makeConstraints { make in
+                //make.top.equalToSuperview().offset(10)
+                make.leading.equalToSuperview().offset(20)
+                make.width.height.equalTo(80)
+            }
         
         titleLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(logoImageView)
+            //make.centerY.equalTo(logoImageView)
+            make.centerY.equalTo(profileImageView)
             make.trailing.equalToSuperview().inset(20)
         }
         

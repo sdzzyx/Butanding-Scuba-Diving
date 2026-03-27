@@ -12,6 +12,7 @@ final class HomeView: UIView {
     
     // MARK: - Properties
     private let viewModel: HomeViewModel
+    weak var delegate: HomeViewDelegate?
     
     // Scroll container
     let scrollView = UIScrollView()
@@ -28,8 +29,17 @@ final class HomeView: UIView {
     let homeTitleLabel = UILabel()
     let homeSubtitleLabel = UILabel()
     let galleryCollectionView: UICollectionView
+    let otherDestinationTitleLabel = UILabel()
+    let destinationCollectionView: UICollectionView
+    let eventTitleLabel = UILabel()
+    let eventCollectionView: UICollectionView
+    let homepageQuoteLabel = UILabel()
+    let homepageSubQuoteLabel = UILabel()
+    let homepageImagesCollectionView: UICollectionView
     
     private var galleryHeightConstraint: Constraint?
+    private var destinationHeightConstraint: Constraint?
+    private var eventHeightConstraint: Constraint?
     
     // MARK: - Init
     init(viewModel: HomeViewModel) {
@@ -50,6 +60,31 @@ final class HomeView: UIView {
         galleryLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         galleryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: galleryLayout)
         galleryCollectionView.isScrollEnabled = false
+        
+        // Destination Images Layout
+        let destinationLayout = UICollectionViewFlowLayout()
+        destinationLayout.scrollDirection = .horizontal
+        destinationLayout.minimumLineSpacing = 12
+        destinationLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        destinationCollectionView = UICollectionView(frame: .zero, collectionViewLayout: destinationLayout)
+        destinationCollectionView.showsHorizontalScrollIndicator = false
+        
+        // Event Images Layout
+        let eventLayout = UICollectionViewFlowLayout()
+        eventLayout.scrollDirection = .horizontal
+        eventLayout.minimumLineSpacing = 12
+        eventLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        eventCollectionView = UICollectionView(frame: .zero, collectionViewLayout: eventLayout)
+        eventCollectionView.showsHorizontalScrollIndicator = false
+        
+        // Horizontal carousel for homepage images
+        let carouselLayout = UICollectionViewFlowLayout()
+        carouselLayout.scrollDirection = .horizontal
+        carouselLayout.minimumLineSpacing = 16
+        homepageImagesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: carouselLayout)
+        homepageImagesCollectionView.showsHorizontalScrollIndicator = false
+        homepageImagesCollectionView.backgroundColor = .clear
+
         
         super.init(frame: .zero)
         setupUI()
@@ -93,6 +128,7 @@ final class HomeView: UIView {
         viewAllButton.setTitle(viewModel.viewAllButtonText, for: .normal)
         viewAllButton.setTitleColor(.primaryOrange, for: .normal)
         viewAllButton.titleLabel?.font = UIFont.roboto(.regular, size: 15)
+        viewAllButton.addTarget(self, action: #selector(viewAllButtonTapped), for: .touchUpInside)
         
         homeTitleLabel.attributedText = NSAttributedString.highlightedString(
             fullText: viewModel.homeTitleText,
@@ -126,13 +162,71 @@ final class HomeView: UIView {
         scrollView.showsVerticalScrollIndicator = false
         galleryCollectionView.showsHorizontalScrollIndicator = false
         
+        homepageQuoteLabel.font = UIFont.roboto(.bold, size: 20)
+        homepageQuoteLabel.textColor = .primaryBlueColor
+        homepageQuoteLabel.textAlignment = .center
+        homepageQuoteLabel.numberOfLines = 0
+        
+        homepageSubQuoteLabel.font = UIFont.roboto(.bold, size: 23)
+        homepageSubQuoteLabel.textColor = .primaryOrange
+        homepageSubQuoteLabel.textAlignment = .center
+        homepageSubQuoteLabel.numberOfLines = 0
+        
+        
+        if let layout = homepageImagesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 16
+        }
+        homepageImagesCollectionView.decelerationRate = .fast
+        homepageImagesCollectionView.isPagingEnabled = false
+        homepageImagesCollectionView.register(GalleryImageCell.self, forCellWithReuseIdentifier: GalleryImageCell.identifier)
+        homepageImagesCollectionView.backgroundColor = .clear
+        homepageImagesCollectionView.showsHorizontalScrollIndicator = false
+        
         // Added subviews to contentView
         [
             logoImageView, notificationButton,
             greetingLabel, subGreetingLabel,
             titleLabel, viewAllButton, collectionView,
-            homeTitleLabel, homeSubtitleLabel, galleryCollectionView
+            homeTitleLabel, homeSubtitleLabel, galleryCollectionView,
+            homepageQuoteLabel, homepageImagesCollectionView, homepageSubQuoteLabel
         ].forEach { contentView.addSubview($0) }
+        
+        
+        otherDestinationTitleLabel.text = AppConstant.Home.destinationTitle
+        otherDestinationTitleLabel.font = UIFont.roboto(.bold, size: 16)
+        otherDestinationTitleLabel.textColor = .primaryBlueColor
+
+        destinationCollectionView.register(DestinationCell.self, forCellWithReuseIdentifier: DestinationCell.identifier)
+        destinationCollectionView.backgroundColor = .clear
+
+        contentView.addSubview(otherDestinationTitleLabel)
+        contentView.addSubview(destinationCollectionView)
+        
+        
+        eventTitleLabel.text = AppConstant.Home.eventTitle
+        eventTitleLabel.font = UIFont.roboto(.bold, size: 16)
+        eventTitleLabel.textColor = .primaryBlueColor
+        
+        eventCollectionView.register(EventCell.self, forCellWithReuseIdentifier: EventCell.identifier)
+        eventCollectionView.backgroundColor = .clear
+        
+        contentView.addSubview(eventTitleLabel)
+        contentView.addSubview(eventCollectionView)
+    }
+    
+    @objc private func viewAllButtonTapped() {
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+            self.viewAllButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        },
+                       completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.viewAllButton.transform = .identity
+            }
+            // Call delegate after animation
+            self.delegate?.didTapViewAll()
+        })
     }
     
     // MARK: - Layout
@@ -199,12 +293,73 @@ final class HomeView: UIView {
             make.top.equalTo(homeSubtitleLabel.snp.bottom).offset(20)
             make.left.right.equalToSuperview()
             galleryHeightConstraint = make.height.equalTo(0).constraint
+            //make.bottom.equalToSuperview().offset(-20)
+        }
+        
+        otherDestinationTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(galleryCollectionView.snp.bottom).offset(30)
+            make.left.equalToSuperview().offset(16)
+        }
+
+        destinationCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(otherDestinationTitleLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(150)
+            //make.bottom.equalToSuperview().offset(-20)
+        }
+        
+        eventTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(destinationCollectionView.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(16)
+        }
+        
+        eventCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(eventTitleLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(150)
+            //make.bottom.equalToSuperview().offset(-20)
+        }
+        
+        homepageQuoteLabel.snp.makeConstraints { make in
+            make.top.equalTo(eventCollectionView.snp.bottom).offset(30)
+            make.left.right.equalToSuperview()
+        }
+        
+        homepageImagesCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(homepageQuoteLabel.snp.bottom).offset(20)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(160)
+        }
+        
+        homepageSubQuoteLabel.snp.makeConstraints { make in
+            make.top.equalTo(homepageImagesCollectionView.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().offset(-20)
         }
+
     }
     
     func updateGalleryHeight(_ height: CGFloat) {
         galleryHeightConstraint?.update(offset: height)
         layoutIfNeeded()
     }
+    
+    func updateDestinationHeight(_ height: CGFloat) {
+        destinationHeightConstraint?.update(offset: height)
+        layoutIfNeeded()
+    }
+    
+    func updateEventHeight(_ height: CGFloat) {
+        eventHeightConstraint?.update(offset: height)
+        layoutIfNeeded()
+    }
+    
+    func updateGreeting() {
+        greetingLabel.text = viewModel.greetingText
+    }
+}
+
+protocol HomeViewDelegate: AnyObject {
+    func didTapViewAll()
+    func didSelectPackage(_ package: DivePackage)
 }

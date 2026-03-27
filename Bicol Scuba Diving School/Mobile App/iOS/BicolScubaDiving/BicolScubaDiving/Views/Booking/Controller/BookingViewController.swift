@@ -7,6 +7,8 @@
 
 import UIKit
 import PhotosUI
+import FirebaseAuth
+import FirebaseFirestore
 
 class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
     
@@ -29,6 +31,7 @@ class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func loadView() {
         view = bookingView
     }
@@ -42,9 +45,11 @@ class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
         
         setupCompanionPicker()
         
+        loadUserInfo()
+        
         bookingView.onContinueTap = { [weak self] in
             guard let self = self else { return }
-            let paymentVC = PaymentViewController()
+            let paymentVC = PaymentViewController(package: self.package, viewModel: self.viewModel)
             self.navigationController?.pushViewController(paymentVC, animated: true)
         }
         
@@ -53,9 +58,42 @@ class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
             self.bookingView.activityIndicator.stopAnimating()
         }
         
+        bookingView.onPhoneNumberChanged = { [weak self] phone in
+            self?.viewModel.phoneNumber = phone
+            print("✅ Updated phone number in viewModel: \(phone)")
+        }
+        
+        
+        viewModel.onCompanionsUpdated = { [weak self] companions in
+            guard let self = self else { return }
+            let cards = self.bookingView.visibleCompanionCards()
+
+            for (index, card) in cards.enumerated() {
+                guard index < companions.count else { continue }  // ✅ Prevent crash
+
+                let companion = companions[index]
+                card.fullName = companion.fullName
+                card.onFullNameChanged = { [weak self] name in
+                    self?.viewModel.updateFullName(for: index + 1, name: name)
+                }
+            }
+
+//            for (index, card) in self.bookingView.visibleCompanionCards().enumerated() {
+//                let companion = companions[index]
+//                card.fullName = companion.fullName
+//                card.onFullNameChanged = { [weak self] name in
+//                    self?.viewModel.updateFullName(for: index + 1, name: name)
+//                }
+//            }
+        }
+
+        
         viewModel.onNumberOfCompanionsChanged = { [weak self] count in
             guard let self = self else { return }
             self.bookingView.updateCompanions(count: count)
+            
+            // Update companion array inside the viewModel
+                self.viewModel.updateCompanionCount(count)
             
         }
         
@@ -69,6 +107,12 @@ class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
             self?.bookingView.setMainCertificateUploaded(true)
         }
     }
+    
+    // when user proceeds to payment success
+        func proceedToPaymentConfirmation() {
+            let paymentVC = PaymentConfirmationViewController(package: package, viewModel: viewModel)
+            navigationController?.pushViewController(paymentVC, animated: true)
+        }
     
     private func presentPhotoPicker(for index: Int) {
         var config = PHPickerConfiguration()
@@ -90,22 +134,75 @@ class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
         currentUploadIndex = nil
         
         if provider.canLoadObject(ofClass: UIImage.self) {
-            provider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-                guard let self = self, let uiImage = image as? UIImage else { return }
-                
-                DispatchQueue.main.async {
+                provider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                    guard let self = self, let uiImage = image as? UIImage else { return }
+                    
+                    // ✅ Generate a unique file path for the uploaded image
+                    let path: String
                     if companionIndex == 0 {
-                        self.viewModel.updateMainCertificate(image: uiImage)
+                        path = "certificates/main/\(UUID().uuidString).jpg"
                     } else {
-                        self.viewModel.updateCertificate(for: companionIndex, image: uiImage)
-                        if let card = self.bookingView.companionCard(at: companionIndex) {
-                            card.updateCertificateUploaded()
+                        path = "certificates/companions/\(UUID().uuidString).jpg"
+                    }
+                    
+                    // ✅ Upload to Firebase Storage
+                    StorageService.shared.uploadImage(uiImage, path: path) { result in
+                        switch result {
+                        case .success(let urlString):
+                            DispatchQueue.main.async {
+                                if companionIndex == 0 {
+                                    // Update main certificate with Firebase URL
+                                    self.viewModel.updateMainCertificate(url: urlString)
+                                    self.bookingView.uploadCertificateButton.setTitle(
+                                        AppConstant.Booking.certificateUploadedTitle,
+                                        for: .normal
+                                    )
+                                    self.bookingView.uploadCertificateButton.setTitleColor(.systemGreen, for: .normal)
+                                    self.bookingView.setMainCertificateUploaded(true)
+                                } else {
+                                    // Update companion certificate with Firebase URL
+                                    self.viewModel.updateCertificate(for: companionIndex, url: urlString)
+                                    if let card = self.bookingView.companionCard(at: companionIndex) {
+                                        card.updateCertificateUploaded()
+                                    }
+                                }
+                            }
+                        case .failure(let error):
+                            print("❌ Failed to upload image:", error.localizedDescription)
                         }
                     }
                 }
             }
-        }
     }
+    
+    private func validateSlots(selectedCompanions: Int) {
+        let totalSlots = package.totalSlot
+        let bookedSlots = package.bookedSlot
+        let remainingSlots = totalSlots - bookedSlots
+
+        let totalPeople = 1 + selectedCompanions  // main user + companions
+
+        if totalPeople > remainingSlots {
+            // ❌ Show alert
+            let alert = UIAlertController(
+                title: "Slot Limit Exceeded",
+                message: "Only \(remainingSlots) slots are available. Please reduce the number of companions.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+
+            // ❌ Disable Continue button
+            bookingView.continueButton.isEnabled = false
+            bookingView.continueButton.backgroundColor = .primaryGrayLight
+        }
+//        else {
+//            // ✔ Revalidate normally
+//            bookingView.continueButton.isEnabled = true
+//            bookingView.continueButton.backgroundColor = .primaryOrange
+//        }
+    }
+
     
     private func setupDatePicker() {
         
@@ -133,6 +230,36 @@ class BookingViewController: UIViewController, PHPickerViewControllerDelegate {
         
         bookingView.preferredDateTextField.resignFirstResponder()
         
+    }
+    
+    private func loadUserInfo() {
+        guard let user = Auth.auth().currentUser else { return }
+        
+        let uid = user.uid
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(uid).getDocument { [weak self] snapshot, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("❌ Failed to load user info:", error.localizedDescription)
+                return
+            }
+            
+            let data = snapshot?.data() ?? [:]
+            
+            let firstName = data["firstname"] as? String ?? ""
+            let lastName = data["lastname"] as? String ?? ""
+            let email = data["email"] as? String ?? user.email ?? ""
+            let phone = data["phoneNumber"] as? String ?? ""
+            
+            let fullName = "\(firstName) \(lastName)".trimmingCharacters(in: .whitespaces)
+            
+            DispatchQueue.main.async {
+                self.bookingView.configureUserInfo(name: fullName, email: email, phoneNumber: phone)
+                self.viewModel.phoneNumber = phone
+            }
+        }
     }
     
     private func setupCompanionPicker() {
@@ -178,5 +305,8 @@ extension BookingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         }
         
         viewModel.numberOfCompanions = selected
+        
+        // ✅ Validate slot availability
+            validateSlots(selectedCompanions: selected)
     }
 }

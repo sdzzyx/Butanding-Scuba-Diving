@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 /// A view-specific data model used to configure the UI elements of `LoginView`
 struct LoginViewData {
@@ -29,7 +30,7 @@ class LoginViewModel {
     let forgotPasswordText = AppConstant.Login.forgotPasswordTitle
     let footerText = AppConstant.Login.footerText
     
-    var onLoginSuccess: (() -> Void)?
+    var onLoginSuccess: ((String) -> Void)?
     var onLoginFailure: ((Error) -> Void)?
     
     var viewData: LoginViewData {
@@ -48,11 +49,50 @@ class LoginViewModel {
     
     func login(username: String, password: String) {
         // TODO: Add logic here
+        Auth.auth().signIn(withEmail: username, password: password) { [weak self] result, error in
+                if let error = error {
+                    self?.onLoginFailure?(error)
+                    return
+                }
+                
+            guard let user = result?.user else { return }
+                    
+                    if user.isEmailVerified {
+                        print("User logged in: \(user.uid)")
+                        
+                        // 🔹 Ensure Firestore user doc exists
+                        FirestoreService.shared.createUserIfNeeded(user: user) { _ in
+                            FirestoreService.shared.fetchUserRole(uid: user.uid) { role in
+                                DispatchQueue.main.async {
+                                    self?.onLoginSuccess?(role)
+                                }
+                            }
+                        }
+                    } else {
+                        // ❌ Prevent access until verified
+                        let verifyError = NSError(
+                            domain: "Login",
+                            code: -3,
+                            userInfo: [NSLocalizedDescriptionKey: "Please verify your email before logging in."]
+                        )
+                        self?.onLoginFailure?(verifyError)
+                        
+                        // Send email verification again if needed
+                        user.sendEmailVerification(completion: nil)
+                        
+                        // Force logout to block navigation
+                        do {
+                            try Auth.auth().signOut()
+                        } catch {
+                            print("Error signing out unverified user: \(error.localizedDescription)")
+                        }
+                    }
+                }
         
         // Simulate success
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.onLoginSuccess?()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//            self.onLoginSuccess?()
+//        }
     }
     
     func forgotPasswordTapped() {
@@ -69,6 +109,10 @@ class LoginViewModel {
     
     func loginWithApple(completion: @escaping (AuthResult) -> Void) {
         SocialAuthManager.shared.signInWithApple(completion: completion)
+    }
+    
+    func loginWithFacebook(from controller: UIViewController, completion: @escaping (AuthResult) -> Void) {
+        SocialAuthManager.shared.signInWithFacebook(presentingVC: controller, completion: completion)
     }
     
 }

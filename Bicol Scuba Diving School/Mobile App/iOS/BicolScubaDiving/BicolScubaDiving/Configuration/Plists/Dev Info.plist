@@ -11,6 +11,58 @@
 		<string>Roboto-Light.ttf</string>
 		<string>Roboto-Bold.ttf</string>
 	</array>
+    
+    <!-- URL Schemes -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <!-- Google Sign-In -->
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.497234524456-b4c8c99od7uhoeekt0ftmvtopodrdni8</string>
+            </array>
+        </dict>
+        
+        <!-- Facebook -->
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1829662990998144</string>
+            </array>
+        </dict>
+        
+        <!-- PayMongo GCash return -->
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>butandingscubadiving</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>butandingscubadiving</string>
+            </array>
+        </dict>
+    </array>
+    
+    <!-- Facebook Config -->
+    <key>FacebookAppID</key>
+    <string>1829662990998144</string>
+    <key>FacebookClientToken</key>
+    <string>9ddbc5eca85b43b4888ee0751c778357</string>
+    <key>FacebookDisplayName</key>
+    <string>Bicol Scuba Diving</string>
+
+    <!-- Allow checking installed apps -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+        <!-- Optional: include SafariViewController redirect handler -->
+        <string>butandingscubadiving</string>
+    </array>
+    
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
