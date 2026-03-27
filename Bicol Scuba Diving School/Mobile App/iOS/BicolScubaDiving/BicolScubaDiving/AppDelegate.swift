@@ -1,0 +1,78 @@
+//
+//  AppDelegate.swift
+//  BicolScubaDiving
+//
+//  Created by Melvin Ballesteros on 6/10/25.
+//
+
+import UIKit
+import IQKeyboardManagerSwift
+import SnapKit
+import Firebase
+import FirebaseCore
+import GoogleSignIn
+import FBSDKCoreKit
+
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        configureFirebase()
+        
+        // Facebook SDK initialization
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
+        
+        // Override point for customization after application launch.
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+
+        return true
+    }
+    
+    
+    /// Firebase config based on the build flag (DEV or PROD)
+    func configureFirebase() {
+        if let filePath = Bundle.main.path(forResource: "GoogleService-Info_Dev", ofType: "plist"),
+           let fileopts = FirebaseOptions(contentsOfFile: filePath) {
+            FirebaseApp.configure(options: fileopts)
+        } else {
+            print("Could not find Firebase plist file for DEV target.")
+        }
+    }
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
+        }
+        
+        return ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            options: options
+        )
+    }
+
+    // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+
+}
+
