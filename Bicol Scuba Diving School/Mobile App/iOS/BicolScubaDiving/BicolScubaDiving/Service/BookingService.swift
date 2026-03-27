@@ -14,9 +14,9 @@ class BookingService {
     func saveBooking(_ booking: Booking, completion: @escaping (Error?) -> Void) {
         db.collection("bookings").document(booking.bookingId).setData(booking.dictionary) { error in
             if let error = error {
-                print("❌ Failed to save booking: \(error.localizedDescription)")
+                print("Failed to save booking: \(error.localizedDescription)")
             } else {
-                print("✅ Booking successfully saved to Firestore.")
+                print("Booking successfully saved to Firestore.")
             }
             completion(error)
         }
@@ -29,13 +29,13 @@ class BookingService {
             .order(by: "date", descending: true)
             .getDocuments { snapshot, error in
                 if let error = error {
-                    print("❌ Error fetching instructor bookings: \(error.localizedDescription)")
+                    print("Error fetching instructor bookings: \(error.localizedDescription)")
                     completion([])
                     return
                 }
                 
                 let bookings = snapshot?.documents.compactMap { Booking(document: $0) } ?? []
-                print("✅ Loaded \(bookings.count) bookings for instructor: \(instructorId)")
+                print("Loaded \(bookings.count) bookings for instructor: \(instructorId)")
                 completion(bookings)
             }
     }
@@ -59,18 +59,18 @@ class BookingService {
             .order(by: "date", descending: true)
             .getDocuments { snapshot, error in
                 if let error = error {
-                    print("❌ Error fetching bookings: \(error.localizedDescription)")
+                    print("Error fetching bookings: \(error.localizedDescription)")
                     completion([])
                     return
                 }
                 
                 let bookings = snapshot?.documents.compactMap { Booking(document: $0) } ?? []
-                print("✅ Loaded \(bookings.count) bookings for userId: \(userId)")
+                print("Loaded \(bookings.count) bookings for userId: \(userId)")
                 completion(bookings)
             }
     }
     
-    /// ✅ Helper: Save booking based on a DivePackage (auto-fills imageUrl)
+    /// Helper: Save booking based on a DivePackage (auto-fills imageUrl)
     func createBooking(
         from package: DivePackage,
         userId: String,
@@ -102,7 +102,7 @@ class BookingService {
             userMedicalCertificateUrl: userMedicalCertificateUrl,
             companions: companions,
             reservationDate: reservationDate,
-            status: status // ✅ Automatically include image URL from the package
+            status: status // Automatically include image URL from the package
         )
         
         saveBooking(booking, completion: completion)
