@@ -98,6 +98,54 @@ class AppConstant {
         static let footerText = "By joining, you agree with our Terms and Privacy Policy"
     }
     
+    struct Instructor {
+        static let instructorTitle = "Instructor Dashboard"
+        static let logo = "logo"
+        static let backLogo = "back-logo"
+        static let greetingText = "Welcome Instructor "
+        static let assignedBookingTitle = "Assigned Bookings"
+        static let expandedSymbol = "▶"
+        static let collapseSymbol = "▼"
+        static let bookingNumberTitle = "Booking Number:"
+        static let bookingOneTitle = "Booking #0001"
+        static let packageInformationTitle = "Package Information"
+        static let packageTitle = "Package:"
+        static let packageName = "Discover Scuba Diving"
+        static let nameTitle = "Name:"
+        static let namePlaceholder = "Juan Dela Cruz"
+        static let dateTimeTitle = "Date & Time:"
+        static let dateTimePlaceholder = "October 20, 2025 - 10:00 AM"
+        static let participantsTitle = "Participants:"
+        static let emailTitle = "Email:"
+        static let emailPlaceholder = "juan@gmail.com"
+        static let phoneNumberTitle = "Phone Number:"
+        static let phoneNumberPlaceholder = "09477601772"
+        static let participantsPlaceholder = "1. Maria Santos"
+        static let participantsPlaceholderTwo = "2. Ana Reyes"
+        static let participantsPlaceholderThree = "3. Jake Dela Cruz"
+        static let bookingDetailsTitle = "Booking Details"
+        static let buttonTitle = "Completed"
+        static let bookingScheduleTitle = "Booking Schedules"
+    
+    }
+    
+    struct BookingDetails {
+        static let bookingDetailsTitle = "Booking Details"
+        static let backLogo = "back-logo"
+        static let packageName = "Discover Scuba Diving"
+        static let pendingTitle = "Pending"
+        static let approvedTitle = "Approved"
+        static let cancelTitle = "Canceled"
+        static let bookingNumberTitle = "Booking Number:"
+        static let bookingPlaceholder = "Booking #0001"
+        static let dateTitle = "Reservation Date:"
+        static let datePlaceholder = "October 20, 2025"
+        static let priceTitle = "Price:"
+        static let pricePlaceholder = "Php 2,500.00"
+        static let assignedInstructor = "Assigned Instructor:"
+        static let buttonTitle = "Cancel"
+    }
+    
     struct Profile {
         static let title = "Profile"
         static let accountSettings = "Account Settings"
@@ -137,22 +185,28 @@ class AppConstant {
     struct Home {
         static let logoImageName = "logo"
         static let notificationImageName = "notification"
-        static let greetingText = "Hey John!"
+        static let greetingText = "Hey"
         static let subGreetingText = "What do you need today?"
         static let sectionTitle = "Packages"
         static let viewAllButtonText = "View All"
         static let title = "Swim with the"
         static let subtitle = "Gentle Giants of the Sea"
+        static let destinationTitle = "Other Destinations"
+        static let eventTitle = "Festivals / Events"
     }
     
     struct FirestoreKeys {
         struct Collections {
             static let homepagePackages = "homapage-packages"
             static let homepageData = "homepage-data"
+            static let homepageDestination = "homepage-destination"
+            static let homepageEvent = "homepage-event"
+            static let homepageImages = "homepage-images"
         }
         
         struct Documents {
             static let homepageData = "homepage-data"
+            static let homepageImages = "homepage-images"
         }
         
         struct Fields {
@@ -170,6 +224,47 @@ class AppConstant {
             static let requirements1 = "requirements1"
             static let requirements2 = "requirements2"
             static let requirements3 = "requirements3"
+            
+            static let destinationImage1 = "destination_image1"
+            static let destinationTitle1 = "destination_title1"
+            
+            static let destinationImage2 = "destination_image2"
+            static let destinationTitle2 = "destination_title2"
+            
+            static let destinationImage3 = "destination_image3"
+            static let destinationTitle3 = "destination_title3"
+            
+            static let destinationImage4 = "destination_image4"
+            static let destinationTitle4 = "destination_title4"
+            
+            static let destinationImage5 = "destination_image5"
+            static let destinationTitle5 = "destination_title5"
+            
+            static let eventImage1 = "event_image1"
+            static let eventTitle1 = "event_title1"
+            
+            static let eventImage2 = "event_image2"
+            static let eventTitle2 = "event_title2"
+            
+            static let eventImage3 = "event_image3"
+            static let eventTitle3 = "event_title3"
+            
+            static let eventImage4 = "event_image4"
+            static let eventTitle4 = "event_title4"
+            
+            static let eventImage5 = "event_image5"
+            static let eventTitle5 = "event_title5"
+            
+            static let homepageQuote = "homepage-quote"
+            static let homepageSubquote = "homepage-subquote"
+            static let imageUrl1 = "image-url"
+            static let imageUrl2 = "image-url2"
+            static let imageUrl3 = "image-url3"
+            static let imageUrl4 = "image-url4"
+            
+            static let disabledReason = "disabled_reason"
+
+            
         }
     }
     
@@ -244,5 +339,21 @@ class AppConstant {
         static let continueButtonTitle = "Continue"
         static let paymentHighlightsTitle = "Payment"
         static let methodHighlightsTitle = "Method"
+    }
+    
+    struct CashConfirmation {
+        static let logo = "logo"
+        static let bookingHeader = "Booking Successfull!"
+        static let thankYouLabel = "Thank you!"
+        static let details = "We have recieve your booking information, Please prepare the exact amount and pay directly at the facility."
+        static let homeButtonTitle = "Home"
+    }
+    
+    struct PaymentConfirmation {
+        static let logo = "logo"
+        static let bookingHeader = "Payment Successfull!"
+        static let thankYouLabel = "Thank you!"
+        static let details = "We have recieved your booking information."
+        static let homeButtonTitle = "Home"
     }
 }

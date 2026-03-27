@@ -9,6 +9,7 @@ import FirebaseCore
 import AuthenticationServices
 import CryptoKit
 import GoogleSignIn
+import FBSDKLoginKit
 
 typealias AuthResult = Result<User, Error>
 
@@ -116,3 +117,41 @@ extension SocialAuthManager: ASAuthorizationControllerDelegate, ASAuthorizationC
             .first { $0.isKeyWindow } ?? UIWindow()
     }
 }
+
+
+extension SocialAuthManager {
+    func signInWithFacebook(presentingVC: UIViewController, completion: @escaping (AuthResult) -> Void) {
+        self.authCompletion = completion
+
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: ["public_profile", "email"], from: presentingVC) { [weak self] result, error in
+            guard let self = self else { return }
+
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let result = result, !result.isCancelled else {
+                completion(.failure(NSError(domain: "AuthManager", code: -2, userInfo: [NSLocalizedDescriptionKey: "Facebook login was cancelled."])))
+                return
+            }
+
+            guard let tokenString = AccessToken.current?.tokenString else {
+                completion(.failure(NSError(domain: "AuthManager", code: -3, userInfo: [NSLocalizedDescriptionKey: "No Facebook access token."])))
+                return
+            }
+
+            let credential = FacebookAuthProvider.credential(withAccessToken: tokenString)
+
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let user = authResult?.user {
+                    completion(.success(user))
+                }
+            }
+        }
+    }
+}
+

@@ -58,6 +58,7 @@ class LoginView: UIView {
         textField.keyboardType = .default
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -109,6 +110,12 @@ class LoginView: UIView {
         addSubview(stackView)
         addSubview(socialMediaStackView)
         addSubview(footerButton)
+        
+        setupActions()
+    }
+    
+    private func setupActions() {
+        footerButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
     }
     
     private func setupObserver() {

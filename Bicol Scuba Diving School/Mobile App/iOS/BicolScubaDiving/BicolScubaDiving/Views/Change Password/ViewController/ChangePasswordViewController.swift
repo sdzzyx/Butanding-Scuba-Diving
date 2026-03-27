@@ -81,11 +81,27 @@ class ChangePasswordViewController: UIViewController {
     }
     
     @objc private func submitTapped() {
-        let model = ChangePasswordModel(oldPassword: "old", newPassword: "new", confirmPassword: "new")
-        viewModel.submitChangePassword(model: model)
-        let alert = UIAlertController(title: "Success", message: "Password updated successfully.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
+        let model = ChangePasswordModel(
+                oldPassword: mainView.oldPasswordField.text ?? "",
+                newPassword: mainView.newPasswordField.text ?? "",
+                confirmPassword: mainView.confirmPasswordField.text ?? ""
+            )
+            
+            viewModel.submitChangePassword(model: model) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success:
+                        let alert = UIAlertController(title: "Success", message: "Password updated successfully.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(alert, animated: true)
+                        
+                    case .failure(let error):
+                        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(alert, animated: true)
+                    }
+                }
+            }
     }
     
     @objc private func handleBackgroundTap(_ sender: UITapGestureRecognizer) {

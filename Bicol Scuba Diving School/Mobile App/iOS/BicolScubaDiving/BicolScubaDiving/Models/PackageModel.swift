@@ -17,4 +17,6 @@ struct DivePackage {
     let totalSlot: Int
     let bookedSlot: Int
     let requirements: [String]
+    let disabledReason: String
+
 }
