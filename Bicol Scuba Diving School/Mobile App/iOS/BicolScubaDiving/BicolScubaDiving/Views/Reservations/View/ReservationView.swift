@@ -10,13 +10,6 @@ import SnapKit
 
 class ReservationView: UIView {
     
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
     
     // MARK: - Properties
     var viewModel: ReservationViewModel?
@@ -119,7 +112,8 @@ class ReservationView: UIView {
         addSubview(activityIndicator)
 
         headerImageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            //make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            make.top.equalTo(snp.top).offset(50)
             make.leading.equalToSuperview().offset(16)
             make.width.height.equalTo(100)
         }

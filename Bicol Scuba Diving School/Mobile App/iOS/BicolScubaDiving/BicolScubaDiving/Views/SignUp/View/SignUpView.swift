@@ -217,7 +217,7 @@ class SignUpView: UIView {
     // MARK: - Constraints
     private func setupConstraints() {
         backButton.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(15)
+            make.top.equalToSuperview().offset(65)
             make.leading.equalToSuperview().offset(15)
             make.width.height.equalTo(70)
         }
