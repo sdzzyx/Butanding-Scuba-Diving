@@ -81,7 +81,8 @@ class PackageView: UIView {
         addSubview(activityIndicator)
         
         headerImageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            //make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            make.top.equalTo(snp.top).offset(50)
             make.leading.equalToSuperview().offset(16)
             make.width.height.equalTo(100)
         }

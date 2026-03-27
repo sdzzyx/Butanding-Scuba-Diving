@@ -31,6 +31,17 @@ final class PackageDetailView: UIView {
         return label
     }()
     
+    let inactiveLabel: UILabel = {
+        let label = UILabel()
+        label.font = .roboto(.bold, size: 16)
+        label.textColor = .primaryOrange
+        //label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+
+    
     let descriptionTitleLabel: UILabel = {
         let label = UILabel()
         label.text = AppConstant.PackagesDetail.descriptionTitle
@@ -127,6 +138,8 @@ final class PackageDetailView: UIView {
         contentView.addSubview(priceLabel)
         contentView.addSubview(slotTitleLabel)
         contentView.addSubview(slotLabel)
+        contentView.addSubview(inactiveLabel)
+
         
         headerImageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
@@ -155,8 +168,14 @@ final class PackageDetailView: UIView {
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
+        inactiveLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+
+        
         descriptionTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+            make.top.equalTo(inactiveLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
@@ -203,6 +222,39 @@ final class PackageDetailView: UIView {
         priceLabel.text = viewModel.price
         slotLabel.text = viewModel.slotAvailable
         headerImageView.kf.setImage(with: URL(string: viewModel.imageUrl))
+        
+        //Condition if the slot is fully booked
+        if viewModel.isSlotFull {
+                bookButton.isEnabled = false
+                bookButton.setTitle("Fully Booked", for: .normal)
+                bookButton.backgroundColor = .primaryGrayLight
+                inactiveLabel.text = "Slot is Fully Booked"
+                inactiveLabel.isHidden = false
+                return
+            }
+        
+        // Condition for book button to disable when the package is not active
+            if !viewModel.isActive {
+                inactiveLabel.isHidden = false
+                inactiveLabel.text = viewModel.disabledReason
+                bookButton.isEnabled = false
+                bookButton.setTitle("Not Available", for: .normal)
+                //bookButton.alpha = 0.4
+                bookButton.backgroundColor = .primaryGrayLight
+                return
+            }
+        
+        // Active AND slot not full
+            inactiveLabel.isHidden = true
+            bookButton.isEnabled = true
+            bookButton.setTitle(AppConstant.PackagesDetail.bookButtonTitle, for: .normal)
+            bookButton.backgroundColor = .primaryOrange
+//        else {
+//                inactiveLabel.isHidden = true
+//                bookButton.isEnabled = true
+//                //bookButton.alpha = 1.0
+//                bookButton.tintColor = .primaryGrayLight
+//            }
         
         // Build bullet points with proper indentation
         let nonEmptyRequirements = viewModel.requirements.filter {
