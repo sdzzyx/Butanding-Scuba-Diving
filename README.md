@@ -1,8 +1,9 @@
 # 🐋 Butanding Scuba Diving Booking App 
 
-A mobile application for booking scuba diving experiences in Bicol. Users can explore packages, book sessions, and manage their reservations.
+# A mobile application for booking scuba diving experiences in Bicol. Users can explore packages, book sessions, and manage their reservations.
 
-📱 UI Preview# 
+# 📱 UI Preview
+
 <img width="3468" height="2134" alt="UI" src="https://github.com/user-attachments/assets/28482468-4df8-4004-bf27-ff0389a7a873" />
 
 # ✨ Features
