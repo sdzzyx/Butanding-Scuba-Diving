@@ -1,6 +1,6 @@
 # 🐋 Butanding Scuba Diving Booking App 
 
-## H2 A mobile application for booking scuba diving experiences in Bicol. Users can explore packages, book sessions, and manage their reservations.
+## H2 → A mobile application for booking scuba diving experiences in Bicol. Users can explore packages, book sessions, and manage their reservations.
 
 # 📱 UI Preview
 
