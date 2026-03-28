@@ -37,63 +37,45 @@ class ReservationViewModel {
     }
     
     func selectTab(at index: Int) {
-            guard index >= 0 && index < tabTitles.count else { return }
-            selectedTabIndex = index
-            onTabChanged?(index)
-        }
+        guard index >= 0 && index < tabTitles.count else { return }
+        selectedTabIndex = index
+        onTabChanged?(index)
+    }
+    
+    // MARK: - Fetch Bookings from Firestore
+    func fetchUserBookings() {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        // MARK: - Fetch Bookings from Firestore
-        func fetchUserBookings() {
-            guard let userId = Auth.auth().currentUser?.uid else { return }
-            
-            db.collection("bookings")
-                .whereField("userId", isEqualTo: userId)
-                .addSnapshotListener { [weak self] snapshot, error in
-                    if let error = error {
-                        print("❌ Error fetching bookings: \(error.localizedDescription)")
-                        return
-                    }
-
-                    guard let documents = snapshot?.documents else { return }
-
-                    self?.bookings = documents.compactMap { Booking(document: $0) }
-
-                    print("✅ Loaded \(self?.bookings.count ?? 0) bookings for user: \(userId)")
-                    self?.onBookingsUpdated?()
+        db.collection("bookings")
+            .whereField("userId", isEqualTo: userId)
+            .addSnapshotListener { [weak self] snapshot, error in
+                if let error = error {
+                    print("❌ Error fetching bookings: \(error.localizedDescription)")
+                    return
                 }
-
-            
-//            db.collection("bookings")
-//                .whereField("userId", isEqualTo: userId)
-//                .addSnapshotListener { [weak self] snapshot, error in
-//                    if let error = error {
-//                        print("❌ Error fetching bookings: \(error.localizedDescription)")
-//                        return
-//                    }
-//                    
-//                    guard let documents = snapshot?.documents else { return }
-//                    self?.bookings = documents.compactMap { doc in
-//                        try? doc.data(as: Booking.self)
-//                    }
-//                    
-//                    print("✅ Fetched \(self?.bookings.count ?? 0) bookings")
-//                    self?.onBookingsUpdated?()
-//                }
-        }
+                
+                guard let documents = snapshot?.documents else { return }
+                
+                self?.bookings = documents.compactMap { Booking(document: $0) }
+                
+                print("✅ Loaded \(self?.bookings.count ?? 0) bookings for user: \(userId)")
+                self?.onBookingsUpdated?()
+            }
+    }
     
     
     // call this to replace the entire list (e.g. after fetching from Firestore)
-        func setBookings(_ new: [Booking]) {
-            self.bookings = new
-            onBookingsUpdated?()
-        }
-
-        // update single booking status locally and notify UI
-        func updateLocalBookingStatus(bookingId: String, to newStatus: String) {
-            guard let idx = bookings.firstIndex(where: { $0.bookingId == bookingId }) else { return }
-            let updated = bookings[idx].with(status: newStatus)
-            bookings[idx] = updated
-            onBookingsUpdated?()
-        }
+    func setBookings(_ new: [Booking]) {
+        self.bookings = new
+        onBookingsUpdated?()
+    }
+    
+    // update single booking status locally and notify UI
+    func updateLocalBookingStatus(bookingId: String, to newStatus: String) {
+        guard let idx = bookings.firstIndex(where: { $0.bookingId == bookingId }) else { return }
+        let updated = bookings[idx].with(status: newStatus)
+        bookings[idx] = updated
+        onBookingsUpdated?()
+    }
     
 }

@@ -27,32 +27,32 @@ class ProfileViewModel {
         let isEmailPasswordUser = Auth.auth().currentUser?.isEmailPasswordUser ?? false
         
         if let sections = sections {
-                    self.sections = sections
-                } else {
-                    var accountItems = [
-                        ProfileItem(title: AppConstant.Profile.personalInfo),
-                        ProfileItem(title: AppConstant.Profile.logout)
-                    ]
-                    
-                    if isEmailPasswordUser {
-                        accountItems.insert(ProfileItem(title: AppConstant.Profile.changePassword), at: 1)
-                    }
-                    
-                    self.sections = [
-                        ProfileSection(sectionTitle: AppConstant.Profile.accountSettings, items: accountItems),
-                        ProfileSection(sectionTitle: AppConstant.Profile.generalInformation, items: [
-                            ProfileItem(title: AppConstant.Profile.privacyPolicy),
-                            ProfileItem(title: AppConstant.Profile.refundPolicy),
-                            ProfileItem(title: AppConstant.Profile.termsAndConditions)
-                        ]),
-                        ProfileSection(sectionTitle: AppConstant.Profile.support, items: [
-                            ProfileItem(title: AppConstant.Profile.emailUs),
-                            ProfileItem(title: AppConstant.Profile.callUs)
-                        ])
-                    ]
-                }
+            self.sections = sections
+        } else {
+            var accountItems = [
+                ProfileItem(title: AppConstant.Profile.personalInfo),
+                ProfileItem(title: AppConstant.Profile.logout)
+            ]
+            
+            if isEmailPasswordUser {
+                accountItems.insert(ProfileItem(title: AppConstant.Profile.changePassword), at: 1)
+            }
+            
+            self.sections = [
+                ProfileSection(sectionTitle: AppConstant.Profile.accountSettings, items: accountItems),
+                ProfileSection(sectionTitle: AppConstant.Profile.generalInformation, items: [
+                    ProfileItem(title: AppConstant.Profile.privacyPolicy),
+                    ProfileItem(title: AppConstant.Profile.refundPolicy),
+                    ProfileItem(title: AppConstant.Profile.termsAndConditions)
+                ]),
+                ProfileSection(sectionTitle: AppConstant.Profile.support, items: [
+                    ProfileItem(title: AppConstant.Profile.emailUs),
+                    ProfileItem(title: AppConstant.Profile.callUs)
+                ])
+            ]
+        }
         
-
+        
         if let socialIcons = socialIcons {
             self.socialIcons = socialIcons
         } else {

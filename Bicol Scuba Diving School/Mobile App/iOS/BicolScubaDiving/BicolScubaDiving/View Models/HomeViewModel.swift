@@ -153,5 +153,5 @@ final class HomeViewModel {
     var allEvents: [EventItem] {
         return events.flatMap { $0.events }
     }
-
+    
 }

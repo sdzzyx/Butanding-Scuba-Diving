@@ -20,8 +20,6 @@ struct ChangePasswordViewData {
     let submitTitle: String
 }
 
-
-
 class ChangePasswordViewModel {
     
     // View data for configuring UI text

@@ -51,29 +51,29 @@ class PersonalInformationViewModel {
         )
     }
     
-    // ✅ Fetch from FirebaseAuth
+    // Fetch from FirebaseAuth
     private func loadUserInfo() {
         guard let user = Auth.auth().currentUser else { return }
-                
-                // Load from Auth
-                let nameComponents = user.displayName?.split(separator: " ") ?? []
-                personalInfomation.firstname = nameComponents.first.map(String.init) ?? ""
-                personalInfomation.lastname = nameComponents.dropFirst().joined(separator: " ")
-                personalInfomation.email = user.email ?? ""
-                personalInfomation.phoneNumber = user.phoneNumber ?? ""
-                
-                // ✅ Load additional info from Firestore if available
-                db.collection("users").document(user.uid).getDocument { [weak self] snapshot, error in
-                    guard let data = snapshot?.data(), error == nil else { return }
-                    
-                    self?.personalInfomation.firstname = data["firstname"] as? String ?? self?.personalInfomation.firstname ?? ""
-                    self?.personalInfomation.lastname = data["lastname"] as? String ?? self?.personalInfomation.lastname ?? ""
-                    self?.personalInfomation.phoneNumber = data["phone"] as? String ?? self?.personalInfomation.phoneNumber ?? ""
-                    
-                    self?.infoUpdated?()
-                }
-                
-                infoUpdated?()
+        
+        // Load from Auth
+        let nameComponents = user.displayName?.split(separator: " ") ?? []
+        personalInfomation.firstname = nameComponents.first.map(String.init) ?? ""
+        personalInfomation.lastname = nameComponents.dropFirst().joined(separator: " ")
+        personalInfomation.email = user.email ?? ""
+        personalInfomation.phoneNumber = user.phoneNumber ?? ""
+        
+        // Load additional info from Firestore if available
+        db.collection("users").document(user.uid).getDocument { [weak self] snapshot, error in
+            guard let data = snapshot?.data(), error == nil else { return }
+            
+            self?.personalInfomation.firstname = data["firstname"] as? String ?? self?.personalInfomation.firstname ?? ""
+            self?.personalInfomation.lastname = data["lastname"] as? String ?? self?.personalInfomation.lastname ?? ""
+            self?.personalInfomation.phoneNumber = data["phone"] as? String ?? self?.personalInfomation.phoneNumber ?? ""
+            
+            self?.infoUpdated?()
+        }
+        
+        infoUpdated?()
     }
     
     func updateFirstName(_ firstName: String) {

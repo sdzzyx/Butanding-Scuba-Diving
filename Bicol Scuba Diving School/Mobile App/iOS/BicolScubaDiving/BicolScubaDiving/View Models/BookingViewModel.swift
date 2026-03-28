@@ -17,14 +17,14 @@ class BookingViewModel {
     var phoneNumber: String?
     
     var reservationDate: String?
-
+    
     
     // Main User
     var mainUserCertificate: UIImage?
     //var onMainCertificateUpdated: ((UIImage) -> Void)?
     
     var mainMedicalCertificateUrl: String?
-        
+    
     var onMainCertificateUpdated: ((String) -> Void)? // Now passes URL instead of UIImage
     
     // Companions
@@ -59,10 +59,10 @@ class BookingViewModel {
             // Remove extra companions
             companions.removeLast(companions.count - count)
         }
-
+        
         onCompanionsUpdated?(companions)
     }
-
+    
     
     func updateMainCertificate(url: String) {
         self.mainMedicalCertificateUrl = url
@@ -81,6 +81,6 @@ class BookingViewModel {
         guard index > 0, index <= companions.count else { return }
         companions[index - 1].fullName = name
         onCompanionsUpdated?(companions)
-        print("✏️ Updated companion \(index) full name: \(name)")
+        print("Updated companion \(index) full name: \(name)")
     }
 }
