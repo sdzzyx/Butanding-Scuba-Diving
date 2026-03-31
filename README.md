@@ -18,6 +18,7 @@
 # 🛠 Tech Stack
 
 - iOS (Swift / UIKit)
+- Android (Kotlin / Jetpack Compose) 
 - Firebase (Auth, Firestore)
 - Google/Facebook Sign-In
 
